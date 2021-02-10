@@ -3,11 +3,11 @@
   <head>
     <meta charset="utf-8">
     <title> Welcome to DiligentApp</title>
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="admin.css"> <!--CSS del LoginBox de admin -->
   </head>
   <body>
-  <div class="login-box">
-  <img src ="images/AppLogo4.png" class = "avatar">
+  <div class="login-box"> <!-- div del css del LoginBox admin -->
+  <img src ="AppLogo3.png" class = "Logo"> <!-- Logo de DiligentApp Admin -->
     <h1>Welcome to DiligentApp</h1>
       <form>
         <p>Company Code</p>
