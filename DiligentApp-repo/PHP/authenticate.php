@@ -3,11 +3,11 @@
   <head>
     <meta charset="utf-8">
     <title> Welcome to DiligentApp</title>
-    <link rel="stylesheet" type="text/css" href="admin.css"> <!--CSS del LoginBox de admin -->
+    <link rel="stylesheet" href="Login.css"> <!--CSS del LoginBox de admin -->
   </head>
   <body>
   <div class="login-box"> <!-- div del css del LoginBox admin -->
-  <img src ="AppLogo3.png" class = "Logo"> <!-- Logo de DiligentApp Admin -->
+  <img src ="DiligentAppLogo.png" class = "Logo"> <!-- Logo de DiligentApp Admin -->
     <h1>Welcome to DiligentApp</h1>
       <form>
         <p>Company Code</p>
@@ -18,10 +18,9 @@
         <input type="password" name="password" placeholder="Enter Password">
         <input type="submit" name="submit" value="Login">
         <nav>
-        <a href="#">Forgot Password?</a>
+        <a href="#">Forgot Passworkd?</a>
         <a href="#">Register here!</a>
-        </nav>
-
+      </nav>
       </form>
 
         </div>

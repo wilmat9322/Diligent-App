@@ -1,8 +1,7 @@
-body {
+body{
   margin: 0;
   padding: 0;
   background-image: url(Fondo.jpg); /*Imagen de fondo de la página */
-  background-repeat: no-repeat;
   background-size: cover;
   width: 1200px;
   height: 1200px;
@@ -11,7 +10,7 @@ body {
 }
 .login-box{
   width: 440px; /* Ancho y alto del login box */
-  height: 620px;
+  height: 600px;
   background: rgba(0, 0, 0, 0.5); /* color de fondo del login box */
   color:#fff3e6;
   top: 50%;
@@ -40,7 +39,7 @@ h1{
 }
 .login-box p{
   margin: 0px;
-  padding: 50px 0 0px; /* Mueve los espacios de <p> del loginbox */
+  padding: 50px 0 0; /* Mueve los espacios de <p> del loginbox */
   text-align: left;
   font-size: 24px;
   margin-top: -20px;
@@ -48,7 +47,7 @@ h1{
 }
 .login-box input{
   width: 100%;
-  margin-bottom: 0px;
+  margin-bottom: 0;
 }
 .login-box input[type="text"], input[type="password"]
 {
@@ -65,7 +64,7 @@ h1{
   outline: none;
   height: 50px;
   margin-top: 30px;
-  background: #1c8adb; /*Color del boton de login */
+  background: #ec4646; /*Color del boton de login */
   color: #fff3e6;
   font-size: 24px;
   border-radius: 20px; /*Le da curva al boton de login */
@@ -73,18 +72,19 @@ h1{
 .login-box input[type="submit"]:hover
 {
   cursor: pointer;
-  background: #c1a1d3; /* color cuando se pone el cursor encima del boton de login */
+  background: #b67171; /* color cuando se pone el cursor encima del boton de login */
   color: #fff3e6;
 }
 .login-box nav a{
   text-decoration: none;
-  padding: 20px;
+  padding: 10px;
   position:relative;
   left:0px;
-  top:20px;
+  top:10px;
   font-size: 20px;
   color: #fff3e6;
 }
-.login-box a:hover
+.login-box nav a:hover
 {
-  color: #c1a1d3; /* color del forgot password y register here cuando se le pone el cursor encima */
+  color: #b67171; /* color del forgot password y register here cuando se le pone el cursor encima */
+}

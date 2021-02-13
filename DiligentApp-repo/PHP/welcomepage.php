@@ -2,19 +2,43 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>Welcome to DiligentApp!</title>
+    <link rel="stylesheet" type="text/css" href="home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+
   </head>
   <body>
-    <header>
-    <nav>
-      <a href="#"> <!-- img src = "img/logo.png atl = "logo" Para añadir la imagen de la app en el header --></a>
-      <ul>
-        <li><a href="authenticate-first.php">Logout</a></li>
-        <li><a href="#">My profile</a></li>
-      </ul>
-      <div>
 
-      </nav>
-    </header>
+      <!--Aquí empieza el header de la aplicación-->
+      <header>
+        <div>
+          <a href="#" class="logout">Logout</a>
+          <a href="#" class="show_profile">My profile</a>
+          <img src="" class="profile_image" alt"">
+          <center>
+          <img src="" class="Logo-Supermercados" alt="" width="20px" height="20px">
+          </center>
+        </div>
+      </header>
+      <!--Aquí termina el header-->
+
+      <!-- Aquí empieza el menu-->
+        <div class="menu-slide">
+          <center>
+          <img src="AppLogo3.png" class="Logo-DiligentApp" alt="">
+          </center>
+          <a href="#"><i class="far fa-address-card"></i><span>My profile</span></a>
+          <a href="#"><i class="far fa-window-maximize"></i><span>Dashboard</span></a>
+          <a href="#"><i class="fas fa-users"></i><span>Manage Employees</span></a>
+          <a href="#"><i class="fas fa-file-invoice-dollar"></i><span>Payrolls</span></a>
+          <a href="#"><i class="fas fa-landmark"></i><span>W-2 Forms</span></a>
+          <a href="#"><i class="far fa-calendar-plus"></i><span>Schedules</span></a>
+          <a href="#"><i class="fas fa-inbox"></i><span>Inbox</span></a>
+          <a href="#"><i class="fas fa-bed"></i><span>Leave</span></a>
+          <a href="#"><i class="fas fa-user-clock"></i><span>Attendance</span></a>
+          <a href="#"><i class="far fa-file-alt"></i><span>Documents and Policies</span></a>
+        </div>
+      <!--Aquí termina el menu-->
+
   </body>
 </html>
