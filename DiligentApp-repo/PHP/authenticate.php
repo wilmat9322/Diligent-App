@@ -3,11 +3,16 @@
   <head>
     <meta charset="utf-8">
     <title> Welcome to DiligentApp</title>
-    <link rel="stylesheet" href="Login.css"> <!--CSS del LoginBox de admin -->
+
   </head>
   <body>
+    <style>
+    <?php include 'CSS/Login.css'; ?>
+    </style>
+    <div>
+      <img src="Fondo.jpg" class="Fondo">
   <div class="login-box"> <!-- div del css del LoginBox admin -->
-  <img src ="DiligentAppLogo.png" class = "Logo"> <!-- Logo de DiligentApp Admin -->
+  <img src ="images/Admin.png" class = "Logo"> <!-- Logo de DiligentApp Admin -->
     <h1>Welcome to DiligentApp</h1>
       <form>
         <p>Company Code</p>
