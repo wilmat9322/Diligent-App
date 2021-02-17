@@ -1,17 +1,22 @@
+    /***** Propiedades del body *****/
 body{
   margin: 0;
   padding: 0;
   font-family: Helvetica, "Trebuchet MS", Verdana, sans-serif;
 }
+
+    /***** Background del Login Box *****/
 .Fondo{
   background-size: cover;
   background-position: center;
   width: 100%;
   height: 100%;
-  filter: blur(5px);
+  filter: blur(4px);
 }
+
+    /***** Posición y otras propiedades del Login Box *****/
 .login-box{
-  width: 440px; /* Ancho y alto del login box */
+  width: 440px;
   height: 600px;
   background: rgba(0, 0, 0, 0.5); /* color de fondo del login box */
   color:#fff3e6;
@@ -22,23 +27,30 @@ body{
   box-sizing: border-box;
   padding: 10px 30px; /*Mueve el contenido del login-box */
 }
+
+    /***** Logo que aparece en el Login Box *****/
 .Logo{
   width: 150px;
   height: 150px;
-  border-radius: 40%; /* Hace que las esquinas del logo se curven */
-  position: absolute; /* Se posiciona según el LoginBox */
-  top: 70px; /* Posición del logo */
-  left: calc(45% - 50px); /*Movimiento del logo izquierda o derecha */
+  border-radius: 40%;
+  position: absolute;
+  margin-top: 60px;
+
+  left: calc(45% - 50px);
 }
+
+    /***** Propiedades del h1 *****/
 h1{
   margin: 0;
-  padding: 0 0 30px; /* mueve los espacios del h1 */
+  padding:0 0 30px;
   text-align: center;
   font-size:30px;
   font-weight: bold;
   padding-top: 20px;
   margin-bottom: 105px;
 }
+
+    /***** Propiedades de los nombres de los inputs *****/
 .login-box p{
   margin: 0;
   padding: 50px 0 0; /* Mueve los espacios de <p> del loginbox */
@@ -47,36 +59,46 @@ h1{
   margin-top: -20px;
   margin-bottom: 5px;
 }
+
+    /***** Lenght de los input boxes y margenes *****/
 .login-box input{
   width: 100%;
   margin-bottom: 0;
 }
+
 .login-box input[type="text"], input[type="password"]
 {
+    /***** Propiedades del input del usuario y de las cajas de input *****/
   border: none;
   border-bottom: 1px solid #fff3e6; /* linea blanca debajo del texto */
   background: rgba(0, 0, 0, 0.5); /* Color de fondo de caja de texto */
-  color: #fff3e6; /* Color de la linea blanca debajo de la caja de texto */
+  color: #fff3e6; /* Color del texto de la caja de input */
   font-size: 20px;
   outline: none;
 }
+
+    /***** Propiedades del botón de submit *****/
 .login-box input[type="submit"]
 {
   border: none;
   outline: none;
   height: 50px;
   margin-top: 30px;
-  background: #ec4646; /*Color del boton de login */
+  background: #ec4646; /*Color del boton de Login */
   color: #fff3e6;
   font-size: 24px;
   border-radius: 20px; /*Le da curva al boton de login */
 }
+
+    /***** hover del botón de Login *****/
 .login-box input[type="submit"]:hover
 {
   cursor: pointer;
   background: #b67171; /* color cuando se pone el cursor encima del boton de login */
   color: #fff3e6;
 }
+
+    /***** Propiedades de los nav (Forgot Password y Register here!) *****/
 .login-box nav a{
   text-decoration: none;
   padding: 16px;
@@ -86,6 +108,8 @@ h1{
   font-size: 20px;
   color: #fff3e6;
 }
+
+    /***** Hover de los nav o a *****/
 .login-box nav a:hover
 {
   color: #b67171; /* color del forgot password y register here cuando se le pone el cursor encima */
