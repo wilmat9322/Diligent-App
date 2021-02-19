@@ -3,6 +3,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: Helvetica, "Trebuchet MS", Verdana, sans-serif;
+  display: grid;
 }
 
 /***** Propiedades del header *****/
@@ -23,7 +24,7 @@ header {
   margin-right: 50px;
   border-radius: 2px;
   font-family: Helvetica, "Trebuchet MS", Verdana, sans-serif;
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 600;
   color: #fff;
   transition: 0.25s;
@@ -32,7 +33,7 @@ header {
 
 /***** Transición de Hover del btn Logout *****/
 .logout:hover {
-  background: #1a75ff;
+  background: #f05454;
 }
 
 /***** Propiedades del btn My profile *****/
@@ -45,7 +46,7 @@ header {
   margin-right: 25px;
   border-radius: 2px;
   font-family: Helvetica, "Trebuchet MS", Verdana, sans-serif;
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 600;
   color: #fff;
   transition: 0.25s;
@@ -54,16 +55,16 @@ header {
 
 /***** Transición de Hover del btn Logout *****/
 .show_profile:hover {
-  background: #1a75ff;
+  background: #f05454;
 }
 
 /***** Propiedades de la imagen de My profile *****/
 .profile_image {
-  width: 50px;
-  height: 50px;
+  width: 70px;
+  height: 70px;
   padding: 0;
   float: right;
-  margin: 20px 0;
+  margin: 10px 0;
   margin-right: 22px;
   border-radius: 10px;
 }
@@ -79,7 +80,7 @@ header {
   height: 120px;
   float: left;
   margin-left: 40px;
-  margin-top: 0px;
+  margin-top: 0;
   border-radius: 8px;
 }
 
@@ -93,7 +94,7 @@ h1 {
   background-color: #181818;
 }
 
-/***** Propiedades del h4 llamado Employee que esta al lado de la foto de Dilligent App en el menu *****/
+/***** Propiedades del h4 llamado Administrator que esta al lado de la foto de Dilligent App en el menu *****/
 h4 {
   color: #fff;
   margin-top: -50px;
@@ -119,7 +120,7 @@ h6 {
   width: 270px;
   height: 100%;
   transition: 0.25s;
-  transition-propert: left;
+  transition-property: left;
 }
 
 /***** Propiedades de la foto del menú *****/
@@ -147,7 +148,7 @@ h6 {
 
 /***** Transición de Hover de los elementos del menú *****/
 .menu-slide a:hover {
-  background: #1a75ff;
+  background: #f05454;
 }
 
 /***** Padding de los elementos del menu *****/
@@ -155,7 +156,7 @@ h6 {
   padding-right: 10px;
 }
 
-/***** Note *****/
+/***** Tipo id para que el btn de menu no se altere por otro bloque de codigo  *****/
 /***** Propiedades del btn de menu *****/
 label #menu_btn {
   z-index: 1;
@@ -172,7 +173,7 @@ label #menu_btn {
 
 /***** Transición de Hover del btn de menu *****/
 label #menu_btn:hover {
-  color: #1a75ff;
+  color: #f05454;
 }
 
 /***** Si el btn se toca, se esconderá *****/
@@ -194,15 +195,15 @@ label #menu_btn:hover {
 
 /***** Propiedades del contenido que mostraran las herramientas *****/
 .contenido {
-  margin-left: 250px;
-  background: #f8f7de;
+  margin-left: 270px;
+  background: #fff;
   background-position: center;
   background-size: cover;
   height: 100vh;
   transition: 0.25s;
 }
 
-/***** Para que el margen del background del contenido esté a la par con el menu escondido *****/
+/***** Para que el margen del background del contenido esté a la par con el menu escondido*****/
 #check:checked~.contenido {
   margin-left: 50px;
 }
@@ -210,4 +211,23 @@ label #menu_btn:hover {
 /***** Para que el boton de checkbox no se vea *****/
 #check {
   display: none;
+}
+main {
+margin-top: 145px;
+min-height: 100%;
+padding: 2rem;
+background: #f1f5f9;
+}
+.profile_img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 10px;
+  height: 200px;
+  width: 200px;
+}
+.admin_name {
+  display: block;
+  text-align: center;
+  position: center;
 }
