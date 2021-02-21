@@ -47,11 +47,8 @@
       </label>
       <a href="#" class="logout">Logout</a>
       <a href="#" class="show_profile">My profile</a>
-      <img src="images/Hombre.png" class="profile_image" alt"">
+      <img src="images/profilepic.png" class="profile_image" alt"">
       <img src="images/Negocio.png" class="negocio" alt="">
-      <center>
-        <h1>Employee Management | Automatic Payrolls </h1>
-      </center>
     </div>
   </header>
   <!----- Aquí termina el header ----->
@@ -82,6 +79,9 @@
 
     <main>
       <div class="top-user">
+
+        <h3 style="margin-left:10px;">Payrolls</h3>
+        <p class="selectors-p"> Range Payrolls Since:</p>
 
         <select class="selectors">
           <option value="0">Select Month:</option>
@@ -114,6 +114,7 @@
           <option value="12">2021</option>
         </select>
 
+        <button class="submit-btn" type="button"> Submit</button>
         <input class="search-container" type"submit" name="search" placeholder="Search Payroll">
         <button class="search-btn" type="submit" value="Search"><span><i class="fas fa-search"></i></span></button>
 

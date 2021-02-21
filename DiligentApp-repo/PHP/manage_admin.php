@@ -30,7 +30,8 @@
 
   <!----- Referencia al file del diseño de la app ----->
   <style>
-    <?php include 'CSS/payrolls_admin.css';?>
+    <?php include 'CSS/manage_admin.css';
+    ?>
   </style>
 
   <!----- Utilicé un input tipo checkbox para el botón de menú.
@@ -77,12 +78,11 @@
   <!----- Aquí termina el menú ----->
 
   <div class="contenido">
-
     <main>
       <div class="top-user">
 
-        <h3 style="margin-left:10px;">Payrolls</h3>
-        <p class="selectors-p"> Range Payrolls Since:</p>
+        <h3 style="margin-left:10px;">Manage Employees</h3>
+        <p class="selectors-p"> Range Employees Working Since:</p>
 
         <select class="selectors">
           <option value="0">Select Month:</option>
@@ -117,19 +117,18 @@
         </select>
 
         <button class="submit-btn" type="button"> Submit</button>
-        <input class="search-container" type"submit" name="search" placeholder="Search Payroll">
+        <input class="search-container" type"submit" name="search" placeholder="Search Employee">
         <button class="search-btn" type="submit" value="Search"><span><i class="fas fa-search"></i></span></button>
 
-        <button class="print-btn" type="button"><span><i class="fas fa-print"></i></span> Print Payroll</button>
-
-        <button class="payroll-btn" onclick="document.getElementById('id01').style.display='block'" style="width:auto;"><span><i class="fas fa-file-invoice-dollar"></i></span> Add Payroll</button>
+        <button class="payroll-btn" onclick="document.getElementById('id01').style.display='block'" style="width:auto;"><span><i class="fas fa-user-plus"></i></span> Add Employee</button>
+        <button class="print-btn" onclick="document.getElementById('id02').style.display='block'" style="width:auto;"><span><i class="fas fa-user-minus"></i></span> Remove Employee</button>
 
         <div id="id01" class="modal">
 
-        <form class="modal-content animate" action="/action_page.php" method="post">
+        <form class="modal-content animate" action="" method="post">
             <div class="txtcontainer">
             <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-            <h3> Complete the following information to add a payroll </h3>
+            <h3> Complete the following information to add an Employee </h3>
         </div>
 
         <div class="container">
@@ -140,21 +139,14 @@
           <label for="uname"><b>Employee Number</b></label>
           <input type="text" placeholder="Enter Employee Number" name="name" required>
 
-          <label for="uname"><b>Pay Rate</b></label>
-          <input type="text" placeholder="Enter Employee Pay Rate" name="name" required>
+          <label for="uname"><b>Position</b></label>
+          <input type="text" placeholder="Enter Employee Position" name="name" required>
 
-          <label for="uname"><b>Gross Earnings</b></label>
-          <input type="text" placeholder="Enter Gross Earnings" name="name" required>
+          <label for="uname"><b>Type</b></label>
+          <input type="text" placeholder="Enter Type of Employee" name="name" required>
 
-          <label for="uname"><b>Deductions</b></label>
-          <input type="text" placeholder="Enter Deductions" name="name" required>
-
-          <label for="uname"><b>Net Pay</b></label>
-          <input type="text" placeholder="Enter Net Pay" name="name" required>
-
-          <label for="uname"><b>Date</b></label>
-          <input type="text" placeholder="Enter Date" name="name" required>
-
+          <label for="uname"><b>Earning Rate (ph)</b></label>
+          <input type="text" placeholder="Enter Earning Rate (per hour)" name="name" required>
 
           <button class="add-btn" type="submit">Add</button>
           <button class="cancel-btn" type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
@@ -179,27 +171,64 @@
         }
         </script>
 
+
+      <div id="id02" class="modal">
+
+      <form class="modal-content animate" action="" method="post">
+          <div class="txtcontainer">
+          <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
+          <h3> Complete the following information to remove an Employee</h3>
       </div>
 
+      <div class="container">
+
+        <label for="uname"><b>Employee Number</b></label>
+        <input type="text" placeholder="Enter Employee Number" name="name" required>
+
+        <label for="uname"><b>Admin Password</b></label>
+        <input type="text" placeholder="Enter Password" name="name" required>
+
+        <button class="add-btn" type="submit">Add</button>
+        <button class="cancel-btn" type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
+
+      </div>
+
+      <div class="container">
+
+      </div>
+      </form>
+      </div>
+
+      <script>
+      // Get the modal
+      var modal = document.getElementById('id02');
+
+      // When the user clicks anywhere outside of the modal, close it
+      window.onclick = function(event) {
+      if (event.target == modal) {
+      modal.style.display = "none";
+        }
+      }
+      </script>
+</div>
       <section class="List">
         <div class="empleados-grid">
           <div class="empleados-card">
 
           <div>
-          <h3><span><i class="fas fa-file-invoice-dollar"></i></span>List of Employee Payrolls</h3>
+          <h3><span><i class="fas fa-users"></i></span>List of Employees</h3>
           </div>
 
           <table>
             <thead>
               <tr>
-                <th>Payroll Number</th>
                   <th>Employee Name</th>
                   <th>Employee Number</th>
-                  <th>Pay Rate</th>
-                  <th>Gross earnings</th>
-                  <th>Deductions</th>
-                  <th>Net Pay</th>
-                  <th>Date</th>
+                  <th>Position</th>
+                  <th>Type</th>
+                  <th>Working Since</th>
+                  <th>Hours Worked</th>
+                  <th>Earning Rate (ph)</th>
               </tr>
           </thead>
           <tbody>
@@ -211,20 +240,8 @@
               <td></td>
               <td></td>
               <td></td>
-              <td></td>
             </tr>
             <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
               <td></td>
               <td></td>
               <td></td>
@@ -241,20 +258,8 @@
               <td></td>
               <td></td>
               <td></td>
-              <td></td>
             </tr>
             <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
               <td></td>
               <td></td>
               <td></td>
@@ -271,20 +276,8 @@
               <td></td>
               <td></td>
               <td></td>
-              <td></td>
             </tr>
             <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
               <td></td>
               <td></td>
               <td></td>
@@ -301,6 +294,14 @@
               <td></td>
               <td></td>
               <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
               <td></td>
             </tr>
             <tr>
@@ -311,10 +312,26 @@
               <td></td>
               <td></td>
               <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
               <td></td>
             </tr>
             <tr>
               <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
               <td></td>
               <td></td>
               <td></td>

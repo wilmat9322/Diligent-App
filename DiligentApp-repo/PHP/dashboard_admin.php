@@ -47,7 +47,7 @@
       </label>
       <a href="#" class="logout">Logout</a>
       <a href="#" class="show_profile">My profile</a>
-      <img src="images/Hombre.png" class="profile_image" alt"">
+      <img src="images/profilepic.png" class="profile_image" alt"">
       <img src="images/Negocio.png" class="negocio" alt="">
 
     </div>
@@ -115,7 +115,7 @@
         </div>
       </div>
       <div class="ponches-footer" style="margin-top: 60px;">
-        <a href="#">View all</a>
+        <a href="payrolls_admin.php">View all</a>
       </div>
       </div>
     </div>
@@ -130,7 +130,7 @@
         </div>
       </div>
       <div class="ponches-footer" style="margin-top: 76px;">
-        <a href="#">View all</a>
+        <a href="payrolls_admin.php">View all</a>
       </div>
       </div>
       </div>
@@ -223,7 +223,7 @@
           <td>$7.25</td>
         </tr>
         <tr>
-          <td class="empleados-footer"><a href="#">View all</a></td>
+          <td class="empleados-footer"><a href="manage_admin.php">View all</a></td>
           <td><td><td><td><td><td class="border">
         </tr>
         </div>

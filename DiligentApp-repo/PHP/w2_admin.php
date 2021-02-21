@@ -30,7 +30,7 @@
 
   <!----- Referencia al file del diseño de la app ----->
   <style>
-    <?php include 'CSS/myprofile_admin.css';
+    <?php include 'CSS/w2_admin.css';
     ?>
   </style>
 
@@ -49,6 +49,7 @@
       <a href="#" class="show_profile">My profile</a>
       <img src="images/profilepic.png" class="profile_image" alt"">
       <img src="images/Negocio.png" class="negocio" alt="">
+
     </div>
   </header>
   <!----- Aquí termina el header ----->
@@ -76,48 +77,7 @@
   </div>
   <!----- Aquí termina el menú ----->
 
-  <!-- Div para añadir la función de buscador
-    <div>
-      <span class = "ti-search o nombre del simbolo de serach"></span>
-      <input type ="search" placeholder="Seach">
-    </div>
-  -->
   <div class="contenido">
-
-    <main>
-      <div class="user_profile">
-      <img src="images/profilepic.png" class="profile_img" alt="">
-      <h2 class="admin_name">William S. Matos Díaz</h2>
-
-      <h3>Personal Inforamtion</h3>
-      <hr>
-      <p>Full Name:</p>
-      <input type="text" name="Information" placeholder="William S. Matos Díaz">
-      <p>Employee Code:</p>
-      <input type="text" name="Information" placeholder="William S. Matos Díaz">
-      <p>Birthday</p>
-      <input type="text" name="username" placeholder="12/15/1999">
-      <p>Gender</p>
-      <input type="text" name="username" placeholder="Male">
-      <p>Age</p>
-      <input type="text" name="username" placeholder="21">
-      <p>Marital Status</p>
-      <input type="text" name="username" placeholder="In a relationship">
-      <p>Marital Status Since</p>
-      <input type="text" name="username" placeholder="">
-      <p>Spouse Full Name</p>
-      <input type="text" name="username" placeholder="">
-      <p>Disability</p>
-      <input type="text" name="username" placeholder="No">
-      <p>Race</p>
-      <input type="text" name="username" placeholder="Hispanic Latino">
-      <p>Nationality</p>
-      <input type="text" name="username" placeholder="United States Citizen">
-      <p>Military status</p>
-      <input type="text" name="username" placeholder="">
-      </div>
-      <hr>
-      <h3>Education</h3>
-      <h3>Salary</h3>
-    </div>
-    </main>
+  </div>
+  </body>
+  </html>
