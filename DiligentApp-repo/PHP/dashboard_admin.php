@@ -30,7 +30,7 @@
 
   <!----- Referencia al file del diseño de la app ----->
   <style>
-    <?php include 'CSS/admin.css';
+    <?php include 'CSS/dashboard_admin.css';
     ?>
   </style>
 
@@ -49,9 +49,7 @@
       <a href="#" class="show_profile">My profile</a>
       <img src="images/Hombre.png" class="profile_image" alt"">
       <img src="images/Negocio.png" class="negocio" alt="">
-      <center>
-        <h1>Employee Management | Automatic Payrolls </h1>
-      </center>
+
     </div>
   </header>
   <!----- Aquí termina el header ----->
@@ -65,80 +63,87 @@
     <!----- Lista de las herramientas con sus símbolos en el menú ----->
     <a href="myprofile_admin.php"><i class="far fa-address-card"></i><span>My profile</span></a>
     <a href="dashboard_admin.php"><i class="far fa-window-maximize"></i><span>Dashboard</span></a>
-    <a href="#"><i class="fas fa-users"></i><span>Manage Employees</span></a>
-    <a href="#"><i class="fas fa-file-invoice-dollar"></i><span>Payrolls</span></a>
-    <a href="#"><i class="fas fa-landmark"></i><span>W-2 Forms</span></a>
-    <a href="#"><i class="far fa-calendar-plus"></i><span>Schedules</span></a>
-    <a href="#"><i class="fas fa-inbox"></i><span>Inbox</span></a>
-    <a href="#"><i class="fas fa-bed"></i><span>Leave</span></a>
-    <a href="#"><i class="fas fa-user-clock"></i><span>Attendance</span></a>
-    <a href="#"><i class="far fa-file-alt"></i><span>Documents and Policies</span></a>
+    <a href="manage_admin.php"><i class="fas fa-users"></i><span>Manage Employees</span></a>
+    <a href="payrolls_admin.php"><i class="fas fa-file-invoice-dollar"></i><span>Payrolls</span></a>
+    <a href="w2_admin.php"><i class="fas fa-landmark"></i><span>W-2 Forms</span></a>
+    <a href="schedules_admin.php"><i class="far fa-calendar-plus"></i><span>Schedules</span></a>
+    <a href="messages_admin.php"><i class="fas fa-inbox"></i><span>Messages</span></a>
+    <a href="leaves_admin.php"><i class="fas fa-bed"></i><span>Leave</span></a>
+    <a href="attendance_admin.php"><i class="fas fa-user-clock"></i><span>Attendance</span></a>
+    <a href="dc_admin.php"><i class="far fa-file-alt"></i><span>Documents and Policies</span></a>
     <footer>
       <h6>Powered by Diligent Technologies</h6>
     </footer>
   </div>
   <!----- Aquí termina el menú ----->
 
-  <!-- Div para añadir la función de buscador
-    <div>
-      <span class = "ti-search o nombre del simbolo de serach"></span>
-      <input type ="search" placeholder="Seach">
-    </div>
-  -->
   <div class="contenido">
 
-  <main>
-    <h2 class="card-header">Admin Dashboard</h2>
+    <main>
+      <h2 class="dash-header">Admin Dashboard</h2>
 
-    <div class="dashboard-cards">
+      <div class="dashboard-cards">
 
-    <!-- Caja de ponches -->
-      <div class="cards">
-        <div class="card-body">
-        <span><i class="fas fa-user-clock"></i></span>
-        <div>
-          <h3>Clock in/out</h3>
+      <!-- Caja de ponches -->
+        <div class="ponches-card">
+          <div class="ponches-single">
+          <div class="ponches-body">
+          <span><i class="fas fa-user-clock" style="margin-bottom: 40px;"></i></span>
+          <div>
+            <h3>Clock in/out</h3>
+            <div class="green">
+            <h2 style="padding-top: 40px;">Punch Status: <span class="green-status">On-Time</span></div></h2>
+          </div>
+        </div>
+        <div class="ponches-footer" style="margin-top: 90px;">
+          <a href="#">View all</a>
         </div>
       </div>
-      <div class="card-footer">
+    </div>
+
+      <div class="ponches-card">
+        <div class="ponches-single">
+        <div class="ponches-body">
+        <span><i class="fas fa-file-invoice-dollar" style="margin-bottom: 70px;"></i></span>
+        <div>
+          <h3>Last Payroll</h3>
+          <div class="gray-status">
+          <h2>Gross Earnings: <span class="gray">$253.75</h2></span>
+          <h2>Deductions: <span class="gray">$20.03</h2></span>
+          <h2>Net Payment: <span class="gray">$233.45 </h2></span>
+        </div>
+        </div>
+      </div>
+      <div class="ponches-footer" style="margin-top: 60px;">
         <a href="#">View all</a>
       </div>
-    </div>
-
-    <!-- Caja de la útltima paga -->
-    <div class="cards">
-      <div class="card-body">
-      <span><i class="far fa-money-bill-alt"></i></span>
-      <div>
-        <h3>Last Payroll</h3>
       </div>
     </div>
-    <div class="card-footer">
-      <a href="#">View all</a>
-    </div>
-    </div>
 
-  <!-- Horas trabajadas -->
-    <div class="cards">
-      <div class="card-body">
-      <span><i class="fas fa-business-time"></i></span>
-      <div>
-        <h3>Hours Worked for this Payroll</h3>
+      <div class="ponches-card">
+        <div class="ponches-single">
+        <div class="ponches-body">
+        <span><i class="fas fa-business-time" style="margin-bottom: 50px;"></i></span>
+        <div>
+          <h3>Hours Worked for this payroll</h3>
+          <h2 style="padding-top: 40px;">You have worked <span class="gray">35</span> hours for this payroll.</h2>
+        </div>
       </div>
-    </div>
-    <div class="card-footer">
-      <a href="#">View all</a>
-    </div>
-    </div>
+      <div class="ponches-footer" style="margin-top: 76px;">
+        <a href="#">View all</a>
+      </div>
+      </div>
+      </div>
+
 </div>
 
   <!----------------------- Tabla de dashboard empleados -------------------->
-  <section class="recent">
-    <div class="activity-grid">
-      <div class="activity-card">
+  <section class="List">
+    <div class="empleados-grid">
+      <div class="empleados-card">
 
       <div>
-      <h3><span><i class="fas fa-file-invoice-dollar"></i></span>List of Employees</h3>
+      <h3><span><i class="fas fa-users"></i></span>List of Employees</h3>
       </div>
 
       <table>
@@ -199,28 +204,70 @@
           <td>14hrs</td>
           <td>$7.25</td>
         </tr>
+        <tr>
+          <td>Esteban Gonzalez Gonzalez</td>
+          <td>008045</td>
+          <td>Bagger</td>
+          <td>Employee</td>
+          <td>April 5, 2020</td>
+          <td>14hrs</td>
+          <td>$7.25</td>
+        </tr>
+        <tr>
+          <td>Alejandro Del Valle</td>
+          <td>008031</td>
+          <td>Bagger</td>
+          <td>Employee</td>
+          <td>July 5, 2020</td>
+          <td>14hrs</td>
+          <td>$7.25</td>
+        </tr>
+        <tr>
+          <td class="empleados-footer"><a href="#">View all</a></td>
+          <td><td><td><td><td><td class="border">
+        </tr>
+        </div>
       </tbody>
-      <tfooter>
-        <div class="activity-footer">
-        <a href="#">View all</a>
-      </div>
-      </tfoorter>
     </table>
   </div>
 
-  <div class="summary">
-    <div class="summary-card">
-      <div class="summary-single">
+  <div class="small-cards">
+    <div class="turno-card">
+      <div class="turno-single">
       <div>
-          <h5 <span><i class="fas fa-file-invoice-dollar"></i></span>Next Shift</h5>
+          <h5 <span><i class="far fa-calendar-plus"></i></span>Next Shift</h5>
           <small>Date: March 15, 2021</small><br>
           <small>Time: 8:00 a.m.</small><br>
-          <div class="summary-footer">
+          <div class="turno-footer">
           <a href="#">View all</a>
         </div>
         </div>
     </div>
   </div>
+  <div class="inbox-card">
+    <div class="inbox-single">
+    <div>
+        <h5 <span><i class="fas fa-envelope"></i></span>Messages</h5>
+        <small>Recieved: 0</small><br>
+        <small>Sent: 0 </small><br>
+        <div class="inbox-footer">
+        <a href="#">View all</a>
+      </div>
+      </div>
+  </div>
+</div>
+<div class="leave-card">
+  <div class="leave-single">
+  <div>
+      <h5 <span><i class="fas fa-bed"></i></span>Leaves</h5>
+      <small>Number of Leaves: 1</small><br>
+      <small>Latest Leave: Medical Appointment</small><br>
+      <small>Status:<small class="yellow-status"> Pending</small></small><br>
+      <div class="leave-footer">
+      <a href="#">View all</a>
+    </div>
+    </div>
+</div>
 </div>
 </div>
 </div>

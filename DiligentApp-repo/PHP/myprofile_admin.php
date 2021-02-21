@@ -65,14 +65,14 @@
     <!----- Lista de las herramientas con sus símbolos en el menú ----->
     <a href="myprofile_admin.php"><i class="far fa-address-card"></i><span>My profile</span></a>
     <a href="dashboard_admin.php"><i class="far fa-window-maximize"></i><span>Dashboard</span></a>
-    <a href="#"><i class="fas fa-users"></i><span>Manage Employees</span></a>
-    <a href="#"><i class="fas fa-file-invoice-dollar"></i><span>Payrolls</span></a>
-    <a href="#"><i class="fas fa-landmark"></i><span>W-2 Forms</span></a>
-    <a href="#"><i class="far fa-calendar-plus"></i><span>Schedules</span></a>
-    <a href="#"><i class="fas fa-inbox"></i><span>Inbox</span></a>
-    <a href="#"><i class="fas fa-bed"></i><span>Leave</span></a>
-    <a href="#"><i class="fas fa-user-clock"></i><span>Attendance</span></a>
-    <a href="#"><i class="far fa-file-alt"></i><span>Documents and Policies</span></a>
+    <a href="manage_admin.php"><i class="fas fa-users"></i><span>Manage Employees</span></a>
+    <a href="payrolls_admin.php"><i class="fas fa-file-invoice-dollar"></i><span>Payrolls</span></a>
+    <a href="w2_admin.php"><i class="fas fa-landmark"></i><span>W-2 Forms</span></a>
+    <a href="schedules_admin.php"><i class="far fa-calendar-plus"></i><span>Schedules</span></a>
+    <a href="messages_admin.php"><i class="fas fa-inbox"></i><span>Messages</span></a>
+    <a href="leaves_admin.php"><i class="fas fa-bed"></i><span>Leave</span></a>
+    <a href="attendance_admin.php"><i class="fas fa-user-clock"></i><span>Attendance</span></a>
+    <a href="dc_admin.php"><i class="far fa-file-alt"></i><span>Documents and Policies</span></a>
     <footer>
       <h6>Powered by Diligent Technologies</h6>
     </footer>
@@ -92,16 +92,35 @@
       <img src="images/Hombre.png" class="profile_img" alt="">
       <h2 class="admin_name">William S. Matos Díaz</h2>
 
-      <div class="Personal Information"
+      <h3>Personal Inforamtion</h3>
       <hr>
-      <p>Nombre:</p>
+      <p>Full Name:</p>
+      <input type="text" name="Information" placeholder="William S. Matos Díaz">
+      <p>Employee Code:</p>
       <input type="text" name="Information" placeholder="William S. Matos Díaz">
       <p>Birthday</p>
       <input type="text" name="username" placeholder="12/15/1999">
       <p>Gender</p>
       <input type="text" name="username" placeholder="Male">
       <p>Age</p>
+      <input type="text" name="username" placeholder="21">
+      <p>Marital Status</p>
+      <input type="text" name="username" placeholder="In a relationship">
+      <p>Marital Status Since</p>
+      <input type="text" name="username" placeholder="">
+      <p>Spouse Full Name</p>
+      <input type="text" name="username" placeholder="">
+      <p>Disability</p>
+      <input type="text" name="username" placeholder="No">
+      <p>Race</p>
+      <input type="text" name="username" placeholder="Hispanic Latino">
+      <p>Nationality</p>
+      <input type="text" name="username" placeholder="United States Citizen">
+      <p>Military status</p>
+      <input type="text" name="username" placeholder="">
+      </div>
       <hr>
-      <div class="Education>
+      <h3>Education</h3>
+      <h3>Salary</h3>
     </div>
     </main>

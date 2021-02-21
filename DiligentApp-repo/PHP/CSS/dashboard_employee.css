@@ -35,7 +35,7 @@
 
     /***** Transición de Hover del btn Logout *****/
     .logout:hover {
-      background: #f05454;
+      background: #1a75ff;
     }
 
     /***** Propiedades del btn My profile *****/
@@ -57,7 +57,7 @@
 
     /***** Transición de Hover del btn Logout *****/
     .show_profile:hover {
-      background: #f05454;
+      background: #1a75ff;
     }
 
     /***** Propiedades de la imagen de My profile *****/
@@ -108,8 +108,8 @@
 
     /***** Propiedades del menú *****/
     .menu-slide {
-      background: #222831;
       z-index: 1;
+      background: #222831;
       margin-top: 145px;
       padding-top: 30px;
       position: fixed;
@@ -135,7 +135,7 @@
       color: #f8f7de;
       display: block;
       width: 100%;
-      line-height: 60px;
+      line-height: 70px;
       text-decoration: none;
       padding-left: 20px;
       box-sizing: border-box;
@@ -145,7 +145,7 @@
 
     /***** Transición de Hover de los elementos del menú *****/
     .menu-slide a:hover {
-      background: #f05454;
+      background: #1a75ff;
     }
 
     /***** Padding de los elementos del menu *****/
@@ -170,7 +170,7 @@
 
     /***** Transición de Hover del btn de menu *****/
     label #menu_btn:hover {
-      color: #f05454;
+      color: #1a75ff;
     }
 
     /***** Si el btn se toca, se esconderá *****/
@@ -196,6 +196,7 @@
       background: #fff;
       background-position: center;
       background-size: cover;
+      height: 100hv;
       transition: 0.25s;
     }
 
@@ -223,7 +224,7 @@
   .dashboard-cards {
     display: grid;
     grid-template-columns: 2fr 2fr 2fr;
-    grid-auto-rows:minmax(100ps, auto);
+    grid-auto-rows:minmax(100px, auto);
     grid-gap: 1em;
   }
   .ponches-card {
@@ -243,7 +244,7 @@
 }
   .ponches-body i {
     font-size: 2.3rem;
-    color: #f05454;
+    color: #1a75ff;
     margin-top: 10px;
     padding-bottom: 7rem;
     padding-right: 1rem;
@@ -272,7 +273,7 @@
 }
 .empleados-grid {
   display: grid;
-  grid-template-columns: 75% 23%;
+  grid-template-columns: 75% 23.4%;
   grid-column-gap: 1.5rem;
 }
 .empleados-card{
@@ -302,7 +303,7 @@
 }
 .empleados-card i{
   font-size: 2rem;
-  color: #f05454;
+  color: #1a75ff;
   margin-top: 20px;
   margin-right: 20px;
   padding-left: 0.8rem;
@@ -336,7 +337,7 @@ tbody tr:nth-child(even) {
 }
 .turno-single i{
   font-size: 1.6rem;
-  color: #f05454;
+  color: #1a75ff;
   padding-right: 1rem;
 }
 .turno-single h5{
@@ -376,7 +377,7 @@ tbody tr:nth-child(even) {
 }
 .inbox-single i{
   font-size: 1.6rem;
-  color: #f05454;
+  color: #1a75ff;
   padding-right: 1rem;
 }
 .inbox-single h5{
@@ -417,7 +418,7 @@ tbody tr:nth-child(even) {
 }
 .leave-single i{
   font-size: 1.6rem;
-  color: #f05454;
+  color: #1a75ff;
   padding-right: 1rem;
 }
 .leave-single h5{
