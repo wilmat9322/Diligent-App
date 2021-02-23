@@ -22,7 +22,7 @@
   <!----- Fonts y Símbolos que utilicé para la aplicación ----->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
   <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link rel="shortcut icon" type="image/png" href="images/favicon2">
+  <link rel="shortcut icon" type="image/png" href="images/favicon">
   <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:ital,wght@1,300&display=swap" rel="stylesheet">
 </head>
 
@@ -30,7 +30,7 @@
 
   <!----- Referencia al file del diseño de la app ----->
   <style>
-    <?php include 'CSS/payrolls_employee.css';
+    <?php include 'CSS/schedules_admin.css';
     ?>
   </style>
 
@@ -49,26 +49,28 @@
       <a href="#" class="show_profile">My profile</a>
       <img src="images/profilepic.png" class="profile_image" alt"">
       <img src="images/Negocio.png" class="negocio" alt="">
+
     </div>
   </header>
   <!----- Aquí termina el header ----->
 
   <!----- Aquí empieza el menu ----->
   <div class="menu-slide">
-    <img src="images/Employee.png" class="Logo-DiligentApp" alt="DiligentApp">
+    <img src="images/Admin.png" class="Logo-DiligentApp" alt="">
 
-    <h4>Employee</h4>
+    <h4>Administrator</h4>
 
     <!----- Lista de las herramientas con sus símbolos en el menú ----->
-    <a href="myprofile_employee.php"><i class="far fa-address-card"></i><span>My profile</span></a>
-    <a href="dashboard_employee.php"><i class="far fa-window-maximize"></i><span>Dashboard</span></a>
-    <a href="payrolls_employee.php"><i class="fas fa-file-invoice-dollar"></i><span>Payrolls</span></a>
-    <a href="w2_employee.php"><i class="fas fa-landmark"></i><span>W-2 Forms</span></a>
-    <a href="schedules_employees.php"><i class="far fa-calendar-plus"></i><span>Schedules</span></a>
-    <a href="messages_employee.php"><i class="fas fa-envelope"></i><span>Messages</span></a>
-    <a href="leave_employee.php"><i class="fas fa-bed"></i><span>Leave</span></a>
-    <a href="attendance_employee.php"><i class="fas fa-user-clock"></i><span>Attendance</span></a>
-    <a href="dc_employee.php"><i class="far fa-file-alt"></i><span>Documents and Policies</span></a>
+    <a href="myprofile_admin.php"><i class="far fa-address-card"></i><span>My profile</span></a>
+    <a href="dashboard_admin.php"><i class="far fa-window-maximize"></i><span>Dashboard</span></a>
+    <a href="manage_admin.php"><i class="fas fa-users"></i><span>Manage Employees</span></a>
+    <a href="payrolls_admin.php"><i class="fas fa-file-invoice-dollar"></i><span>Payrolls</span></a>
+    <a href="w2_admin.php"><i class="fas fa-landmark"></i><span>W-2 Tax Forms</span></a>
+    <a href="schedules_admin.php"><i class="far fa-calendar-plus"></i><span>Schedules</span></a>
+    <a href="messages_admin.php"><i class="fas fa-envelope"></i><span>Messages</span></a>
+    <a href="leaves_admin.php"><i class="fas fa-bed"></i><span>Leave</span></a>
+    <a href="attendance_admin.php"><i class="fas fa-user-clock"></i><span>Attendance</span></a>
+    <a href="dc_admin.php"><i class="far fa-file-alt"></i><span>Documents and Policies</span></a>
     <footer>
       <h6>Powered by Diligent Technologies</h6>
     </footer>
@@ -76,12 +78,12 @@
   <!----- Aquí termina el menú ----->
 
   <div class="contenido">
-
     <main>
       <div class="top-user">
 
-        <h3 style="margin-left:10px;">Payrolls</h3>
-        <p class="selectors-p"> Range Payrolls Since:</p>
+        <h3 style="margin-left:10px;">Schedules</h3>
+        <p class="selectors-p"> Range Schedules Since:</p>
+
 
         <select class="selectors">
           <option value="0">Select Day:</option>
@@ -146,35 +148,123 @@
           <option value="10">2018</option>
           <option value="11">2019</option>
           <option value="12">2021</option>
+
         </select>
 
         <button class="submit-btn" type="button"> Submit</button>
-        <input class="search-container" type"submit" name="search" placeholder="Search Payroll">
+        <input class="search-container" type"submit" name="search" placeholder="Search Employee">
         <button class="search-btn" type="submit" value="Search"><span><i class="fas fa-search"></i></span></button>
 
-        <button class="print-btn" type="button"><span><i class="fas fa-print"></i></span> Print Payroll</button>
+        <button class="payroll-btn" onclick="document.getElementById('id01').style.display='block'" style="width:auto;"><span><i class="fas fa-user-plus"></i></span> Add Schedules</button>
+        <button class="print-btn" onclick="document.getElementById('id02').style.display='block'" style="width:auto;"><span><i class="fas fa-user-minus"></i></span> Edit Schedules</button>
+        <button class="save-btn" <span><i class="fas fa-save"></i></span> Save Changes</button>
 
+        <div id="id01" class="modal">
+
+        <form class="modal-content animate" action="" method="post">
+            <div class="txtcontainer">
+            <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+            <h3> Complete the following information to add an Employee </h3>
+        </div>
+
+        <div class="container">
+
+          <label for="uname"><b>Employee Name</b></label>
+          <input type="text" placeholder="Enter Employee Name" name="name" required>
+
+          <label for="uname"><b>Employee Number</b></label>
+          <input type="text" placeholder="Enter Employee Number" name="name" required>
+
+          <label for="uname"><b>Position</b></label>
+          <input type="text" placeholder="Enter Employee Position" name="name" required>
+
+          <label for="uname"><b>Type</b></label>
+          <input type="text" placeholder="Enter Type of Employee" name="name" required>
+
+          <label for="uname"><b>Earning Rate (ph)</b></label>
+          <input type="text" placeholder="Enter Earning Rate (per hour)" name="name" required>
+
+          <button class="add-btn" type="submit">Add</button>
+          <button class="cancel-btn" type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+
+        </div>
+
+        <div class="container">
+
+        </div>
+        </form>
+        </div>
+
+        <script>
+        // Get the modal
+        var modal = document.getElementById('id01');
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+        if (event.target == modal) {
+        modal.style.display = "none";
+          }
+        }
+        </script>
+
+
+      <div id="id02" class="modal">
+
+      <form class="modal-content animate" action="" method="post">
+          <div class="txtcontainer">
+          <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
+          <h3> Complete the following information to remove an Employee</h3>
+      </div>
+
+      <div class="container">
+
+        <label for="uname"><b>Employee Number</b></label>
+        <input type="text" placeholder="Enter Employee Number" name="name" required>
+
+        <label for="uname"><b>Admin Password</b></label>
+        <input type="text" placeholder="Enter Password" name="name" required>
+
+        <button class="add-btn" type="submit">Add</button>
+        <button class="cancel-btn" type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
 
       </div>
 
+      <div class="container">
+
+      </div>
+      </form>
+      </div>
+
+      <script>
+      // Get the modal
+      var modal = document.getElementById('id02');
+
+      // When the user clicks anywhere outside of the modal, close it
+      window.onclick = function(event) {
+      if (event.target == modal) {
+      modal.style.display = "none";
+        }
+      }
+      </script>
+</div>
       <section class="List">
         <div class="empleados-grid">
           <div class="empleados-card">
 
           <div>
-          <h3><span><i class="fas fa-file-invoice-dollar"></i></span>List of Payrolls</h3>
+          <h3><span><i class="fas fa-users"></i></span>Schedules</h3>
           </div>
 
           <table>
             <thead>
               <tr>
-                  <th>Payroll Number</th>
-                  <th>Employee number</th>
-                  <th>Pay Rate</th>
-                  <th>Gross earnings</th>
-                  <th>Deductions</th>
-                  <th>Net Pay</th>
-                  <th>Date</th>
+                  <th>Employee Name</th>
+                  <th>Employee Number</th>
+                  <th>Position</th>
+                  <th>Type</th>
+                  <th>Working Since</th>
+                  <th>Hours Worked</th>
+                  <th>Earning Rate (ph)</th>
               </tr>
           </thead>
           <tbody>
@@ -292,7 +382,5 @@
       </div>
 
   </div>
-</main>
-</section>
 </body>
 </html>

@@ -30,7 +30,7 @@
 
   <!----- Referencia al file del diseño de la app ----->
   <style>
-    <?php include 'CSS/w2_admin.css';
+    <?php include 'CSS/dc_admin.css';
     ?>
   </style>
 
@@ -45,8 +45,8 @@
       <label for="check">
         <i class="fas fa-bars" id="menu_btn"></i>
       </label>
-      <a href="loggingout.php" class="logout">Logout</a>
-      <a href="myprofile_admin.php" class="show_profile">My profile</a>
+      <a href="#" class="logout">Logout</a>
+      <a href="#" class="show_profile">My profile</a>
       <img src="images/profilepic.png" class="profile_image" alt"">
       <img src="images/Negocio.png" class="negocio" alt="">
 
@@ -78,12 +78,62 @@
   <!----- Aquí termina el menú ----->
 
   <div class="contenido">
+
     <main>
       <div class="top-user">
 
-        <h3 style="margin-left:10px;">W-2 Tax Forms</h3>
-        <p class="selectors-p"> Select Year:</p>
+        <h3 style="margin-left:10px;">Documents and Policies</h3>
+        <p class="selectors-p"> Range Documents Since:</p>
 
+        <select class="selectors">
+          <option value="0">Select Day:</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+          <option value="11">11</option>
+          <option value="12">12</option>
+          <option value="13">13</option>
+          <option value="14">14</option>
+          <option value="15">15</option>
+          <option value="16">16</option>
+          <option value="17">17</option>
+          <option value="18">18</option>
+          <option value="19">19</option>
+          <option value="20">20</option>
+          <option value="21">21</option>
+          <option value="22">22</option>
+          <option value="23">23</option>
+          <option value="24">24</option>
+          <option value="25">25</option>
+          <option value="26">26</option>
+          <option value="27">27</option>
+          <option value="28">28</option>
+          <option value="29">29</option>
+          <option value="30">30</option>
+          <option value="31">31</option>
+        </select>
+        <select class="selectors">
+          <option value="0">Select Month:</option>
+          <option value="1">January</option>
+          <option value="2">February</option>
+          <option value="3">March</option>
+          <option value="4">April</option>
+          <option value="5">May</option>
+          <option value="6">June</option>
+          <option value="7">July</option>
+          <option value="8">August</option>
+          <option value="9">September</option>
+          <option value="10">October</option>
+          <option value="11">November</option>
+          <option value="12">December</option>
+        </select>
         <select class="selectors">
           <option value="0">Select Year:</option>
           <option value="1">2010</option>
@@ -102,32 +152,34 @@
         </select>
 
         <button class="submit-btn" type="button"> Submit</button>
-        <input class="search-container" type"submit" name="search" placeholder="Search Tax Form">
+        <input class="search-container" type"submit" name="search" placeholder="Search Document">
         <button class="search-btn" type="submit" value="Search"><span><i class="fas fa-search"></i></span></button>
 
-        <button class="print-btn" <span><i class="fas fa-print"></i></span> Print Tax Form</button>
-        <button class="payroll-btn" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">+ <span><i class="fas fa-file-invoice-dollar"></i></span> Add Form</button>
-        <button class="delete-btn" onclick="document.getElementById('id02').style.display='block'" style="width:auto;">- <span><i class="fas fa-file-invoice-dollar"></i></span> Remove Form</button>
+        <button class="print-btn" type="button"><span><i class="fas fa-print"></i></span> Print Document</button>
+
+        <button class="payroll-btn" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">+ <span><i class="far fa-file-alt"></i></span> Add Document</button>
+        <button class="delete-btn" onclick="document.getElementById('id02').style.display='block'" style="width:auto;">- <span><i class="far fa-file-alt"></i></span> Remove Document</button>
         <button class="save-btn" <span><i class="fas fa-save"></i></span> Save Changes</button>
+
 
         <div id="id01" class="modal">
 
-        <form class="modal-content animate" action="" method="post">
+        <form class="modal-content animate" action="/action_page.php" method="post">
             <div class="txtcontainer">
             <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-            <h3> Complete the following information to add a Tax Form</h3>
+            <h3> Complete the following information to add a document. </h3>
         </div>
 
         <div class="container">
 
-          <label for="uname"><b>Add Tax Form</br></label>
+          <label for="uname"><b>Document Name</br></label>
+          <input type="text" placeholder="Enter Document Name" name="name" required>
+
+          <label for="uname"><b>Add Document</br></label>
           <input type="file" id="myFile" name="filename">
 
-          <label for="uname"><b>Employee Name</br></label>
-          <input type="text" placeholder="Enter Employee Name" name="name" required>
-
-          <label for="uname"><b>Employee Code</br></label>
-          <input type="text" placeholder="Enter Employee Code" name="name" required>
+          <label for="uname"><b>Brief Description of the Document</br></label>
+          <textarea rows="6" cols="63" name="comment" form="usrform"></textarea></br>
 
           <label for="uname"><b>Date</br></label>
           <input type="text" placeholder="Enter Date" name="name" required>
@@ -160,13 +212,13 @@
         <form class="modal-content animate" action="/action_page.php" method="post">
             <div class="txtcontainer">
             <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
-            <h3> To remove a Tax Form, please enter a valid password. </h3>
+            <h3> To remove a Payroll, please enter a valid password. </h3>
         </div>
 
         <div class="container">
 
-          <label for="uname"><br>Tax Form Code</br></label>
-          <input type="text" placeholder="Enter Tax Form Code" name="name" required>
+          <label for="uname"><br>Remove Document</br></label>
+          <input type="text" placeholder="Enter Document Name" name="name" required>
 
           <label for="uname"><br>Password</br></label>
           <input type="password" placeholder="Enter Password" name="name" required>
@@ -194,91 +246,97 @@
         }
         </script>
 
-  </div>
-        <section class="List">
-          <div class="empleados-grid">
-            <div class="empleados-card">
+      </div>
 
-            <div>
-            <h3><span><i class="fas fa-landmark"></i></span>List of Tax Forms</h3>
+      <section class="List">
+        <div class="empleados-grid">
+          <div class="empleados-card">
+
+          <div>
+          <h3><span><i class="far fa-file-alt"></i></span>Documents and Policies</h3>
+          </div>
+
+          <table>
+            <thead>
+              <tr>
+                <th>Document Name</th>
+                <th>Description</th>
+                <th>Date</th>
+              </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
             </div>
+          </tbody>
+        </table>
+      </div>
 
-            <table>
-              <thead>
-                <tr>
-                    <th>Tax Form Code</th>
-                    <th>Employee Name</th>
-                    <th>Employee Code</th>
-                    <th>Date</th>
-                </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr><tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr><tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr><tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr><tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr><tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr><tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr><tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr><tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr><tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr><tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              </div>
-            </tbody>
-          </table>
-        </div>
   </div>
-  </body>
-  </html>
+</main>
+</section>
+</body>
+</html>

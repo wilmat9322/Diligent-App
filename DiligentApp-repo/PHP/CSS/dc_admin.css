@@ -35,7 +35,7 @@
 
     /***** Transición de Hover del btn Logout *****/
     .logout:hover {
-      background: #1a75ff;
+      background: #f05454;
     }
 
     /***** Propiedades del btn My profile *****/
@@ -57,7 +57,7 @@
 
     /***** Transición de Hover del btn Logout *****/
     .show_profile:hover {
-      background: #1a75ff;
+      background: #f05454;
     }
 
     /***** Propiedades de la imagen de My profile *****/
@@ -136,7 +136,7 @@
       color: #f8f7de;
       display: block;
       width: 100%;
-      line-height: 70px;
+      line-height: 60px;
       text-decoration: none;
       padding-left: 20px;
       box-sizing: border-box;
@@ -146,7 +146,7 @@
 
     /***** Transición de Hover de los elementos del menú *****/
     .menu-slide a:hover {
-      background: #1a75ff;
+      background: #f05454;
     }
 
     /***** Padding de los elementos del menu *****/
@@ -171,7 +171,7 @@
 
     /***** Transición de Hover del btn de menu *****/
     label #menu_btn:hover {
-      color: #1a75ff;
+      color: #f05454;
     }
 
     /***** Si el btn se toca, se esconderá *****/
@@ -200,23 +200,12 @@
     #check {
       display: none;
     }
-    /***** Propiedades del contenido que mostraran las herramientas *****/
     .contenido {
       margin-left: 270px;
       background: #fff;
       background-position: center;
       background-size: cover;
       transition: 0.25s;
-    }
-
-    /***** Para que el margen del background del contenido esté a la par con el menu escondido*****/
-    #check:checked~.contenido {
-      margin-left: 50px;
-    }
-
-    /***** Para que el boton de checkbox no se vea *****/
-    #check {
-      display: none;
     }
     main {
       margin-top: 145px;
@@ -226,53 +215,52 @@
       padding: 1rem 4rem;
       padding-right: 70px;
     }
-  .List {
-    margin-top: 2rem;
-    margin-bottom: 3rem;
-  }
-  .empleados-grid {
-    display: grid;
-    grid-column-gap: 1.5rem;
-  }
-  .empleados-card{
-    background: #fff;
-
-  }
-  .empleados-card h3 {
-    color: #777;
-    margin-top: 0;
-    font-size: 1.4rem;
-    padding-left: 0;
-  }
-  .empleados-card table{
-    width: 100%;
-    height: 100px;
-    border-collapse: collapse;
-}
-  .empleados-card thead{
-    background: #efefef;
-    text-align: left;
-  }
-  .empleados-card i{
-    font-size: 2rem;
-    color: #1a75ff;;
-    margin-top: 20px;
-    margin-right: 20px;
-    padding-left: 0.8rem;
-  }
-  th, td {
-    font-size: 0.9rem;
-    padding: 1rem 4rem;
-    text-align: left;
-    border: 1px solid #dddddd;
-    color: black;
-  }
-  td {
-    font-size: 1rem;
-  }
-  tbody tr:nth-child(even) {
-    background: #f9fafc;
-  }
+    .List {
+      margin-top: 2rem;
+      margin-bottom: 3rem;
+    }
+    .empleados-grid {
+      display: grid;
+      grid-column-gap: 1.5rem;
+    }
+    .empleados-card{
+      background: #fff;
+    }
+    .empleados-card h3 {
+      color: #777;
+      margin-top: 0;
+      font-size: 1.4rem;
+      padding-left: 0;
+    }
+    .empleados-card table{
+      width: 100%;
+      height: 100px;
+      border-collapse: collapse;
+    }
+    .empleados-card thead{
+      background: #efefef;
+      text-align: center;
+    }
+    .empleados-card i{
+      font-size: 2rem;
+      color: #f05454;
+      margin-top: 20px;
+      margin-right: 20px;
+      padding-left: 0.8rem;
+    }
+    th, td {
+      font-size: 0.9rem;
+      padding: 1rem 4rem;
+      border: 1px solid #dddddd;
+      color: black;
+      text-align: center
+    }
+    td {
+      font-size: 1rem;
+    }
+    tbody tr:nth-child(even) {
+      background: #f9fafc;
+    }
 .top-user{
   float: none;
   display: block;
@@ -308,7 +296,7 @@
  color: black;
  background: #ddd;
  text-align: center;
- padding: 6.2px 9px;
+ padding: 6.4px 9px;
  margin-left: -2px;
  text-decoration: none;
  font-size: 17px;
@@ -322,31 +310,172 @@
   color: white;
   background: green;
   text-align: center;
-  padding: 7.4px 9px;
+  padding: 7.3px 9px;
   text-decoration: none;
   margin-left: 10px;
   font-size: 15px;
   border:none;
   cursor: pointer;
 }
-.print-btn:hover{
-  background-color: #4CAF50;;
+.print-btn:hover {
+  background: #4CAF50;
+}
+.delete-btn{
+  color: white;
+  background: red;
+  text-align: center;
+  padding: 7.3px 9px;
+  text-decoration: none;
+  margin-left: 10px;
+  font-size: 15px;
+  border:none;
+  cursor: pointer;
+}
+.delete-btn:hover {
+  background: #ec4646;;
+}
+.save-btn {
+  color: white;
+  background: gray;
+  float: right;
+  padding: 7.3px 9px;
+  text-decoration: none;
+  margin-left: 10px;
+  font-size: 15px;
+  border:none;
+  cursor: pointer;
+}
+.save-btn:hover {
+  background: #A9A9A9;
 }
 .selectors{
   padding: 6.9px 9px;
   margin-left: 10px;
   position: relative;
   cursor: pointer;
-
 }
 .payroll-btn{
   color: white;
-  background: #23689b;
+  background: #0e49b5;
   text-align: center;
-  padding: 7.4px 9px;
+  padding: 7.3px 9px;
   text-decoration: none;
   margin-left: 10px;
   font-size: 15px;
   border:none;
   cursor: pointer;
+}
+.payroll-btn:hover {
+  background: #23689b;
+}
+input[type=text], input[type=password], input[type=file] {
+  width: 29rem;
+  padding: 14px 20px;
+  margin: 8px 0;
+  display: block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+textarea{
+  resize: none;
+}
+.add-btn {
+  background-color: green;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px;
+  margin-top: 30px;
+  margin-left: 115px;
+  border: none;
+  cursor: pointer;
+  width: 100px;
+}
+.add-btn:hover {
+  background: #4CAF50;
+}
+.confirm-btn {
+  background-color: green;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px;
+  margin-top: 30px;
+  margin-left: 115px;
+  border: none;
+  cursor: pointer;
+  width: 100px;
+}
+.confirm-btn:hover {
+  background: #4CAF50;
+}
+.cancel-btn {
+  color: white;
+  margin-left: 20px;
+  padding: 14px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100px;
+  background-color: red;
+}
+.cancel-btn:hover {
+  background: #f44336
+}
+.txtcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+  position: relative;
+}
+.container {
+  padding: 16px;
+}
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: none;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.4);
+  padding-top: 60px;
+}
+.modal-content {
+  background-color: #fefefe;
+  margin: 8% auto 15% auto;
+  border: 1px solid #888;
+  width: 26%;
+  line-height: 25px;
+}
+.close {
+  display: none;
+  position: absolute;
+  right: 15px;
+  top: 10;
+  color: #000;
+  font-size: 35px;
+  font-weight: bold;
+}
+.close:hover,
+.close:focus {
+  color: red;
+  cursor: pointer;
+}
+.animate {
+  -webkit-animation: animatezoom 0.6s;
+  animation: animatezoom 0.6s
+}
+@-webkit-keyframes animatezoom {
+  from {-webkit-transform: scale(0)}
+  to {-webkit-transform: scale(1)}
+}
+
+@keyframes animatezoom {
+  from {transform: scale(0)}
+  to {transform: scale(1)}
+}
+@media screen and (max-width: 300px) {
+  span.psw {
+     display: block;
+     float: none;
 }

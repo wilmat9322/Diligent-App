@@ -22,7 +22,7 @@
   <!----- Fonts y Símbolos que utilicé para la aplicación ----->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
   <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link rel="shortcut icon" type="image/png" href="images/favicon">
+  <link rel="shortcut icon" type="image/png" href="images/favicon2">
   <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:ital,wght@1,300&display=swap" rel="stylesheet">
 </head>
 

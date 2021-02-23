@@ -64,9 +64,9 @@
     <a href="dashboard_admin.php"><i class="far fa-window-maximize"></i><span>Dashboard</span></a>
     <a href="manage_admin.php"><i class="fas fa-users"></i><span>Manage Employees</span></a>
     <a href="payrolls_admin.php"><i class="fas fa-file-invoice-dollar"></i><span>Payrolls</span></a>
-    <a href="w2_admin.php"><i class="fas fa-landmark"></i><span>W-2 Forms</span></a>
+    <a href="w2_admin.php"><i class="fas fa-landmark"></i><span>W-2 Tax Forms</span></a>
     <a href="schedules_admin.php"><i class="far fa-calendar-plus"></i><span>Schedules</span></a>
-    <a href="messages_admin.php"><i class="fas fa-inbox"></i><span>Messages</span></a>
+    <a href="messages_admin.php"><i class="fas fa-envelope"></i><span>Messages</span></a>
     <a href="leaves_admin.php"><i class="fas fa-bed"></i><span>Leave</span></a>
     <a href="attendance_admin.php"><i class="fas fa-user-clock"></i><span>Attendance</span></a>
     <a href="dc_admin.php"><i class="far fa-file-alt"></i><span>Documents and Policies</span></a>
@@ -85,39 +85,109 @@
   <div class="contenido">
 
     <main>
+
       <div class="user_profile">
       <img src="images/profilepic.png" class="profile_img" alt="">
-      <h2 class="admin_name">William S. Matos Díaz</h2>
-
-      <h3>Personal Inforamtion</h3>
-      <hr>
-      <p>Full Name:</p>
-      <input type="text" name="Information" placeholder="William S. Matos Díaz">
-      <p>Employee Code:</p>
-      <input type="text" name="Information" placeholder="William S. Matos Díaz">
-      <p>Birthday</p>
-      <input type="text" name="username" placeholder="12/15/1999">
-      <p>Gender</p>
-      <input type="text" name="username" placeholder="Male">
-      <p>Age</p>
-      <input type="text" name="username" placeholder="21">
-      <p>Marital Status</p>
-      <input type="text" name="username" placeholder="In a relationship">
-      <p>Marital Status Since</p>
-      <input type="text" name="username" placeholder="">
-      <p>Spouse Full Name</p>
-      <input type="text" name="username" placeholder="">
-      <p>Disability</p>
-      <input type="text" name="username" placeholder="No">
-      <p>Race</p>
-      <input type="text" name="username" placeholder="Hispanic Latino">
-      <p>Nationality</p>
-      <input type="text" name="username" placeholder="United States Citizen">
-      <p>Military status</p>
-      <input type="text" name="username" placeholder="">
+      <h2 style="font-size: 2rem;" class="admin_name">William S. Matos Díaz</h2>
+      <button class="edit-btn" type="button"><span><i class="far fa-window-maximize"></i></span> Edit Profile</button>
       </div>
-      <hr>
-      <h3>Education</h3>
-      <h3>Salary</h3>
-    </div>
-    </main>
+
+
+
+
+      <section class="tablas">
+        <div class="tabla-grid">
+          <div class="contenido-card">
+
+          <div>
+          <h3><span><i class="far fa-address-card"></i></span>Personal Information</h3>
+          </div>
+
+          <table>
+          <tbody>
+            <tr>
+              <td>Name:</td>
+              <td>William S. Matos Díaz</td>
+            </tr>
+            <tr>
+              <td>Birthday:</td>
+              <td>12/15/1999</td>
+            </tr>
+            <tr>
+              <td>Gender</td>
+              <td>Male</td>
+            </tr>
+            <tr>
+              <td>Age</td>
+              <td>21 years old</td>
+            </tr>
+
+            </div>
+          </tbody>
+        </table>
+      </div>
+      </section>
+
+      <section class="tablas">
+        <div class="tabla-grid">
+          <div class="contenido-card">
+            <div>
+            <h3><span><i class="fas fa-graduation-cap"></i></span>Education</h3>
+            </div>
+
+            <table>
+            <tbody>
+              <tr>
+                <td>Highschool</td>
+                <td>Escuela Superior Luis Muñoz Marín</td>
+              </tr>
+              <tr>
+                <td>Currently Studying</td>
+                <td>Yes</td>
+              </tr>
+              <tr>
+                <td>Degree to obtain:</td>
+                <td>B.S. Computer Science</td>
+              </tr>
+
+              </div>
+            </tbody>
+          </table>
+        </div>
+        </section>
+
+        <section class="tablas">
+          <div class="tabla-grid">
+            <div class="contenido-card">
+              <div>
+              <h3><span><i class="fas fa-briefcase"></i></span>Labor Information</h3>
+              </div>
+
+              <table>
+              <tbody>
+                <tr>
+                  <td>Employee Code:</td>
+                  <td>008015</td>
+                </tr>
+                <tr>
+                  <td>Position:</td>
+                  <td>Manager</td>
+                </tr>
+                <tr>
+                  <td>Type:</td>
+                  <td>Administrator</td>
+                </tr>
+                <tr>
+                  <td>Earning Rate:</td>
+                  <td>14.25 per hour</td>
+                </tr>
+
+                </div>
+              </tbody>
+            </table>
+          </div>
+          </section>
+  </div>
+  </main>
+  </body>
+  </html>

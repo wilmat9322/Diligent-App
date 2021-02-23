@@ -64,9 +64,9 @@
     <a href="dashboard_admin.php"><i class="far fa-window-maximize"></i><span>Dashboard</span></a>
     <a href="manage_admin.php"><i class="fas fa-users"></i><span>Manage Employees</span></a>
     <a href="payrolls_admin.php"><i class="fas fa-file-invoice-dollar"></i><span>Payrolls</span></a>
-    <a href="w2_admin.php"><i class="fas fa-landmark"></i><span>W-2 Forms</span></a>
+    <a href="w2_admin.php"><i class="fas fa-landmark"></i><span>W-2 Tax Forms</span></a>
     <a href="schedules_admin.php"><i class="far fa-calendar-plus"></i><span>Schedules</span></a>
-    <a href="messages_admin.php"><i class="fas fa-inbox"></i><span>Messages</span></a>
+    <a href="messages_admin.php"><i class="fas fa-envelope"></i><span>Messages</span></a>
     <a href="leaves_admin.php"><i class="fas fa-bed"></i><span>Leave</span></a>
     <a href="attendance_admin.php"><i class="fas fa-user-clock"></i><span>Attendance</span></a>
     <a href="dc_admin.php"><i class="far fa-file-alt"></i><span>Documents and Policies</span></a>
@@ -83,6 +83,40 @@
 
         <h3 style="margin-left:10px;">Payrolls</h3>
         <p class="selectors-p"> Range Payrolls Since:</p>
+        <select class="selectors">
+          <option value="0">Select Day:</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+          <option value="11">11</option>
+          <option value="12">12</option>
+          <option value="13">13</option>
+          <option value="14">14</option>
+          <option value="15">15</option>
+          <option value="16">16</option>
+          <option value="17">17</option>
+          <option value="18">18</option>
+          <option value="19">19</option>
+          <option value="20">20</option>
+          <option value="21">21</option>
+          <option value="22">22</option>
+          <option value="23">23</option>
+          <option value="24">24</option>
+          <option value="25">25</option>
+          <option value="26">26</option>
+          <option value="27">27</option>
+          <option value="28">28</option>
+          <option value="29">29</option>
+          <option value="30">30</option>
+          <option value="31">31</option>
+        </select>
 
         <select class="selectors">
           <option value="0">Select Month:</option>
@@ -122,7 +156,10 @@
 
         <button class="print-btn" type="button"><span><i class="fas fa-print"></i></span> Print Payroll</button>
 
-        <button class="payroll-btn" onclick="document.getElementById('id01').style.display='block'" style="width:auto;"><span><i class="fas fa-file-invoice-dollar"></i></span> Add Payroll</button>
+        <button class="payroll-btn" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">+ <span><i class="fas fa-file-invoice-dollar"></i></span> Add Payroll</button>
+        <button class="delete-btn" onclick="document.getElementById('id02').style.display='block'" style="width:auto;">- <span><i class="fas fa-file-invoice-dollar"></i></span> Remove Payroll</button>
+        <button class="save-btn" <span><i class="fas fa-save"></i></span> Save Changes</button>
+
 
         <div id="id01" class="modal">
 
@@ -134,27 +171,29 @@
 
         <div class="container">
 
-          <label for="uname"><b>Employee Name</b></label>
+          <label for="uname"><b>Add Payroll</br></label>
+          <input type="file" id="myFile" name="filename">
+
+          <label for="uname"><b>Employee Name</br></label>
           <input type="text" placeholder="Enter Employee Name" name="name" required>
 
-          <label for="uname"><b>Employee Number</b></label>
-          <input type="text" placeholder="Enter Employee Number" name="name" required>
+          <label for="uname"><b>Employee Code</br></label>
+          <input type="text" placeholder="Enter Employee Code" name="name" required>
 
-          <label for="uname"><b>Pay Rate</b></label>
+          <label for="uname"><b>Pay Rate</br></label>
           <input type="text" placeholder="Enter Employee Pay Rate" name="name" required>
 
-          <label for="uname"><b>Gross Earnings</b></label>
+          <label for="uname"><b>Gross Earnings</br></label>
           <input type="text" placeholder="Enter Gross Earnings" name="name" required>
 
-          <label for="uname"><b>Deductions</b></label>
+          <label for="uname"><b>Deductions</br></label>
           <input type="text" placeholder="Enter Deductions" name="name" required>
 
-          <label for="uname"><b>Net Pay</b></label>
+          <label for="uname"><b>Net Pay</br></label>
           <input type="text" placeholder="Enter Net Pay" name="name" required>
 
-          <label for="uname"><b>Date</b></label>
+          <label for="uname"><b>Date</br></label>
           <input type="text" placeholder="Enter Date" name="name" required>
-
 
           <button class="add-btn" type="submit">Add</button>
           <button class="cancel-btn" type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
@@ -179,6 +218,45 @@
         }
         </script>
 
+        <div id="id02" class="modal">
+
+        <form class="modal-content animate" action="/action_page.php" method="post">
+            <div class="txtcontainer">
+            <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
+            <h3> To remove a Payroll, please enter a valid password. </h3>
+        </div>
+
+        <div class="container">
+
+          <label for="uname"><br>Payroll Number</br></label>
+          <input type="text" placeholder="Enter Payroll Name" name="name" required>
+
+          <label for="uname"><br>Password</br></label>
+          <input type="password" placeholder="Enter Password" name="name" required>
+
+          <button class="confirm-btn" type="submit">Confirm</button>
+          <button class="cancel-btn" type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
+
+        </div>
+
+        <div class="container">
+
+        </div>
+        </form>
+        </div>
+
+        <script>
+        // Get the modal
+        var modal = document.getElementById('id02');
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+        if (event.target == modal) {
+        modal.style.display = "none";
+          }
+        }
+        </script>
+
       </div>
 
       <section class="List">
@@ -194,7 +272,7 @@
               <tr>
                 <th>Payroll Number</th>
                   <th>Employee Name</th>
-                  <th>Employee Number</th>
+                  <th>Employee Code</th>
                   <th>Pay Rate</th>
                   <th>Gross earnings</th>
                   <th>Deductions</th>

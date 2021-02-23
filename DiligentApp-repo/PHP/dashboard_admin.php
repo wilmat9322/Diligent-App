@@ -65,9 +65,9 @@
     <a href="dashboard_admin.php"><i class="far fa-window-maximize"></i><span>Dashboard</span></a>
     <a href="manage_admin.php"><i class="fas fa-users"></i><span>Manage Employees</span></a>
     <a href="payrolls_admin.php"><i class="fas fa-file-invoice-dollar"></i><span>Payrolls</span></a>
-    <a href="w2_admin.php"><i class="fas fa-landmark"></i><span>W-2 Forms</span></a>
+    <a href="w2_admin.php"><i class="fas fa-landmark"></i><span>W-2 Tax Forms</span></a>
     <a href="schedules_admin.php"><i class="far fa-calendar-plus"></i><span>Schedules</span></a>
-    <a href="messages_admin.php"><i class="fas fa-inbox"></i><span>Messages</span></a>
+    <a href="messages_admin.php"><i class="fas fa-envelope"></i><span>Messages</span></a>
     <a href="leaves_admin.php"><i class="fas fa-bed"></i><span>Leave</span></a>
     <a href="attendance_admin.php"><i class="fas fa-user-clock"></i><span>Attendance</span></a>
     <a href="dc_admin.php"><i class="far fa-file-alt"></i><span>Documents and Policies</span></a>
@@ -239,7 +239,7 @@
           <small>Date: March 15, 2021</small><br>
           <small>Time: 8:00 a.m.</small><br>
           <div class="turno-footer">
-          <a href="#">View all</a>
+          <a href="schedules_admin.php">View all</a>
         </div>
         </div>
     </div>

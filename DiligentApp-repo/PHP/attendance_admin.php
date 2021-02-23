@@ -22,7 +22,7 @@
   <!----- Fonts y Símbolos que utilicé para la aplicación ----->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
   <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link rel="shortcut icon" type="image/png" href="images/favicon2">
+  <link rel="shortcut icon" type="image/png" href="images/favicon">
   <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:ital,wght@1,300&display=swap" rel="stylesheet">
 </head>
 
@@ -30,7 +30,7 @@
 
   <!----- Referencia al file del diseño de la app ----->
   <style>
-    <?php include 'CSS/payrolls_employee.css';
+    <?php include 'CSS/attendance_admin.css';
     ?>
   </style>
 
@@ -49,26 +49,28 @@
       <a href="#" class="show_profile">My profile</a>
       <img src="images/profilepic.png" class="profile_image" alt"">
       <img src="images/Negocio.png" class="negocio" alt="">
+
     </div>
   </header>
   <!----- Aquí termina el header ----->
 
   <!----- Aquí empieza el menu ----->
   <div class="menu-slide">
-    <img src="images/Employee.png" class="Logo-DiligentApp" alt="DiligentApp">
+    <img src="images/Admin.png" class="Logo-DiligentApp" alt="">
 
-    <h4>Employee</h4>
+    <h4>Administrator</h4>
 
     <!----- Lista de las herramientas con sus símbolos en el menú ----->
-    <a href="myprofile_employee.php"><i class="far fa-address-card"></i><span>My profile</span></a>
-    <a href="dashboard_employee.php"><i class="far fa-window-maximize"></i><span>Dashboard</span></a>
-    <a href="payrolls_employee.php"><i class="fas fa-file-invoice-dollar"></i><span>Payrolls</span></a>
-    <a href="w2_employee.php"><i class="fas fa-landmark"></i><span>W-2 Forms</span></a>
-    <a href="schedules_employees.php"><i class="far fa-calendar-plus"></i><span>Schedules</span></a>
-    <a href="messages_employee.php"><i class="fas fa-envelope"></i><span>Messages</span></a>
-    <a href="leave_employee.php"><i class="fas fa-bed"></i><span>Leave</span></a>
-    <a href="attendance_employee.php"><i class="fas fa-user-clock"></i><span>Attendance</span></a>
-    <a href="dc_employee.php"><i class="far fa-file-alt"></i><span>Documents and Policies</span></a>
+    <a href="myprofile_admin.php"><i class="far fa-address-card"></i><span>My profile</span></a>
+    <a href="dashboard_admin.php"><i class="far fa-window-maximize"></i><span>Dashboard</span></a>
+    <a href="manage_admin.php"><i class="fas fa-users"></i><span>Manage Employees</span></a>
+    <a href="payrolls_admin.php"><i class="fas fa-file-invoice-dollar"></i><span>Payrolls</span></a>
+    <a href="w2_admin.php"><i class="fas fa-landmark"></i><span>W-2 Tax Forms</span></a>
+    <a href="schedules_admin.php"><i class="far fa-calendar-plus"></i><span>Schedules</span></a>
+    <a href="messages_admin.php"><i class="fas fa-envelope"></i><span>Messages</span></a>
+    <a href="leaves_admin.php"><i class="fas fa-bed"></i><span>Leave</span></a>
+    <a href="attendance_admin.php"><i class="fas fa-user-clock"></i><span>Attendance</span></a>
+    <a href="dc_admin.php"><i class="far fa-file-alt"></i><span>Documents and Policies</span></a>
     <footer>
       <h6>Powered by Diligent Technologies</h6>
     </footer>
@@ -76,12 +78,11 @@
   <!----- Aquí termina el menú ----->
 
   <div class="contenido">
-
     <main>
       <div class="top-user">
 
-        <h3 style="margin-left:10px;">Payrolls</h3>
-        <p class="selectors-p"> Range Payrolls Since:</p>
+        <h3 style="margin-left:10px;">Attendance</h3>
+        <p class="selectors-p"> Range Attendance Since:</p>
 
         <select class="selectors">
           <option value="0">Select Day:</option>
@@ -117,6 +118,7 @@
           <option value="30">30</option>
           <option value="31">31</option>
         </select>
+
         <select class="selectors">
           <option value="0">Select Month:</option>
           <option value="1">January</option>
@@ -132,6 +134,7 @@
           <option value="11">November</option>
           <option value="12">December</option>
         </select>
+
         <select class="selectors">
           <option value="0">Select Year:</option>
           <option value="1">2010</option>
@@ -146,35 +149,37 @@
           <option value="10">2018</option>
           <option value="11">2019</option>
           <option value="12">2021</option>
+
         </select>
 
         <button class="submit-btn" type="button"> Submit</button>
-        <input class="search-container" type"submit" name="search" placeholder="Search Payroll">
+        <input class="search-container" type"submit" name="search" placeholder="Search Employee">
         <button class="search-btn" type="submit" value="Search"><span><i class="fas fa-search"></i></span></button>
 
-        <button class="print-btn" type="button"><span><i class="fas fa-print"></i></span> Print Payroll</button>
+        <button class="ontime-btn"><span><i class="fas fa-user"></i></span> On-Time</button>
+        <button class="late-btn"><span><i class="fas fa-user"></i></span> Late</button>
+        <button class="nopunch-btn"><span><i class="fas fa-user"></i></span> Not Punched</button>
 
-
-      </div>
-
+</div>
       <section class="List">
         <div class="empleados-grid">
           <div class="empleados-card">
 
           <div>
-          <h3><span><i class="fas fa-file-invoice-dollar"></i></span>List of Payrolls</h3>
+          <h3><span><i class="fas fa-users"></i></span>List of Attendances</h3>
           </div>
 
           <table>
             <thead>
               <tr>
-                  <th>Payroll Number</th>
-                  <th>Employee number</th>
-                  <th>Pay Rate</th>
-                  <th>Gross earnings</th>
-                  <th>Deductions</th>
-                  <th>Net Pay</th>
-                  <th>Date</th>
+                  <th>Employee Name</th>
+                  <th>Shift Day</th>
+                  <th>Shift Time</th>
+                  <th>Check in Time</th>
+                  <th>Punch Status</th>
+                  <th>Departure time</th>
+                  <th>Punch Status</th>
+                  <th>Hours Worked</th>
               </tr>
           </thead>
           <tbody>
@@ -186,26 +191,10 @@
               <td></td>
               <td></td>
               <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
               <td></td>
             </tr>
             <tr>
               <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
               <td></td>
               <td></td>
               <td></td>
@@ -222,26 +211,10 @@
               <td></td>
               <td></td>
               <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
               <td></td>
             </tr>
             <tr>
               <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
               <td></td>
               <td></td>
               <td></td>
@@ -258,14 +231,6 @@
               <td></td>
               <td></td>
               <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
               <td></td>
             </tr>
             <tr>
@@ -276,6 +241,7 @@
               <td></td>
               <td></td>
               <td></td>
+              <td></td>
             </tr>
             <tr>
               <td></td>
@@ -285,7 +251,59 @@
               <td></td>
               <td></td>
               <td></td>
+              <td></td>
             </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+
             </div>
           </tbody>
         </table>

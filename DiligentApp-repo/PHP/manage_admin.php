@@ -65,9 +65,9 @@
     <a href="dashboard_admin.php"><i class="far fa-window-maximize"></i><span>Dashboard</span></a>
     <a href="manage_admin.php"><i class="fas fa-users"></i><span>Manage Employees</span></a>
     <a href="payrolls_admin.php"><i class="fas fa-file-invoice-dollar"></i><span>Payrolls</span></a>
-    <a href="w2_admin.php"><i class="fas fa-landmark"></i><span>W-2 Forms</span></a>
+    <a href="w2_admin.php"><i class="fas fa-landmark"></i><span>W-2 Tax Forms</span></a>
     <a href="schedules_admin.php"><i class="far fa-calendar-plus"></i><span>Schedules</span></a>
-    <a href="messages_admin.php"><i class="fas fa-inbox"></i><span>Messages</span></a>
+    <a href="messages_admin.php"><i class="fas fa-envelope"></i><span>Messages</span></a>
     <a href="leaves_admin.php"><i class="fas fa-bed"></i><span>Leave</span></a>
     <a href="attendance_admin.php"><i class="fas fa-user-clock"></i><span>Attendance</span></a>
     <a href="dc_admin.php"><i class="far fa-file-alt"></i><span>Documents and Policies</span></a>
@@ -84,6 +84,41 @@
         <h3 style="margin-left:10px;">Manage Employees</h3>
         <p class="selectors-p"> Range Employees Working Since:</p>
 
+        <select class="selectors">
+          <option value="0">Select Day:</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+          <option value="11">11</option>
+          <option value="12">12</option>
+          <option value="13">13</option>
+          <option value="14">14</option>
+          <option value="15">15</option>
+          <option value="16">16</option>
+          <option value="17">17</option>
+          <option value="18">18</option>
+          <option value="19">19</option>
+          <option value="20">20</option>
+          <option value="21">21</option>
+          <option value="22">22</option>
+          <option value="23">23</option>
+          <option value="24">24</option>
+          <option value="25">25</option>
+          <option value="26">26</option>
+          <option value="27">27</option>
+          <option value="28">28</option>
+          <option value="29">29</option>
+          <option value="30">30</option>
+          <option value="31">31</option>
+        </select>
+        
         <select class="selectors">
           <option value="0">Select Month:</option>
           <option value="1">January</option>
@@ -122,6 +157,7 @@
 
         <button class="payroll-btn" onclick="document.getElementById('id01').style.display='block'" style="width:auto;"><span><i class="fas fa-user-plus"></i></span> Add Employee</button>
         <button class="print-btn" onclick="document.getElementById('id02').style.display='block'" style="width:auto;"><span><i class="fas fa-user-minus"></i></span> Remove Employee</button>
+        <button class="save-btn" <span><i class="fas fa-save"></i></span> Save Changes</button>
 
         <div id="id01" class="modal">
 
@@ -136,8 +172,8 @@
           <label for="uname"><b>Employee Name</b></label>
           <input type="text" placeholder="Enter Employee Name" name="name" required>
 
-          <label for="uname"><b>Employee Number</b></label>
-          <input type="text" placeholder="Enter Employee Number" name="name" required>
+          <label for="uname"><b>Employee Code</b></label>
+          <input type="text" placeholder="Enter Employee Code" name="name" required>
 
           <label for="uname"><b>Position</b></label>
           <input type="text" placeholder="Enter Employee Position" name="name" required>
@@ -182,8 +218,8 @@
 
       <div class="container">
 
-        <label for="uname"><b>Employee Number</b></label>
-        <input type="text" placeholder="Enter Employee Number" name="name" required>
+        <label for="uname"><b>Employee Code</b></label>
+        <input type="text" placeholder="Enter Employee Code" name="name" required>
 
         <label for="uname"><b>Admin Password</b></label>
         <input type="text" placeholder="Enter Password" name="name" required>
@@ -223,7 +259,7 @@
             <thead>
               <tr>
                   <th>Employee Name</th>
-                  <th>Employee Number</th>
+                  <th>Employee Code</th>
                   <th>Position</th>
                   <th>Type</th>
                   <th>Working Since</th>
