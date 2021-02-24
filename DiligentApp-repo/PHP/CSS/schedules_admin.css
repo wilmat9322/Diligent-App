@@ -223,10 +223,11 @@
   .empleados-grid {
     display: grid;
     grid-column-gap: 1.5rem;
+
   }
   .empleados-card{
     background: #fff;
-
+    width: 95rem;
   }
   .empleados-card h3 {
     color: #777;
@@ -252,8 +253,8 @@
   }
   th, td {
     font-size: 0.8rem;
-    padding: 1rem 4rem;
-    text-align: left;
+    padding: 1rem 2rem;
+    text-align: center;
     border: 1px solid #dddddd;
     color: black;
   }
@@ -310,7 +311,7 @@
 }
 .print-btn{
   color: white;
-  background: red;
+  background: green;
   text-align: center;
   padding: 7.3px 9px;
   text-decoration: none;
@@ -320,14 +321,27 @@
   cursor: pointer;
 }
 .print-btn:hover {
-  background: #ec4646;
+  background: #4CAF50;
 }
 .selectors{
   padding: 6.9px 9px;
   margin-left: 10px;
   position: relative;
   cursor: pointer;
-
+}
+.remove-btn{
+  color: white;
+  background: red;
+  text-align: center;
+  padding: 7.3px 9px;
+  text-decoration: none;
+  margin-left: 10px;
+  font-size: 15px;
+  border:none;
+  cursor: pointer;
+}
+.remove-btn:hover {
+  background: #ec4646;
 }
 .payroll-btn{
   color: white;
@@ -409,7 +423,7 @@ input[type=text], input[type=password] {
   top: 0;
   width: 100%;
   height: 100%;
-  overflow: none; /* Permitir scroll */
+  overflow: auto; /* Permitir scroll */
   background-color: rgb(0,0,0);
   background-color: rgba(0,0,0,0.4);
   padding-top: 60px;

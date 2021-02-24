@@ -30,7 +30,7 @@
 
   <!----- Referencia al file del diseño de la app ----->
   <style>
-    <?php include 'CSS/dc_admin.css';
+    <?php include 'CSS/messages_admin.css';
     ?>
   </style>
 
@@ -76,14 +76,13 @@
     </footer>
   </div>
   <!----- Aquí termina el menú ----->
-
   <div class="contenido">
 
     <main>
       <div class="top-user">
 
-        <h3 style="margin-left:10px;">Documents and Policies</h3>
-        <p class="selectors-p"> Range Documents Since:</p>
+        <h3 style="margin-left:10px;">Messages</h3>
+        <p class="selectors-p"> Range Messages Since:</p>
 
         <select class="selectors">
           <option value="0">Select Day:</option>
@@ -152,39 +151,41 @@
         </select>
 
         <button class="submit-btn" type="button"> Submit</button>
-        <input class="search-container" type"submit" name="search" placeholder="Search Document">
+        <input class="search-container" type"submit" name="search" placeholder="Search Messages">
         <button class="search-btn" type="submit" value="Search"><span><i class="fas fa-search"></i></span></button>
 
-        <button class="print-btn" type="button"><span><i class="fas fa-print"></i></span> Print Document</button>
 
-        <button class="payroll-btn" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">+ <span><i class="far fa-file-alt"></i></span> Add Document</button>
-        <button class="delete-btn" onclick="document.getElementById('id02').style.display='block'" style="width:auto;">- <span><i class="far fa-file-alt"></i></span> Remove Document</button>
-        <button class="save-btn" <span><i class="fas fa-save"></i></span> Save Changes</button>
-
+        <button class="create-btn" onclick="document.getElementById('id01').style.display='block'" style="width:auto;"><span><i class="fas fa-envelope"></i></span> Create Message</button>
+        <button class="sent-btn" type="button"><span><i class="fas fa-envelope"></i></span><a href="messages_admin.php"> See Inbox Messages</a></button>
+        <button class="delete-btn" type="button"><span><i class="fas fa-envelope"></i></span> Delete Messages</button>
 
         <div id="id01" class="modal">
 
         <form class="modal-content animate" action="/action_page.php" method="post">
             <div class="txtcontainer">
             <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-            <h3> Complete the following information to add a document. </h3>
+            <h3> Complete the following information to send a message. </h3>
         </div>
 
         <div class="container">
+          <label for="uname"><b>Send a Message to:</br></label>
+            <select class="selectors" style="margin-left: 0;">
+              <option value="0">Choose a reciever:</option>
+              <option value="1">All Admins and Employess</option>
+              <option value="2">Only Admins</option>
+              <option value="3">Only Employees</option>
 
-          <label for="uname"><b>Document Name</br></label>
-          <input type="text" placeholder="Enter Document Name" name="name" required>
 
-          <label for="uname"><b>Add Document</br></label>
-          <input type="file" id="myFile" name="filename">
+            </select><br>
 
-          <label for="uname"><b>Brief Description of the Document</br></label>
+          <br><label for="uname"><b>Brief Description of the Document</br></label>
           <textarea rows="6" cols="63" name="comment" form="usrform"></textarea></br>
 
-          <label for="uname"><b>Date</br></label>
-          <input type="text" placeholder="Enter Date" name="name" required>
+          <br><label for="uname"><b>Add Document</br></label>
+          <input type="file" id="myFile" name="filename">
 
-          <button class="add-btn" type="submit">Add</button>
+
+          <button class="add-btn" type="submit">Send</button>
           <button class="cancel-btn" type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
 
         </div>
@@ -253,14 +254,13 @@
           <div class="empleados-card">
 
           <div>
-          <h3><span><i class="far fa-file-alt"></i></span>Documents and Policies</h3>
+          <h3><span><i class="fas fa-envelope"></i></span>Sent Messages</h3>
           </div>
 
           <table>
             <thead>
               <tr>
-                <th>Document Name</th>
-                <th>Description</th>
+                <th>Sent</th>
                 <th>Date</th>
               </tr>
           </thead>
@@ -268,65 +268,48 @@
             <tr>
               <td></td>
               <td></td>
-              <td></td>
             </tr>
             <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
               <td></td>
               <td></td>
             </tr>
             <tr>
               <td></td>
               <td></td>
-              <td></td>
             </tr>
             <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
               <td></td>
               <td></td>
             </tr>
             <tr>
               <td></td>
               <td></td>
-              <td></td>
             </tr>
             <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
               <td></td>
               <td></td>
             </tr>
             <tr>
               <td></td>
               <td></td>
+            </tr>
+            <tr>
+              <td></td>
               <td></td>
             </tr>
             <tr>
               <td></td>
               <td></td>
+            </tr>
+            <tr>
+              <td></td>
               <td></td>
             </tr>
             <tr>
               <td></td>
               <td></td>
-              <td></td>
             </tr>
             <tr>
-              <td></td>
               <td></td>
               <td></td>
             </tr>

@@ -45,7 +45,7 @@
       <label for="check">
         <i class="fas fa-bars" id="menu_btn"></i>
       </label>
-      <a href="#" class="logout">Logout</a>
+      <a href="loggingout.php" class="logout">Logout</a>
       <a href="#" class="show_profile">My profile</a>
       <img src="images/profilepic.png" class="profile_image" alt"">
       <img src="images/Negocio.png" class="negocio" alt="">
@@ -64,7 +64,7 @@
     <a href="dashboard_employee.php"><i class="far fa-window-maximize"></i><span>Dashboard</span></a>
     <a href="payrolls_employee.php"><i class="fas fa-file-invoice-dollar"></i><span>Payrolls</span></a>
     <a href="w2_employee.php"><i class="fas fa-landmark"></i><span>W-2 Forms</span></a>
-    <a href="schedules_employees.php"><i class="far fa-calendar-plus"></i><span>Schedules</span></a>
+    <a href="schedules_employees.php"><i class="far fa-calendar-alt"></i><span>Schedules</span></a>
     <a href="messages_employee.php"><i class="fas fa-envelope"></i><span>Messages</span></a>
     <a href="leave_employee.php"><i class="fas fa-bed"></i><span>Leave</span></a>
     <a href="attendance_employee.php"><i class="fas fa-user-clock"></i><span>Attendance</span></a>

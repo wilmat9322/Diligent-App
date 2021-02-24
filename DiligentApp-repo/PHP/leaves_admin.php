@@ -66,7 +66,7 @@
     <a href="manage_admin.php"><i class="fas fa-users"></i><span>Manage Employees</span></a>
     <a href="payrolls_admin.php"><i class="fas fa-file-invoice-dollar"></i><span>Payrolls</span></a>
     <a href="w2_admin.php"><i class="fas fa-landmark"></i><span>W-2 Tax Forms</span></a>
-    <a href="schedules_admin.php"><i class="far fa-calendar-plus"></i><span>Schedules</span></a>
+    <a href="schedules_admin.php"><i class="far fa-calendar-alt"></i><span>Schedules</span></a>
     <a href="messages_admin.php"><i class="fas fa-envelope"></i><span>Messages</span></a>
     <a href="leaves_admin.php"><i class="fas fa-bed"></i><span>Leave</span></a>
     <a href="attendance_admin.php"><i class="fas fa-user-clock"></i><span>Attendance</span></a>
@@ -81,7 +81,7 @@
     <main>
       <div class="top-user">
 
-        <h3 style="margin-left:10px;">W-2 Tax Forms</h3>
+        <h3 style="margin-left:10px;">Leaves</h3>
         <p class="selectors-p"> Select Year:</p>
 
         <select class="selectors">
@@ -134,7 +134,7 @@
           <option value="11">November</option>
           <option value="12">December</option>
         </select>
-        
+
         <select class="selectors">
           <option value="0">Select Year:</option>
           <option value="1">2010</option>
@@ -153,12 +153,12 @@
         </select>
 
         <button class="submit-btn" type="button"> Submit</button>
-        <input class="search-container" type"submit" name="search" placeholder="Search Tax Form">
+        <input class="search-container" type"submit" name="search" placeholder="Search Employee">
         <button class="search-btn" type="submit" value="Search"><span><i class="fas fa-search"></i></span></button>
 
-        <button class="print-btn" <span><i class="fas fa-print"></i></span> Print Tax Form</button>
-        <button class="payroll-btn" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">+ <span><i class="fas fa-file-invoice-dollar"></i></span> Add Form</button>
-        <button class="delete-btn" onclick="document.getElementById('id02').style.display='block'" style="width:auto;">- <span><i class="fas fa-file-invoice-dollar"></i></span> Remove Form</button>
+        <button class="print-btn" <span><i class="fas fa-print"></i></span> Print Leave sheet</button>
+        <button class="payroll-btn" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">+ <span><i class="fas fa-bed"></i></span> Add Leave</button>
+        <button class="delete-btn" onclick="document.getElementById('id02').style.display='block'" style="width:auto;">- <span><i class="fas fa-bed"></i></span> Remove Leave</button>
         <button class="save-btn" <span><i class="fas fa-save"></i></span> Save Changes</button>
 
         <div id="id01" class="modal">
@@ -166,13 +166,10 @@
         <form class="modal-content animate" action="" method="post">
             <div class="txtcontainer">
             <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-            <h3> Complete the following information to add a Tax Form</h3>
+            <h3> Complete the following information to make a leave petition </h3>
         </div>
 
         <div class="container">
-
-          <label for="uname"><b>Add Tax Form</br></label>
-          <input type="file" id="myFile" name="filename">
 
           <label for="uname"><b>Employee Name</br></label>
           <input type="text" placeholder="Enter Employee Name" name="name" required>
@@ -180,8 +177,17 @@
           <label for="uname"><b>Employee Code</br></label>
           <input type="text" placeholder="Enter Employee Code" name="name" required>
 
-          <label for="uname"><b>Date</br></label>
-          <input type="text" placeholder="Enter Date" name="name" required>
+          <label for="uname"><b>Today's Date</br></label>
+          <input type="text" placeholder="Enter Today's Date" name="name" required>
+
+          <label for="uname"><b>Leave Date Since</br></label>
+          <input type="text" placeholder="Enter the date of your leave" name="name" required>
+
+          <label for="uname"><b>Leave Date Until</br></label>
+          <input type="text" placeholder="Enter the date of your leave" name="name" required>
+
+          <label for="uname"><b>Reason of Leave</br></label>
+          <textarea rows="6" cols="63" name="comment" form="usrform"></textarea></br>
 
           <button class="add-btn" type="submit">Add</button>
           <button class="cancel-btn" type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
@@ -251,16 +257,20 @@
             <div class="empleados-card">
 
             <div>
-            <h3><span><i class="fas fa-landmark"></i></span>List of Tax Forms</h3>
+            <h3><span><i class="fas fa-bed"></i></span>List of Leaves</h3>
             </div>
 
             <table>
               <thead>
                 <tr>
-                    <th>Tax Form Code</th>
                     <th>Employee Name</th>
                     <th>Employee Code</th>
-                    <th>Date</th>
+                    <th>Reason for leave</th>
+                    <th>Date issued</th>
+                    <th>From Date</th>
+                    <th>To Date</th>
+                    <th>Approve or Deny</th>
+
                 </tr>
             </thead>
             <tbody>
@@ -269,64 +279,115 @@
                 <td></td>
                 <td></td>
                 <td></td>
+                <td></td>
+                <td></td>
+                <td>
+                  <div class="leaves-btn">
+                  <button class="approve-btn" <span><i class="fas fa-thumbs-up" style="width:auto;"></i></span><b>Approve</button><br>
+                  <button class="deny-btn" <span><i class="fas fa-thumbs-down" style="width:auto;"></i></span><b>Deny</button><br>
+                </div>
+                </td>
               </tr>
               <tr>
                 <td></td>
                 <td></td>
                 <td></td>
                 <td></td>
-              </tr><tr>
                 <td></td>
                 <td></td>
                 <td></td>
-                <td></td>
-              </tr><tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr><tr>
+              </tr>
+              <tr>
                 <td></td>
                 <td></td>
                 <td></td>
-                <td></td>
-              </tr><tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr><tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr><tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr><tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr><tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr><tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr><tr>
                 <td></td>
                 <td></td>
                 <td></td>
                 <td></td>
               </tr>
-              </div>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+
             </tbody>
           </table>
         </div>

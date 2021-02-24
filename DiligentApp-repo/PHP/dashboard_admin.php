@@ -45,8 +45,8 @@
       <label for="check">
         <i class="fas fa-bars" id="menu_btn"></i>
       </label>
-      <a href="#" class="logout">Logout</a>
-      <a href="#" class="show_profile">My profile</a>
+      <a href="loggingout.php" class="logout">Logout</a>
+      <a href="myprofile_admin.php" class="show_profile">My profile</a>
       <img src="images/profilepic.png" class="profile_image" alt"">
       <img src="images/Negocio.png" class="negocio" alt="">
 
@@ -66,7 +66,7 @@
     <a href="manage_admin.php"><i class="fas fa-users"></i><span>Manage Employees</span></a>
     <a href="payrolls_admin.php"><i class="fas fa-file-invoice-dollar"></i><span>Payrolls</span></a>
     <a href="w2_admin.php"><i class="fas fa-landmark"></i><span>W-2 Tax Forms</span></a>
-    <a href="schedules_admin.php"><i class="far fa-calendar-plus"></i><span>Schedules</span></a>
+    <a href="schedules_admin.php"><i class="far fa-calendar-alt"></i><span>Schedules</span></a>
     <a href="messages_admin.php"><i class="fas fa-envelope"></i><span>Messages</span></a>
     <a href="leaves_admin.php"><i class="fas fa-bed"></i><span>Leave</span></a>
     <a href="attendance_admin.php"><i class="fas fa-user-clock"></i><span>Attendance</span></a>
@@ -96,7 +96,7 @@
           </div>
         </div>
         <div class="ponches-footer" style="margin-top: 90px;">
-          <a href="#">View all</a>
+          <a href="attendance_admin.php">View all</a>
         </div>
       </div>
     </div>
@@ -150,7 +150,7 @@
         <thead>
           <tr>
               <th>Name</th>
-              <th>Employee number</th>
+              <th>Employee code</th>
               <th>Position</th>
               <th>Type</th>
               <th>Working Since</th>
@@ -251,7 +251,7 @@
         <small>Recieved: 0</small><br>
         <small>Sent: 0 </small><br>
         <div class="inbox-footer">
-        <a href="#">View all</a>
+        <a href="messages_admin.php">View all</a>
       </div>
       </div>
   </div>
@@ -264,7 +264,7 @@
       <small>Latest Leave: Medical Appointment</small><br>
       <small>Status:<small class="yellow-status"> Pending</small></small><br>
       <div class="leave-footer">
-      <a href="#">View all</a>
+      <a href="leaves_admin.php">View all</a>
     </div>
     </div>
 </div>

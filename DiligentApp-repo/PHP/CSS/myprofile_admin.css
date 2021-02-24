@@ -191,11 +191,11 @@ label #menu_btn:hover {
 /***** Propiedades del contenido que mostraran las herramientas *****/
 .contenido {
   margin-left: 270px;
-  background: #fff;
   background-position: center;
   background-size: cover;
   height: 100vh;
   transition: 0.25s;
+
 }
 
 /***** Para que el margen del background del contenido esté a la par con el menu escondido*****/
@@ -206,12 +206,6 @@ label #menu_btn:hover {
 /***** Para que el boton de checkbox no se vea *****/
 #check {
   display: none;
-}
-main {
-margin-top: 145px;
-min-height: 100%;
-padding: 3rem;
-background: #f1f5f9;
 }
 .profile_img {
   display: block;

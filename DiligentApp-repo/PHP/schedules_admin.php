@@ -45,8 +45,8 @@
       <label for="check">
         <i class="fas fa-bars" id="menu_btn"></i>
       </label>
-      <a href="#" class="logout">Logout</a>
-      <a href="#" class="show_profile">My profile</a>
+      <a href="loggingout.php" class="logout">Logout</a>
+      <a href="myprofile_admin.php" class="show_profile">My profile</a>
       <img src="images/profilepic.png" class="profile_image" alt"">
       <img src="images/Negocio.png" class="negocio" alt="">
 
@@ -66,7 +66,7 @@
     <a href="manage_admin.php"><i class="fas fa-users"></i><span>Manage Employees</span></a>
     <a href="payrolls_admin.php"><i class="fas fa-file-invoice-dollar"></i><span>Payrolls</span></a>
     <a href="w2_admin.php"><i class="fas fa-landmark"></i><span>W-2 Tax Forms</span></a>
-    <a href="schedules_admin.php"><i class="far fa-calendar-plus"></i><span>Schedules</span></a>
+    <a href="schedules_admin.php"><i class="far fa-calendar-alt"></i></i><span>Schedules</span></a>
     <a href="messages_admin.php"><i class="fas fa-envelope"></i><span>Messages</span></a>
     <a href="leaves_admin.php"><i class="fas fa-bed"></i><span>Leave</span></a>
     <a href="attendance_admin.php"><i class="fas fa-user-clock"></i><span>Attendance</span></a>
@@ -155,9 +155,10 @@
         <input class="search-container" type"submit" name="search" placeholder="Search Employee">
         <button class="search-btn" type="submit" value="Search"><span><i class="fas fa-search"></i></span></button>
 
-        <button class="payroll-btn" onclick="document.getElementById('id01').style.display='block'" style="width:auto;"><span><i class="fas fa-user-plus"></i></span> Add Schedules</button>
-        <button class="print-btn" onclick="document.getElementById('id02').style.display='block'" style="width:auto;"><span><i class="fas fa-user-minus"></i></span> Edit Schedules</button>
+        <button class="payroll-btn" onclick="document.getElementById('id01').style.display='block'" style="width:auto;"><span><i class="far fa-calendar-plus"></i></span> Add Schedule</button>
+        <button class="print-btn" onclick="document.getElementById('id02').style.display='block'" style="width:auto;"><span><i class="far fa-calendar-minus"></i></span> Edit Schedule</button>
         <button class="save-btn" <span><i class="fas fa-save"></i></span> Save Changes</button>
+        <button class="remove-btn" <span><i class="far fa-calendar-times"></i></span> Remove Schedule</button>
 
         <div id="id01" class="modal">
 
@@ -175,14 +176,26 @@
           <label for="uname"><b>Employee Number</b></label>
           <input type="text" placeholder="Enter Employee Number" name="name" required>
 
-          <label for="uname"><b>Position</b></label>
-          <input type="text" placeholder="Enter Employee Position" name="name" required>
+          <label for="uname"><b>Monday</b></label>
+          <input type="text" placeholder="Enter Shift" name="name" required>
 
-          <label for="uname"><b>Type</b></label>
-          <input type="text" placeholder="Enter Type of Employee" name="name" required>
+          <label for="uname"><b>Tuesday</b></label>
+          <input type="text" placeholder="Enter Shift" name="name" required>
 
-          <label for="uname"><b>Earning Rate (ph)</b></label>
-          <input type="text" placeholder="Enter Earning Rate (per hour)" name="name" required>
+          <label for="uname"><b>Wednesday</b></label>
+          <input type="text" placeholder="Enter Shift" name="name" required>
+
+          <label for="uname"><b>Thursday</b></label>
+          <input type="text" placeholder="Enter Shift" name="name" required>
+
+          <label for="uname"><b>Friday</b></label>
+          <input type="text" placeholder="Enter Shift" name="name" required>
+
+          <label for="uname"><b>Saturday</b></label>
+          <input type="text" placeholder="Enter Shift" name="name" required>
+
+          <label for="uname"><b>Sunday</b></label>
+          <input type="text" placeholder="Enter Shift" name="name" required>
 
           <button class="add-btn" type="submit">Add</button>
           <button class="cancel-btn" type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
@@ -252,7 +265,7 @@
           <div class="empleados-card">
 
           <div>
-          <h3><span><i class="fas fa-users"></i></span>Schedules</h3>
+          <h3><span><i class="far fa-calendar-alt"></i></span>Schedules</h3>
           </div>
 
           <table>
@@ -260,11 +273,14 @@
               <tr>
                   <th>Employee Name</th>
                   <th>Employee Number</th>
-                  <th>Position</th>
-                  <th>Type</th>
-                  <th>Working Since</th>
-                  <th>Hours Worked</th>
-                  <th>Earning Rate (ph)</th>
+                  <th>Monday</th>
+                  <th>Tuesday</th>
+                  <th>Wednesday</th>
+                  <th>Thursday</th>
+                  <th>Friday</th>
+                  <th>Saturday</th>
+                  <th>Sunday</th>
+                  <th>Total Hours</th>
               </tr>
           </thead>
           <tbody>
@@ -276,12 +292,6 @@
               <td></td>
               <td></td>
               <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
               <td></td>
               <td></td>
               <td></td>
@@ -290,12 +300,6 @@
               <td></td>
               <td></td>
               <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
               <td></td>
               <td></td>
               <td></td>
@@ -312,12 +316,6 @@
               <td></td>
               <td></td>
               <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
               <td></td>
               <td></td>
               <td></td>
@@ -326,12 +324,6 @@
               <td></td>
               <td></td>
               <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
               <td></td>
               <td></td>
               <td></td>
@@ -348,12 +340,6 @@
               <td></td>
               <td></td>
               <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
               <td></td>
               <td></td>
               <td></td>
@@ -366,6 +352,9 @@
               <td></td>
               <td></td>
               <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
             </tr>
             <tr>
               <td></td>
@@ -375,6 +364,83 @@
               <td></td>
               <td></td>
               <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+
             </tr>
             </div>
           </tbody>
