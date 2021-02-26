@@ -1,4 +1,3 @@
-
     /***** Propiedades del body *****/
     body {
       margin: 0;
@@ -114,17 +113,18 @@
       padding-top: 30px;
       position: fixed;
       left: 0;
-      width: 270px;
+      width: 280px;
       height: 100%;
       transition: 0.25s;
       transition-property: left;
+      overflow: auto;s
     }
 
     /***** Propiedades de la foto del menú *****/
     .menu-slide .Logo-DiligentApp {
       width: 80px;
       height: 80px;
-      border-radius: 100px;
+      border-radius: 400px;
       margin-left: 10px;
       margin-top: -10px;
       margin-bottom: 0;
@@ -135,6 +135,7 @@
       color: #f8f7de;
       display: block;
       width: 100%;
+
       line-height: 60px;
       text-decoration: none;
       padding-left: 20px;

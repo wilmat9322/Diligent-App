@@ -31,7 +31,7 @@
 
   <!----- Comienza el LoginBox ----->
   <div>
-    <img src="images/Fondo.jpg" class="Fondo"> <!-- Fondo del loginbox -->
+      <img src="images/Fondo.jpg" class="Fondo"> <!-- Fondo del loginbox -->
     <div class="login-box">
       <!-- Caja de Login -->
       <img src="images/Admin.png" class="Logo"> <!-- Logo de DiligentApp -->
@@ -50,8 +50,8 @@
 
         <!----- Lista de nav como Forgot Password y Register Here! ----->
         <nav>
-          <a href="#">Forgot Passworkd?</a>
-          <a href="#">Register here!</a>
+          <a href="forgot.php">Forgot Passworkd?</a>
+          <a href="register.php">Register here!</a>
         </nav>
         <!----- Termina el LoginBox ----->
       </form>

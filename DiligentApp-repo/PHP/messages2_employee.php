@@ -30,7 +30,7 @@
 
   <!----- Referencia al file del diseño de la app ----->
   <style>
-    <?php include 'CSS/payrolls_employee.css';
+    <?php include 'CSS/messages2_employee.css';
     ?>
   </style>
 
@@ -49,13 +49,14 @@
       <a href="myprofile_employee.php" class="show_profile">My profile</a>
       <img src="images/profilepic.png" class="profile_image" alt"">
       <img src="images/Negocio.png" class="negocio" alt="">
+
     </div>
   </header>
   <!----- Aquí termina el header ----->
 
   <!----- Aquí empieza el menu ----->
   <div class="menu-slide">
-    <img src="images/Employee.png" class="Logo-DiligentApp" alt="DiligentApp">
+    <img src="images/Employee.png" class="Logo-DiligentApp" alt="">
 
     <h4>Employee</h4>
 
@@ -66,7 +67,7 @@
     <a href="w2_employee.php"><i class="fas fa-landmark"></i><span>W-2 Tax Forms</span></a>
     <a href="schedules_employee.php"><i class="far fa-calendar-alt"></i><span>Schedules</span></a>
     <a href="messages_employee.php"><i class="fas fa-envelope"></i><span>Messages</span></a>
-    <a href="leave_employee.php"><i class="fas fa-bed"></i><span>Leave</span></a>
+    <a href="leaves_employee.php"><i class="fas fa-bed"></i><span>Leave</span></a>
     <a href="attendance_employee.php"><i class="fas fa-user-clock"></i><span>Attendance</span></a>
     <a href="dc_employee.php"><i class="far fa-file-alt"></i><span>Documents and Policies</span></a>
     <footer>
@@ -74,14 +75,13 @@
     </footer>
   </div>
   <!----- Aquí termina el menú ----->
-
   <div class="contenido">
 
     <main>
       <div class="top-user">
 
-        <h3 style="margin-left:10px;">Payrolls</h3>
-        <p class="selectors-p"> Range Payrolls Since:</p>
+        <h3 style="margin-left:10px;">Messages</h3>
+        <p class="selectors-p"> Range Messages Since:</p>
 
         <select class="selectors">
           <option value="0">Select Day:</option>
@@ -146,14 +146,105 @@
           <option value="10">2018</option>
           <option value="11">2019</option>
           <option value="12">2021</option>
+
         </select>
 
         <button class="submit-btn" type="button"> Submit</button>
-        <input class="search-container" type"submit" name="search" placeholder="Search Payroll">
+        <input class="search-container" type"submit" name="search" placeholder="Search Messages">
         <button class="search-btn" type="submit" value="Search"><span><i class="fas fa-search"></i></span></button>
 
-        <button class="print-btn" type="button"><span><i class="fas fa-print"></i></span> Print Payroll</button>
 
+        <button class="create-btn" onclick="document.getElementById('id01').style.display='block'" style="width:auto;"><span><i class="fas fa-envelope"></i></span> Create Message</button>
+        <button class="sent-btn" type="button"><span><i class="fas fa-envelope"></i></span><a href="messages_employee.php"> See Inbox Messages</a></button>
+
+        <button class="delete-btn" type="button"><span><i class="fas fa-envelope"></i></span> Delete Messages</button>
+
+        <div id="id01" class="modal">
+
+        <form class="modal-content animate" action="/action_page.php" method="post">
+            <div class="txtcontainer">
+            <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+            <h3> Complete the following information to send a message. </h3>
+        </div>
+
+        <div class="container">
+          <label for="uname"><b>Send a Message to:</br></label>
+            <select class="selectors" style="margin-left: 0;">
+              <option value="0">Choose a reciever:</option>
+              <option value="1">All Admins and Employess</option>
+              <option value="2">Only Admins</option>
+              <option value="3">Only Employees</option>
+
+            </select><br>
+
+          <br><label for="uname"><b>Brief Description of the Document</br></label>
+          <textarea rows="6" cols="63" name="comment" form="usrform"></textarea></br>
+
+          <br><label for="uname"><b>Add Document</br></label>
+          <input type="file" id="myFile" name="filename">
+
+
+          <button class="add-btn" type="submit">Send</button>
+          <button class="cancel-btn" type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+
+        </div>
+
+        <div class="container">
+
+        </div>
+        </form>
+        </div>
+
+        <script>
+        // Get the modal
+        var modal = document.getElementById('id01');
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+        if (event.target == modal) {
+        modal.style.display = "none";
+          }
+        }
+        </script>
+
+        <div id="id02" class="modal">
+
+        <form class="modal-content animate" action="/action_page.php" method="post">
+            <div class="txtcontainer">
+            <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
+            <h3> To remove a Payroll, please enter a valid password. </h3>
+        </div>
+
+        <div class="container">
+
+          <label for="uname"><br>Remove Document</br></label>
+          <input type="text" placeholder="Enter Document Name" name="name" required>
+
+          <label for="uname"><br>Password</br></label>
+          <input type="password" placeholder="Enter Password" name="name" required>
+
+          <button class="confirm-btn" type="submit">Confirm</button>
+          <button class="cancel-btn" type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
+
+        </div>
+
+        <div class="container">
+
+        </div>
+        </form>
+        </div>
+
+        <script>
+        // Get the modal
+        var modal = document.getElementById('id02');
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+        if (event.target == modal) {
+        modal.style.display = "none";
+          }
+        }
+        </script>
 
       </div>
 
@@ -162,127 +253,62 @@
           <div class="empleados-card">
 
           <div>
-          <h3><span><i class="fas fa-file-invoice-dollar"></i></span>List of Payrolls</h3>
+          <h3><span><i class="fas fa-envelope"></i></span>Sent Messages</h3>
           </div>
 
           <table>
             <thead>
               <tr>
-                  <th>Payroll Number</th>
-                  <th>Employee Code</th>
-                  <th>Pay Rate</th>
-                  <th>Gross Earnings</th>
-                  <th>Deductions</th>
-                  <th>Net Pay</th>
-                  <th>Date</th>
+                <th>Inbox</th>
+                <th>Date</th>
               </tr>
           </thead>
           <tbody>
             <tr>
               <td></td>
               <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
+            </tr>
+            <tr>
               <td></td>
               <td></td>
             </tr>
             <tr>
               <td></td>
               <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
+            </tr>
+            <tr>
               <td></td>
               <td></td>
             </tr>
             <tr>
               <td></td>
               <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
+            </tr>
+            <tr>
               <td></td>
               <td></td>
             </tr>
             <tr>
               <td></td>
               <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
+            </tr>
+            <tr>
               <td></td>
               <td></td>
             </tr>
             <tr>
               <td></td>
               <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
+            </tr>
+            <tr>
               <td></td>
               <td></td>
             </tr>
             <tr>
               <td></td>
               <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
             </tr>
             <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
               <td></td>
               <td></td>
             </tr>

@@ -22,7 +22,7 @@
   <!----- Fonts y Símbolos que utilicé para la aplicación ----->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
   <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link rel="shortcut icon" type="image/png" href="images/favicon">
+  <link rel="shortcut icon" type="image/png" href="images/favicon2">
   <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:ital,wght@1,300&display=swap" rel="stylesheet">
 </head>
 
@@ -30,7 +30,7 @@
 
   <!----- Referencia al file del diseño de la app ----->
   <style>
-    <?php include 'CSS/myprofile_admin.css';
+    <?php include 'CSS/myprofile_employee.css';
     ?>
   </style>
 
@@ -46,7 +46,7 @@
         <i class="fas fa-bars" id="menu_btn"></i>
       </label>
       <a href="loggingout.php" class="logout">Logout</a>
-      <a href="myprofile_admin.php" class="show_profile">My profile</a>
+      <a href="myprofile_employee.php" class="show_profile">My profile</a>
       <img src="images/profilepic.png" class="profile_image" alt"">
       <img src="images/Negocio.png" class="negocio" alt="">
     </div>
@@ -55,21 +55,20 @@
 
   <!----- Aquí empieza el menu ----->
   <div class="menu-slide">
-    <img src="images/Admin.png" class="Logo-DiligentApp" alt="">
+    <img src="images/Employee.png" class="Logo-DiligentApp" alt="">
 
-    <h4>Administrator</h4>
+    <h4>Employee</h4>
 
     <!----- Lista de las herramientas con sus símbolos en el menú ----->
-    <a href="myprofile_admin.php"><i class="far fa-address-card"></i><span>My profile</span></a>
-    <a href="dashboard_admin.php"><i class="far fa-window-maximize"></i><span>Dashboard</span></a>
-    <a href="manage_admin.php"><i class="fas fa-users"></i><span>Manage Employees</span></a>
-    <a href="payrolls_admin.php"><i class="fas fa-file-invoice-dollar"></i><span>Payrolls</span></a>
-    <a href="w2_admin.php"><i class="fas fa-landmark"></i><span>W-2 Tax Forms</span></a>
-    <a href="schedules_admin.php"><i class="far fa-calendar-alt"></i><span>Schedules</span></a>
-    <a href="messages_admin.php"><i class="fas fa-envelope"></i><span>Messages</span></a>
-    <a href="leaves_admin.php"><i class="fas fa-bed"></i><span>Leave</span></a>
-    <a href="attendance_admin.php"><i class="fas fa-user-clock"></i><span>Attendance</span></a>
-    <a href="dc_admin.php"><i class="far fa-file-alt"></i><span>Documents and Policies</span></a>
+    <a href="myprofile_employee.php"><i class="far fa-address-card"></i><span>My profile</span></a>
+    <a href="dashboard_employee.php"><i class="far fa-window-maximize"></i><span>Dashboard</span></a>
+    <a href="payrolls_employee.php"><i class="fas fa-file-invoice-dollar"></i><span>Payrolls</span></a>
+    <a href="w2_employee.php"><i class="fas fa-landmark"></i><span>W-2 Tax Forms</span></a>
+    <a href="schedules_employee.php"><i class="far fa-calendar-alt"></i><span>Schedules</span></a>
+    <a href="messages_employee.php"><i class="fas fa-envelope"></i><span>Messages</span></a>
+    <a href="leaves_employee.php"><i class="fas fa-bed"></i><span>Leave</span></a>
+    <a href="attendance_employee.php"><i class="fas fa-user-clock"></i><span>Attendance</span></a>
+    <a href="dc_employee.php"><i class="far fa-file-alt"></i><span>Documents and Policies</span></a>
     <footer>
       <h6>Powered by Diligent Technologies</h6>
     </footer>
@@ -88,12 +87,8 @@
 
       <div class="user_profile">
       <img src="images/profilepic.png" class="profile_img" alt="">
-      <h2 style="font-size: 2rem;" class="admin_name">William S. Matos Díaz</h2>
-      <button class="edit-btn" type="button"><span><i class="far fa-window-maximize"></i></span> Edit Profile</button>
+      <h2 style="font-size: 2rem;" class="employee_name">William S. Matos Díaz</h2>
       </div>
-
-
-
 
       <section class="tablas">
         <div class="tabla-grid">
@@ -159,11 +154,11 @@
               <tbody>
                 <tr>
                   <td>Employee Code: 008015</td>
-                  <td>Position: Admin</td>
+                  <td>Position: Bagger</td>
                 </tr>
                 <tr>
-                  <td>Type: Manager</td>
-                  <td>Earning Rate: $14.25 per hour</td>
+                  <td>Type: Employee</td>
+                  <td>Earning Rate: $7.25 per hour</td>
                 </tr>
               <tr>
                 <td>Status: Active</td>

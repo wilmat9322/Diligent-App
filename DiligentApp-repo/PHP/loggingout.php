@@ -10,6 +10,6 @@
     echo "<h1>Logout Succesful!</h1>";
     echo "<h3>Thank you for using DiligentApp</h2><br>";
     ?>
-    <h3>Click <a href=""> here </a>to continue.</h3>
+    <h3>Click <a href="authenticate.php"> here </a>to continue.</h3>
   </body>
 </html>

@@ -29,11 +29,12 @@ header {
   color: #fff;
   transition: 0.25s;
   transition-property: background;
+  overflow: auto;
 }
 
 /***** Transición de Hover del btn Logout *****/
 .logout:hover {
-  background: #f05454;
+  background: #1a75ff;
 }
 
 /***** Propiedades del btn My profile *****/
@@ -55,7 +56,7 @@ header {
 
 /***** Transición de Hover del btn Logout *****/
 .show_profile:hover {
-  background: #f05454;
+  background: #1a75ff;
 }
 
 /***** Propiedades de la imagen de My profile *****/
@@ -134,17 +135,18 @@ h6 {
   color: #f8f7de;
   display: block;
   width: 100%;
-  line-height: 60px;
+  line-height: 70px;
   text-decoration: none;
   padding-left: 20px;
   box-sizing: border-box;
   transition: 0.25s;
   transition-property: background;
+  overflow: auto;
 }
 
 /***** Transición de Hover de los elementos del menú *****/
 .menu-slide a:hover {
-  background: #f05454;
+  background: #1a75ff;
 }
 
 /***** Padding de los elementos del menu *****/
@@ -169,7 +171,7 @@ label #menu_btn {
 
 /***** Transición de Hover del btn de menu *****/
 label #menu_btn:hover {
-  color: #f05454;
+  color: #1a75ff;
 }
 
 /***** Si el btn se toca, se esconderá *****/
@@ -216,7 +218,7 @@ label #menu_btn:hover {
   height: 200px;
   width: 200px;
 }
-.admin_name {
+.employee_name {
   display: block;
   text-align: center;
   position: center;
@@ -233,29 +235,13 @@ main {
   padding: 1rem 4rem;
   padding-right: 70px;
 }
-.edit-btn{
-  color: white;
-  background: green;
-  width: 110px;
-  padding: 7.4px 9px;
-  text-decoration: none;
-  margin-top: 0;
-  font-size: 15px;
-  float: left;
-  border:none;
-  cursor: pointer;
-}
-.edit-btn:hover {
-  background: #4CAF50;
-}
+
 .tablas {
-margin-top: 2rem;
+margin-top: 1rem;
 margin-bottom: 3rem;
 }
 .tabla-grid {
 display: grid;
-
-
 }
 .contenido-card{
 background: #fff;
@@ -270,12 +256,11 @@ padding-left: 0;
 width: 100%;
 height: 100px;
 border-collapse: collapse;
-
 }
 
 .contenido-card i{
 font-size: 2rem;
-color: #f05454;
+color: #1a75ff;
 margin-top: 20px;
 margin-right: 20px;
 padding-left: 0.8rem;

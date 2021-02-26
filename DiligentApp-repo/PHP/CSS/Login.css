@@ -6,13 +6,13 @@
     }
 
     /***** Background del Login Box *****/
-    .Fondo {
-      background-size: cover;
-      background-position: center;
-      width: 100%;
-      height: 100%;
-      filter: blur(4px);
-    }
+   .Fondo {
+     background-size: cover;
+     background-position: center;
+     width: 100%;
+     height: 100%;
+     filter: blur(4px);
+   }
 
     /***** Posición y otras propiedades del Login Box *****/
     .login-box {
@@ -118,4 +118,8 @@
     .login-box nav a:hover {
       color: #b67171;
       /* color del forgot password y register here cuando se le pone el cursor encima */
+    }
+    .copyright{
+      float: right;
+      color: black;
     }

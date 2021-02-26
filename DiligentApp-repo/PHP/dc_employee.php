@@ -30,7 +30,7 @@
 
   <!----- Referencia al file del diseño de la app ----->
   <style>
-    <?php include 'CSS/payrolls_employee.css';
+    <?php include 'CSS/dc_employee.css';
     ?>
   </style>
 
@@ -49,13 +49,14 @@
       <a href="myprofile_employee.php" class="show_profile">My profile</a>
       <img src="images/profilepic.png" class="profile_image" alt"">
       <img src="images/Negocio.png" class="negocio" alt="">
+
     </div>
   </header>
   <!----- Aquí termina el header ----->
 
   <!----- Aquí empieza el menu ----->
   <div class="menu-slide">
-    <img src="images/Employee.png" class="Logo-DiligentApp" alt="DiligentApp">
+    <img src="images/Employee.png" class="Logo-DiligentApp" alt="">
 
     <h4>Employee</h4>
 
@@ -66,7 +67,7 @@
     <a href="w2_employee.php"><i class="fas fa-landmark"></i><span>W-2 Tax Forms</span></a>
     <a href="schedules_employee.php"><i class="far fa-calendar-alt"></i><span>Schedules</span></a>
     <a href="messages_employee.php"><i class="fas fa-envelope"></i><span>Messages</span></a>
-    <a href="leave_employee.php"><i class="fas fa-bed"></i><span>Leave</span></a>
+    <a href="leaves_employee.php"><i class="fas fa-bed"></i><span>Leave</span></a>
     <a href="attendance_employee.php"><i class="fas fa-user-clock"></i><span>Attendance</span></a>
     <a href="dc_employee.php"><i class="far fa-file-alt"></i><span>Documents and Policies</span></a>
     <footer>
@@ -80,8 +81,8 @@
     <main>
       <div class="top-user">
 
-        <h3 style="margin-left:10px;">Payrolls</h3>
-        <p class="selectors-p"> Range Payrolls Since:</p>
+        <h3 style="margin-left:10px;">Documents and Policies</h3>
+        <p class="selectors-p"> Range Documents Since:</p>
 
         <select class="selectors">
           <option value="0">Select Day:</option>
@@ -146,14 +147,14 @@
           <option value="10">2018</option>
           <option value="11">2019</option>
           <option value="12">2021</option>
+
         </select>
 
         <button class="submit-btn" type="button"> Submit</button>
-        <input class="search-container" type"submit" name="search" placeholder="Search Payroll">
+        <input class="search-container" type"submit" name="search" placeholder="Search Document">
         <button class="search-btn" type="submit" value="Search"><span><i class="fas fa-search"></i></span></button>
 
-        <button class="print-btn" type="button"><span><i class="fas fa-print"></i></span> Print Payroll</button>
-
+        <button class="print-btn" type="button"><span><i class="fas fa-print"></i></span> Print Document</button>
 
       </div>
 
@@ -162,19 +163,15 @@
           <div class="empleados-card">
 
           <div>
-          <h3><span><i class="fas fa-file-invoice-dollar"></i></span>List of Payrolls</h3>
+          <h3><span><i class="far fa-file-alt"></i></span>Documents and Policies</h3>
           </div>
 
           <table>
             <thead>
               <tr>
-                  <th>Payroll Number</th>
-                  <th>Employee Code</th>
-                  <th>Pay Rate</th>
-                  <th>Gross Earnings</th>
-                  <th>Deductions</th>
-                  <th>Net Pay</th>
-                  <th>Date</th>
+                <th>Document Name</th>
+                <th>Description</th>
+                <th>Date</th>
               </tr>
           </thead>
           <tbody>
@@ -182,7 +179,8 @@
               <td></td>
               <td></td>
               <td></td>
-              <td></td>
+            </tr>
+            <tr>
               <td></td>
               <td></td>
               <td></td>
@@ -191,7 +189,8 @@
               <td></td>
               <td></td>
               <td></td>
-              <td></td>
+            </tr>
+            <tr>
               <td></td>
               <td></td>
               <td></td>
@@ -200,7 +199,8 @@
               <td></td>
               <td></td>
               <td></td>
-              <td></td>
+            </tr>
+            <tr>
               <td></td>
               <td></td>
               <td></td>
@@ -209,7 +209,8 @@
               <td></td>
               <td></td>
               <td></td>
-              <td></td>
+            </tr>
+            <tr>
               <td></td>
               <td></td>
               <td></td>
@@ -218,7 +219,8 @@
               <td></td>
               <td></td>
               <td></td>
-              <td></td>
+            </tr>
+            <tr>
               <td></td>
               <td></td>
               <td></td>
@@ -227,61 +229,13 @@
               <td></td>
               <td></td>
               <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
             </tr>
             <tr>
               <td></td>
               <td></td>
               <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
             </tr>
             <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
               <td></td>
               <td></td>
               <td></td>

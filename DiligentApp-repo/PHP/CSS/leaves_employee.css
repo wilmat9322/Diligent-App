@@ -35,7 +35,7 @@
 
     /***** Transición de Hover del btn Logout *****/
     .logout:hover {
-      background: #f05454;
+      background: #1a75ff;
     }
 
     /***** Propiedades del btn My profile *****/
@@ -57,7 +57,7 @@
 
     /***** Transición de Hover del btn Logout *****/
     .show_profile:hover {
-      background: #f05454;
+      background: #1a75ff;
     }
 
     /***** Propiedades de la imagen de My profile *****/
@@ -70,7 +70,6 @@
       margin-right: 22px;
       border-radius: 10px;
     }
-
     /***** Propiedades del logo de Supermercados Buena Vida *****/
     .negocio {
       width: 120px;
@@ -109,8 +108,8 @@
 
     /***** Propiedades del menú *****/
     .menu-slide {
-      z-index: 1;
       background: #222831;
+      z-index: 1;
       margin-top: 145px;
       padding-top: 30px;
       position: fixed;
@@ -137,18 +136,17 @@
       color: #f8f7de;
       display: block;
       width: 100%;
-      line-height: 60px;
+      line-height: 70px;
       text-decoration: none;
       padding-left: 20px;
       box-sizing: border-box;
       transition: 0.25s;
       transition-property: background;
-
     }
 
     /***** Transición de Hover de los elementos del menú *****/
     .menu-slide a:hover {
-      background: #f05454;
+      background: #1a75ff;
     }
 
     /***** Padding de los elementos del menu *****/
@@ -173,7 +171,7 @@
 
     /***** Transición de Hover del btn de menu *****/
     label #menu_btn:hover {
-      color: #f05454;
+      color: #1a75ff;
     }
 
     /***** Si el btn se toca, se esconderá *****/
@@ -193,6 +191,15 @@
       width: 1px;
     }
 
+    /***** Propiedades del contenido que mostraran las herramientas *****/
+    .contenido {
+      margin-left: 270px;
+      background: #fff;
+      background-position: center;
+      background-size: cover;
+      transition: 0.25s;
+    }
+
     /***** Para que el margen del background del contenido esté a la par con el menu escondido*****/
     #check:checked~.contenido {
       margin-left: 50px;
@@ -201,13 +208,6 @@
     /***** Para que el boton de checkbox no se vea *****/
     #check {
       display: none;
-    }
-    .contenido {
-      margin-left: 270px;
-      background: #fff;
-      background-position: center;
-      background-size: cover;
-      transition: 0.25s;
     }
     main {
       margin-top: 145px;
@@ -245,7 +245,7 @@
     }
     .empleados-card i{
       font-size: 2rem;
-      color: #f05454;
+      color: #1a75ff;
       margin-top: 20px;
       margin-right: 20px;
       padding-left: 0.8rem;
@@ -308,7 +308,7 @@
 .search-btn:hover{
   background-color: #ccc;
 }
-.print-btn{
+.sent-btn{
   color: white;
   background: green;
   text-align: center;
@@ -319,10 +319,14 @@
   border:none;
   cursor: pointer;
 }
-.print-btn:hover {
+.sent-btn:hover {
   background: #4CAF50;
 }
-.delete-btn{
+.sent-btn a{
+  color: white;
+  text-decoration: none;
+}
+.delete-btn {
   color: white;
   background: red;
   text-align: center;
@@ -334,29 +338,16 @@
   cursor: pointer;
 }
 .delete-btn:hover {
-  background: #ec4646;;
+  background: #f44336
 }
-.save-btn {
-  color: white;
-  background: gray;
-  float: right;
-  padding: 7.3px 9px;
-  text-decoration: none;
-  margin-left: 10px;
-  font-size: 15px;
-  border:none;
-  cursor: pointer;
-}
-.save-btn:hover {
-  background: #A9A9A9;
-}
+
 .selectors{
   padding: 6.9px 9px;
   margin-left: 10px;
   position: relative;
   cursor: pointer;
 }
-.payroll-btn{
+.create-btn{
   color: white;
   background: #0e49b5;
   text-align: center;
@@ -367,7 +358,7 @@
   border:none;
   cursor: pointer;
 }
-.payroll-btn:hover {
+.create-btn:hover {
   background: #23689b;
 }
 input[type=text], input[type=password], input[type=file] {
@@ -444,9 +435,9 @@ textarea{
 }
 .modal-content {
   background-color: #fefefe;
-  margin: 8% auto 15% auto;
+  margin: 5% auto 15% auto;
   border: 1px solid #888;
-  width: 26%;
+  width: 28%;
   line-height: 25px;
 }
 .close {

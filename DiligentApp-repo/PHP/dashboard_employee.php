@@ -46,7 +46,7 @@
         <i class="fas fa-bars" id="menu_btn"></i>
       </label>
       <a href="loggingout.php" class="logout">Logout</a>
-      <a href="#" class="show_profile">My profile</a>
+      <a href="myprofile_employee.php" class="show_profile">My profile</a>
       <img src="images/profilepic.png" class="profile_image" alt"">
       <img src="images/Negocio.png" class="negocio" alt="">
     </div>
@@ -63,8 +63,8 @@
     <a href="myprofile_employee.php"><i class="far fa-address-card"></i><span>My profile</span></a>
     <a href="dashboard_employee.php"><i class="far fa-window-maximize"></i><span>Dashboard</span></a>
     <a href="payrolls_employee.php"><i class="fas fa-file-invoice-dollar"></i><span>Payrolls</span></a>
-    <a href="w2_employee.php"><i class="fas fa-landmark"></i><span>W-2 Forms</span></a>
-    <a href="schedules_employees.php"><i class="far fa-calendar-alt"></i><span>Schedules</span></a>
+    <a href="w2_employee.php"><i class="fas fa-landmark"></i><span>W-2 Tax Forms</span></a>
+    <a href="schedules_employee.php"><i class="far fa-calendar-alt"></i><span>Schedules</span></a>
     <a href="messages_employee.php"><i class="fas fa-envelope"></i><span>Messages</span></a>
     <a href="leave_employee.php"><i class="fas fa-bed"></i><span>Leave</span></a>
     <a href="attendance_employee.php"><i class="fas fa-user-clock"></i><span>Attendance</span></a>
@@ -94,7 +94,7 @@
         </div>
       </div>
       <div class="ponches-footer" style="margin-top: 90px;">
-        <a href="#">View all</a>
+        <a href="attendance_employee.php">View all</a>
       </div>
     </div>
   </div>
@@ -269,7 +269,7 @@
           <small>Date: March 15, 2021</small><br>
           <small>Time: 8:00 a.m.</small><br>
           <div class="turno-footer">
-          <a href="#">View all</a>
+          <a href="schedules_employee.php">View all</a>
         </div>
         </div>
     </div>
@@ -281,7 +281,7 @@
         <small>Recieved: 0</small><br>
         <small>Sent: 0 </small><br>
         <div class="inbox-footer">
-        <a href="#">View all</a>
+        <a href="messages_employee.php">View all</a>
       </div>
       </div>
   </div>
@@ -294,7 +294,7 @@
       <small>Latest Leave: Medical Appointment</small><br>
       <small>Status:<small class="yellow-status"> Pending</small></small><br>
       <div class="leave-footer">
-      <a href="#">View all</a>
+      <a href="leaves_employee.php">View all</a>
     </div>
     </div>
 </div>
