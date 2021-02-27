@@ -16,7 +16,7 @@
   <meta name="keywords" content="DiligentApp, Employee Management, Payroll" />
   <meta name="author" content="Diligent Technologies" />
 
-  <title> Password Recovery</title>
+  <title> Register: Step 5</title>
 
   <link rel="shortcut icon" type="image/png" href="images/favicon">
 
@@ -36,15 +36,15 @@
 
       <!----- Información del usuario ----->
       <form>
-        <p>Enter your employee code and the last four digits of your social security number to continue.</p>
-        <p>Employee Code</p>
-        <input type="text" name="username" placeholder="Enter Employee Code">
+        <p><b>Step 5:</b> Create a complex password that you can remember</p>
+        <p>Password</p>
+        <input type="text" name="username" placeholder="Enter your password">
 
-        <p>Social Security Number</p>
-        <input type="text" name="username" placeholder="Enter the four last digits of your SSN">
+        <p>Repeat password</p>
+        <input type="text" name="username" placeholder="Enter your password">
 
-        <input type="button" name="submit" value="Continue" onclick="location.href='newpassword.php';">
-        <input type="button" name="submit" value="Go back" onclick="location.href='authenticate.php';">
+        <input type="button" name="submit" value="Continue" onclick="location.href='register6.php';">
+        <input type="button" name="submit" value="Go back" onclick="location.href='register4.php';">
 
       </form>
     </div>

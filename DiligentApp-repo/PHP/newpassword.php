@@ -16,7 +16,7 @@
   <meta name="keywords" content="DiligentApp, Employee Management, Payroll" />
   <meta name="author" content="Diligent Technologies" />
 
-  <title> Password Recovery</title>
+  <title>Password Recovery</title>
 
   <link rel="shortcut icon" type="image/png" href="images/favicon">
 
@@ -25,7 +25,7 @@
 <body>
   <!----- Referencia al file del diseño de la página de Login ----->
   <style>
-    <?php include 'CSS/forgot.css';?>
+    <?php include 'CSS/newpassword.css';?>
   </style>
 
   <!----- Comienza el LoginBox ----->
@@ -37,14 +37,14 @@
       <!----- Información del usuario ----->
       <form>
         <p>Enter your employee code and the last four digits of your social security number to continue.</p>
-        <p>Employee Code</p>
-        <input type="text" name="username" placeholder="Enter Employee Code">
+        <p>New Password</p>
+        <input type="text" name="username" placeholder="Enter your new password">
 
-        <p>Social Security Number</p>
-        <input type="text" name="username" placeholder="Enter the four last digits of your SSN">
+        <p>Repeat New password</p>
+        <input type="text" name="username" placeholder="Enter your new password">
 
-        <input type="button" name="submit" value="Continue" onclick="location.href='newpassword.php';">
-        <input type="button" name="submit" value="Go back" onclick="location.href='authenticate.php';">
+        <input type="button" name="submit" value="Continue" onclick="location.href='recovery_complete.php';">
+        <input type="button" name="submit" value="Go back" onclick="location.href='forgot.php';">
 
       </form>
     </div>
