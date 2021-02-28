@@ -90,7 +90,7 @@
           <div class="ponches-body">
           <span><i class="fas fa-user-clock" style="margin-bottom: 40px;"></i></span>
           <div>
-            <h3>Clock in/out</h3>
+            <h3>Clock in/Out</h3>
             <div class="green">
             <h2 style="padding-top: 40px;">Punch Status: <span class="green-status">On-Time</span></div></h2>
           </div>

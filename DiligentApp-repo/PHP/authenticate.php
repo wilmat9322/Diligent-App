@@ -16,7 +16,7 @@
   <meta name="keywords" content="DiligentApp, Employee Management, Payroll" />
   <meta name="author" content="Diligent Technologies" />
 
-  <title> Login here</title>
+  <title> Login </title>
 
   <link rel="shortcut icon" type="image/png" href="images/favicon">
 

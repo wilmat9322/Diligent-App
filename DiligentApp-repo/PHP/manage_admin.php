@@ -17,7 +17,7 @@
   <meta name="keywords" content="DiligentApp, Employee Management, Payroll" />
   <meta name="author" content="Diligent Technologies" />
 
-  <title>Welcome to DiligentApp!</title>
+  <title>Employee Management</title>
 
   <!----- Fonts y Símbolos que utilicé para la aplicación ----->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
@@ -155,8 +155,8 @@
         <input class="search-container" type"submit" name="search" placeholder="Search Employee">
         <button class="search-btn" type="submit" value="Search"><span><i class="fas fa-search"></i></span></button>
 
-        <button class="payroll-btn" onclick="document.getElementById('id01').style.display='block'" style="width:auto;"><span><i class="fas fa-user-plus"></i></span> Add Employee</button>
-        <button class="print-btn" onclick="document.getElementById('id02').style.display='block'" style="width:auto;"><span><i class="fas fa-user-minus"></i></span> Remove Employee</button>
+        <button class="add1-btn" onclick="document.getElementById('id01').style.display='block'" style="width:auto;"><span><i class="fas fa-user-plus"></i></span> Add Employee</button>
+        <button class="rm-btn" onclick="document.getElementById('id02').style.display='block'" style="width:auto;"><span><i class="fas fa-user-minus"></i></span> Remove Employee</button>
         <button class="save-btn" <span><i class="fas fa-save"></i></span> Save Changes</button>
 
         <div id="id01" class="modal">

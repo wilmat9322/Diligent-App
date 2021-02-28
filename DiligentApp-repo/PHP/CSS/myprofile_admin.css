@@ -241,6 +241,7 @@ main {
   text-decoration: none;
   margin-top: 0;
   font-size: 15px;
+  border-radius: 20px;
   float: left;
   border:none;
   cursor: pointer;

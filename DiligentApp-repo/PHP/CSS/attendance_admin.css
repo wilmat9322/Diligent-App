@@ -154,7 +154,6 @@
       padding-right: 10px;
     }
 
-    /***** Tipo id para que el btn de menu no se altere por otro bloque de codigo  *****/
     /***** Propiedades del btn de menu *****/
     label #menu_btn {
       z-index: 1;
@@ -317,6 +316,7 @@
   text-decoration: none;
   margin-left: 10px;
   font-size: 15px;
+  border-radius: 20px;
   border:none;
   cursor: pointer;
 }
@@ -331,6 +331,7 @@
   text-decoration: none;
   margin-left: 10px;
   font-size: 15px;
+  border-radius: 20px;
   border:none;
   cursor: pointer;
 }
@@ -352,6 +353,7 @@
   text-decoration: none;
   margin-left: 10px;
   font-size: 15px;
+  border-radius: 20px;
   border:none;
   cursor: pointer;
 }

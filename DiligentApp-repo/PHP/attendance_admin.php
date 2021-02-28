@@ -17,7 +17,7 @@
   <meta name="keywords" content="DiligentApp, Employee Management, Payroll" />
   <meta name="author" content="Diligent Technologies" />
 
-  <title>Welcome to DiligentApp!</title>
+  <title>Attendance</title>
 
   <!----- Fonts y Símbolos que utilicé para la aplicación ----->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
@@ -177,7 +177,7 @@
                   <th>Shift Time</th>
                   <th>Check in Time</th>
                   <th>Punch Status</th>
-                  <th>Departure time</th>
+                  <th>Departure Time</th>
                   <th>Punch Status</th>
                   <th>Hours Worked</th>
               </tr>

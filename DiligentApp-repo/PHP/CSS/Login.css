@@ -106,7 +106,7 @@
     /***** Propiedades de los nav (Forgot Password y Register here!) *****/
     .login-box nav a {
       text-decoration: none;
-      padding: 16px;
+      padding: 17px;
       position: relative;
       left: 0;
       top: 10px;
@@ -118,8 +118,4 @@
     .login-box nav a:hover {
       color: #b67171;
       /* color del forgot password y register here cuando se le pone el cursor encima */
-    }
-    .copyright{
-      float: right;
-      color: black;
     }

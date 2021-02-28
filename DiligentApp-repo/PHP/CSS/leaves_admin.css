@@ -320,6 +320,7 @@
     text-decoration: none;
     margin-left: 10px;
     font-size: 15px;
+    border-radius: 20px;
     border:none;
     cursor: pointer;
   }
@@ -334,6 +335,7 @@
     text-decoration: none;
     margin-left: 10px;
     font-size: 15px;
+    border-radius: 20px;
     border:none;
     cursor: pointer;
   }
@@ -348,6 +350,7 @@
     text-decoration: none;
     margin-left: 10px;
     font-size: 15px;
+    border-radius: 20px;
     border:none;
     cursor: pointer;
   }
@@ -368,6 +371,7 @@
     text-decoration: none;
     margin-left: 10px;
     font-size: 15px;
+    border-radius: 20px;
     border:none;
     cursor: pointer;
   }
@@ -433,6 +437,8 @@
     padding: 1px 5px 10px 1px;
     text-decoration: none;
     font-size: 13px;
+    border-radius: 20px;
+    margin-bottom: 2px;
     border:none;
     cursor: pointer;
   }
@@ -452,6 +458,7 @@
     padding: 1px 25px 10px 1px;
     text-decoration: none;
     font-size: 13px;
+    border-radius: 20px;
     border:none;
     cursor: pointer;
   }

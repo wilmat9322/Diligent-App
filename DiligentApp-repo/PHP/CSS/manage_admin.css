@@ -309,7 +309,7 @@
 .search-btn:hover{
   background-color: #ccc;
 }
-.print-btn{
+.rm-btn{
   color: white;
   background: red;
   text-align: center;
@@ -317,10 +317,11 @@
   text-decoration: none;
   margin-left: 10px;
   font-size: 15px;
+  border-radius: 20px;
   border:none;
   cursor: pointer;
 }
-.print-btn:hover {
+.rm-btn:hover {
   background: #ec4646;
 }
 .selectors{
@@ -330,7 +331,7 @@
   cursor: pointer;
 
 }
-.payroll-btn{
+.add1-btn{
   color: white;
   background: #0e49b5;
   text-align: center;
@@ -338,10 +339,11 @@
   text-decoration: none;
   margin-left: 10px;
   font-size: 15px;
+  border-radius: 20px;
   border:none;
   cursor: pointer;
 }
-.payroll-btn:hover {
+.add1-btn:hover {
   background: #23689b;
 }
 .save-btn {
@@ -352,6 +354,7 @@
   text-decoration: none;
   margin-left: 10px;
   font-size: 15px;
+  border-radius: 20px;
   border:none;
   cursor: pointer;
 }

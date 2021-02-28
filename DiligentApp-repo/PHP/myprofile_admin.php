@@ -17,7 +17,7 @@
   <meta name="keywords" content="DiligentApp, Employee Management, Payroll" />
   <meta name="author" content="Diligent Technologies" />
 
-  <title>Welcome to DiligentApp!</title>
+  <title>My profile</title>
 
   <!----- Fonts y Símbolos que utilicé para la aplicación ----->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
@@ -159,10 +159,10 @@
               <tbody>
                 <tr>
                   <td>Employee Code: 008015</td>
-                  <td>Position: Admin</td>
+                  <td>Position: Manager</td>
                 </tr>
                 <tr>
-                  <td>Type: Manager</td>
+                  <td>Type: Admin</td>
                   <td>Earning Rate: $14.25 per hour</td>
                 </tr>
               <tr>

@@ -17,7 +17,7 @@
   <meta name="keywords" content="DiligentApp, Employee Management, Payroll" />
   <meta name="author" content="Diligent Technologies" />
 
-  <title>Welcome to DiligentApp!</title>
+  <title>Payrolls</title>
 
   <!----- Fonts y Símbolos que utilicé para la aplicación ----->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
@@ -274,7 +274,7 @@
                   <th>Employee Name</th>
                   <th>Employee Code</th>
                   <th>Pay Rate</th>
-                  <th>Gross earnings</th>
+                  <th>Gross Earnings</th>
                   <th>Deductions</th>
                   <th>Net Pay</th>
                   <th>Date</th>

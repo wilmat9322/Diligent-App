@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>DiligentApp</title>
+    <title>Logout Succesful!</title>
     <link rel="shortcut icon" type="image/png" href="images/favicon">
   </head>
   <body>
