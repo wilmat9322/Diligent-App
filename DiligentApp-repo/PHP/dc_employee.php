@@ -40,16 +40,15 @@
 
   <!----- Aquí empieza el header de la aplicación ----->
   <header>
-
     <div>
       <label for="check">
         <i class="fas fa-bars" id="menu_btn"></i>
+
       </label>
       <a href="loggingout.php" class="logout">Logout</a>
-      <a href="myprofile_employee.php" class="show_profile">My profile</a>
+      <a href="myprofile_admin.php" class="show_profile">My profile</a>
       <img src="images/profilepic.png" class="profile_image" alt"">
       <img src="images/Negocio.png" class="negocio" alt="">
-
     </div>
   </header>
   <!----- Aquí termina el header ----->

@@ -6,7 +6,6 @@ body {
   background-image: url(images/Fondo.jpg)
 }
 
-/***** Background del Login Box *****/
 
 /***** Posición y otras propiedades del Login Box *****/
 .login-box {
@@ -111,5 +110,4 @@ h1 {
 /***** Hover de los nav o a *****/
 .login-box nav a:hover {
   color: #b67171;
-  /* color del forgot password y register here cuando se le pone el cursor encima */
 }

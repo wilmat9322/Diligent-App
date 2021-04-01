@@ -156,7 +156,6 @@
       padding-right: 10px;
     }
 
-    /***** Tipo id para que el btn de menu no se altere por otro bloque de codigo  *****/
     /***** Propiedades del btn de menu *****/
     label #menu_btn {
       z-index: 1;

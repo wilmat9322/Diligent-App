@@ -63,26 +63,26 @@ h1 {
 }
 
 .login-box input[type="text"]{
-  /***** Propiedades del input del usuario y de las cajas de input *****/
+
   border: none;
   border-bottom: 1px solid #fff3e6;
-  /* linea blanca debajo del texto */
+
   background: rgba(0, 0, 0, 0.5);
-  /* Color de fondo de caja de texto */
+
   color: #fff3e6;
-  /* Color del texto de la caja de input */
+
   font-size: 20px;
 
 }
 
-/***** Propiedades del botón de submit *****/
+
 .login-box input[type="button"] {
   border: none;
   outline: none;
   height: 50px;
   margin-top: 40px;
   background: #ec4646;
-  /*Color del boton de Login */
+
   color: #fff3e6;
   font-size: 24px;
   border-radius: 0;
@@ -90,14 +90,14 @@ h1 {
   float: right;
   margin-left: 10px;
   border-radius: 15px;
-  /*Le da curva al boton de login */
+
 }
 
 /***** hover del botón de Login *****/
 .login-box input[type="button"]:hover {
   cursor: pointer;
   background: #b67171;
-  /* color cuando se pone el cursor encima del boton de login */
+
   color: #fff3e6;
 }
 .selectors-p{

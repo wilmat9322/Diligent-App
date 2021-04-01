@@ -31,7 +31,7 @@ body {
   display: inline-block;
   font-size: 27px;
   line-height: 20px;
-  text-decoration: none; /* remove underline from anchors */
+  text-decoration: none; 
 }
 .in-admin:hover{
   background: #b67171;
@@ -49,7 +49,7 @@ body {
   font-size: 27px;
   line-height: 20px;
   text-align: center;
-  text-decoration: none; /* remove underline from anchors */
+  text-decoration: none;
 }
 .in-employee:hover{
   background: #027581;
@@ -69,14 +69,14 @@ body {
     padding: 0 50px;
     margin-top: 6px;
 }
-/* Clear floats after the columns */
+
 .row:after {
   content: "";
   display: table;
   clear: both;
 }
 
-/* vertical line */
+
 .vl {
   position: absolute;
   left: 50%;
@@ -85,7 +85,6 @@ body {
 
 }
 
-/* text inside the vertical line */
 .vl-innertext {
   position: absolute;
   top: 50%;
@@ -98,7 +97,7 @@ body {
   margin-top: 112px;
 }
 
-/* hide some text on medium and large screens */
+
 .hide-md-lg {
   display: none;
 }
@@ -118,14 +117,14 @@ opacity: 0.85;
 display: inline-block;
 font-size: 30px;
 line-height: 20px;
-text-decoration: none; /* remove underline from anchors */
+text-decoration: none;
 }
-/* bottom container */
+
 .bottom-container {
   text-align: center;
 }
 
-/* Responsive layout - when the screen is less than 650px wide, make the two columns stack on top of each other instead of next to each other */
+
 @media screen and (max-width: 650px) {
   .employee {
     width: 100%;
@@ -135,11 +134,11 @@ text-decoration: none; /* remove underline from anchors */
     width: 100%;
     margin-top: 0;
   }
-  /* hide the vertical line */
+
   .vl {
     display: none;
   }
-  /* show the hidden text on small screens */
+
   .hide-md-lg {
     display: block;
     text-align: center;

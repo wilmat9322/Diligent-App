@@ -3,6 +3,13 @@
      Curso: COMP 4400 Desarrollo e Implementación de Sistemas
      Profesor: Ing. Rafael Muñoz ----->
 
+     <?php
+     session_start();
+
+     if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
+
+     ?>
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
@@ -40,16 +47,16 @@
 
   <!----- Aquí empieza el header de la aplicación ----->
   <header>
-
     <div>
       <label for="check">
         <i class="fas fa-bars" id="menu_btn"></i>
+
       </label>
       <a href="loggingout.php" class="logout">Logout</a>
       <a href="myprofile_admin.php" class="show_profile">My profile</a>
       <img src="images/profilepic.png" class="profile_image" alt"">
       <img src="images/Negocio.png" class="negocio" alt="">
-
+      <a class="bienvenido"> Hello, <?php echo $_SESSION['name']; ?></a>
     </div>
   </header>
   <!----- Aquí termina el header ----->
@@ -275,3 +282,9 @@
   </main>
 </body>
 </html>
+<?php
+}else{
+  header("Location: authenticate.php");
+  exit();
+}
+ ?>

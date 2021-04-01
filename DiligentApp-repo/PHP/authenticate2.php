@@ -18,7 +18,7 @@
 
   <title> Login </title>
 
-  <link rel="shortcut icon" type="image/png" href="images/favicon">
+  <link rel="shortcut icon" type="image/png" href="images/favicon2">
 
 </head>
 
@@ -26,7 +26,7 @@
   <!----- Referencia al file del diseño de la página de Login ----->
   <style>
     <?php
-    include 'CSS/Login.css';
+    include 'CSS/Login2.css';
     ?>
   </style>
 
@@ -38,11 +38,11 @@
     <div class="login-box">
 
       <!-- Caja de Login -->
-      <img src="images/Admin.png" class="Logo"> <!-- Logo de DiligentApp -->
+      <img src="images/Employee.png" class="Logo"> <!-- Logo de DiligentApp -->
       <h1>Welcome to DiligentApp</h1>
 
       <!----- Información del usuario ----->
-      <form action="login.php" method="post" >
+      <form action="login2.php" method="post" >
 
         <?php if (isset($_GET['error'])) { ?>
           <p class="error"><?php echo $_GET['error']; ?></p>

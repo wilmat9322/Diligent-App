@@ -414,7 +414,7 @@ input[type=text], input[type=password] {
   top: 0;
   width: 100%;
   height: 100%;
-  overflow: none; /* Permitir scroll */
+  overflow: none;
   background-color: rgb(0,0,0);
   background-color: rgba(0,0,0,0.4);
   padding-top: 60px;
@@ -422,14 +422,14 @@ input[type=text], input[type=password] {
 /* Contenido del Modal */
 .modal-content {
   background-color: #fefefe;
-  margin: 9% auto 15% auto; /* top, bottom and centered posici'on del modal */
+  margin: 9% auto 15% auto;
   border: 1px solid #888;
-  width: 30%; /* Width del contenido del modal */
+  width: 30%;
   line-height: 25px;
 
 }
 
-/* Boton (x) de cerrar */
+
 .close {
   display: none;
   position: absolute;
@@ -445,7 +445,7 @@ input[type=text], input[type=password] {
   cursor: pointer;
 }
 
-/* Add Zoom Animation */
+
 .animate {
   -webkit-animation: animatezoom 0.6s;
   animation: animatezoom 0.6s
@@ -461,7 +461,7 @@ input[type=text], input[type=password] {
   to {transform: scale(1)}
 }
 
-/* Change styles for span and cancel button on extra small screens */
+
 @media screen and (max-width: 300px) {
   span.psw {
      display: block;
