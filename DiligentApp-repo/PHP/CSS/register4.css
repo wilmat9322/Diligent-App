@@ -4,6 +4,7 @@ body {
   padding: 0;
   top: 0;
   font-family: Helvetica, "Trebuchet MS", Verdana, sans-serif;
+  zoom: 80%;
 
 }
 /***** Background del Login Box *****/
@@ -20,7 +21,7 @@ body {
 .login-box {
   width: 740px;
   height: 600px;
-  background: rgba(0, 0, 0, 1);
+  background: rgba(0, 0, 0, 0.9);
   /* color de fondo del login box */
   color: #fff3e6;
   top: 50%;
@@ -82,17 +83,16 @@ h1 {
   outline: none;
   height: 50px;
   margin-top: 30px;
-  background: #ec4646;
+  background: #00917c;
   /*Color del boton de Login */
   color: #fff3e6;
   font-size: 24px;
   border-radius: 0;
   width: 200px;
-  position: relative;
   margin-left: 10px;
   border-radius: 15px;
   margin-bottom: 10px;
-  float: right;
+
 
   /*Le da curva al boton de login */
 }
@@ -100,7 +100,7 @@ h1 {
 /***** hover del botón de Login *****/
 .login-box input[type="button"]:hover {
   cursor: pointer;
-  background: #b67171;
+  opacity: 0.8;
   /* color cuando se pone el cursor encima del boton de login */
   color: #fff3e6;
 }

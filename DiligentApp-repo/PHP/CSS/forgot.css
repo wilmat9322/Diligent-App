@@ -4,7 +4,7 @@ body {
   padding: 0;
   top: 0;
   font-family: Helvetica, "Trebuchet MS", Verdana, sans-serif;
-
+  zoom: 80%;
 }
 /***** Background del Login Box *****/
 .Fondo {
@@ -20,7 +20,7 @@ body {
 .login-box {
   width: 740px;
   height: 380px;
-  background: rgba(0, 0, 0, 1);
+  background: rgba(0, 0, 0, 0.9);
   /* color de fondo del login box */
   color: #fff3e6;
   top: 50%;
@@ -66,11 +66,8 @@ h1 {
 
   border: none;
   border-bottom: 1px solid #fff3e6;
-
   background: rgba(0, 0, 0, 0.5);
-
   color: #fff3e6;
-
   font-size: 20px;
 
 }
@@ -81,13 +78,11 @@ h1 {
   outline: none;
   height: 50px;
   margin-top: 40px;
-  background: #ec4646;
-
+  background: #00917c;
   color: #fff3e6;
   font-size: 24px;
   border-radius: 0;
   width: 200px;
-  float: right;
   margin-left: 10px;
   border-radius: 15px;
 
@@ -96,8 +91,7 @@ h1 {
 /***** hover del botón de Login *****/
 .login-box input[type="button"]:hover {
   cursor: pointer;
-  background: #b67171;
-
+  opacity: 0.8;
   color: #fff3e6;
 }
 .selectors-p{
@@ -110,4 +104,11 @@ h1 {
   cursor: pointer;
   margin-bottom: 10px;
   width: 300px;
+}
+
+.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  padding: 50px;
+  font-size: 20px;
 }

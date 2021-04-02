@@ -16,7 +16,7 @@
   <meta name="keywords" content="DiligentApp, Employee Management, Payroll" />
   <meta name="author" content="Diligent Technologies" />
 
-  <title> Register: Step 5</title>
+  <title> Register: Step 5 of 7</title>
 
   <link rel="shortcut icon" type="image/png" href="images/favicon">
 
@@ -36,15 +36,15 @@
 
       <!----- Información del usuario ----->
       <form>
-        <p><b>Step 5:</b> Create a complex password that you can remember</p>
+        <p><b>Step 5 of 7:</b> Create a complex password that you can remember</p>
         <p>Password</p>
         <input type="text" name="username" placeholder="Enter your password">
 
         <p>Repeat password</p>
         <input type="text" name="username" placeholder="Enter your password">
 
+        <input style="margin-left: 135px; background-color: #ec4646;" type="button" name="submit" value="Go back" onclick="location.href='register4.php';">
         <input type="button" name="submit" value="Continue" onclick="location.href='register6.php';">
-        <input type="button" name="submit" value="Go back" onclick="location.href='register4.php';">
 
       </form>
     </div>

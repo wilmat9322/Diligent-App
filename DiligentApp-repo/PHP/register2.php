@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Register: Step 2</title>
+    <title>Register: Step 2 of 7</title>
     <link rel="shortcut icon" type="image/png" href="images/favicon">
 
   </head>
@@ -20,13 +20,15 @@
         <!----- Información del usuario ----->
         <form>
 
-          <p><b>Step 2:</b> Input the following information to proceed.</p>
+          <p><b>Step 2 of 7:</b> Input the following information to proceed.</p>
           <p>Enter your employee code</p>
           <input type="text" name="username" placeholder="Enter Company Code">
           <p>Last four digits of your social security number</p>
           <input type="text" name="username" placeholder="Enter your last four digits of your SSN">
+
+          <input style="margin-left: 135px; background-color:#ec4646;"type="button" name="submit" value="Go back" onclick="location.href='register.php';">
           <input type="button" name="submit" value="Continue" onclick="location.href='register3.php';">
-          <input type="button" name="submit" value="Go back" onclick="location.href='register.php';">
+
         </form>
       </div>
 

@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Register: Step 4</title>
+    <title>Register: Step 4 of 7</title>
     <link rel="shortcut icon" type="image/png" href="images/favicon">
 
   </head>
@@ -20,7 +20,7 @@
         <!----- Información del usuario ----->
         <form>
 
-          <p><b>Step 4:</b> Choose three security questions that you can easily remember. This will help us verify your identity in the future.</p>
+          <p><b>Step 4 of 7:</b> Choose three security questions that you can easily remember. This will help us verify your identity in the future.</p>
           <p class="selectors-p"> Question 1:</p>
           <select class="selectors">
             <option value="0">Choose:</option>
@@ -51,8 +51,9 @@
 
               <input type="text" name="username" placeholder="Enter Company Code">
 
+              <input style="margin-left: 135px; background-color:#ec4646; " type="button" name="submit" value="Go back" onclick="location.href='register3.php';">
               <input type="button" name="submit" value="Continue" onclick="location.href='create_password.php';">
-              <input type="button" name="submit" value="Go back" onclick="location.href='register3.php';">
+
         </form>
       </div>
 

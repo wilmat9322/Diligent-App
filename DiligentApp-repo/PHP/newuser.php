@@ -38,7 +38,7 @@
       <form>
         <p>Your registration has been complete ! Click continue to log in to your new account.</p>
 
-        <input type="button" name="submit" value="Continue" onclick="location.href='authenticate.php';">
+        <input style="margin-left: 15rem;" type="button" name="submit" value="Finish" onclick="location.href='authenticate.php';">
 
       </form>
     </div>

@@ -16,7 +16,7 @@
   <meta name="keywords" content="DiligentApp, Employee Management, Payroll" />
   <meta name="author" content="Diligent Technologies" />
 
-  <title> Register: Step 6</title>
+  <title> Register: Step 6 of 7</title>
 
   <link rel="shortcut icon" type="image/png" href="images/favicon">
 
@@ -36,7 +36,7 @@
 
       <!----- Información del usuario ----->
       <form>
-        <p style="margin-bottom: 30px;"><b>Step 6:</b> Read and accept the following Terms and Conditions to complete the registration.</p>
+        <p style="margin-bottom: 30px;"><b>Step 6 of 7:</b> Read and accept the following Terms and Conditions to complete the registration.</p>
         <p class="box" style="padding-top: 1px;">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore e
           t dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
           consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
@@ -48,8 +48,10 @@
 
               <input type="checkbox">Accept Terms and Conditions
 
+            <div>
+            <input style="margin-left: 135px; background-color:#ec4646;"type="button" name="submit" value="Go back" onclick="location.href='create_password.php';">
            <input type="button" name="submit" value="Continue" onclick="location.href='newuser.php';">
-           <input type="button" name="submit" value="Go back" onclick="location.href='create_password.php';">
+           </div>
 
       </form>
     </div>

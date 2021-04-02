@@ -16,9 +16,10 @@
   <meta name="keywords" content="DiligentApp, Employee Management, Payroll" />
   <meta name="author" content="Diligent Technologies" />
 
-  <title> Register: Step 1</title>
+  <title> Register: Step 1 of 7</title>
 
   <link rel="shortcut icon" type="image/png" href="images/favicon">
+
 
 </head>
 
@@ -36,13 +37,15 @@
 
       <!----- Información del usuario ----->
       <form>
-        <p><b>Step 1:</b> Enter the Company Code to continue. This code was provided by Diligent Technologies or by Supermercados Buena Vida.</p>
+
+        <p><b>Step 1 of 7:</b> Enter the Company Code to continue. This code was provided by Diligent Technologies or by Supermercados Buena Vida.</p>
         <p>Company Code</p>
         <input type="text" name="username" placeholder="Enter Company Code">
-        <input type="button" name="submit" value="Continue" onclick="location.href='register2.php';">
-        <input type="button" name="submit" value="Go back" onclick="location.href='authenticate.php';">
 
+        <input style="margin-left: 135px; background-color:#ec4646; " type="button" name="submit" value="Go back" onclick="location.href='authenticate.php';">
+          <input type="button" name="submit" value="Continue" onclick="location.href='register2.php';">
 
+</div>
       </form>
     </div>
   </div>
