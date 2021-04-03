@@ -3,6 +3,9 @@
 
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="HandheldFriendly" content="true">
   <title>Register: Step 3 of 7</title>
   <link rel="shortcut icon" type="image/png" href="images/favicon">
 
@@ -14,6 +17,22 @@
     <?php include 'CSS/register3.css';
     ?>
   </style>
+
+  <style>
+  /* Chrome, Safari, Edge, Opera arrows in number boxes*/
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  /* Firefox */
+  input[type=number] {
+    -moz-appearance: textfield;
+  }
+  </style>
+
+
   <!----- Comienza el LoginBox ----->
   <div>
     <img src="images/Fondo.jpg" class="Fondo"> <!-- Fondo del loginbox -->
@@ -21,17 +40,21 @@
       <!-- Caja de Login -->
 
       <!----- Información del usuario ----->
-      <form>
+      <form action="signcheck3.php" method="post">
+
+        <?php if (isset($_GET['error'])) { ?>
+          <br><center><label class="error"><?php echo $_GET['error']; ?></label></center>
+        <?php } ?>
+
         <p><b>Step 3 of 7:</b> Input your personal information to register.</p>
 
         <p>First Name</p>
-        <input type="text" name="username" placeholder="Enter your first name">
+        <input type="text" name="name" placeholder="Enter your first name">
 
         <p>Last Name</p>
-        <input type="text" name="username" placeholder="Enter your last name">
+        <input type="text" name="lastname" placeholder="Enter your last name">
 
-
-        <p class="selectors-p"> Birthday</p>
+        <p class="selectors-p" type="birthday"> Birthday</p>
         <select class="selectors">
           <option value="0">Select Day:</option>
           <option value="1">1</option>
@@ -105,18 +128,14 @@
           <option value="2">Other</option>
         </select>
 
-
-        <p>Age</p>
-        <input type="text" name="username" placeholder="Enter your age">
-
         <p>Race</p>
-        <input type="text" name="username" placeholder="Enter your race">
+        <input type="text" name="lastname" placeholder="Enter your race">
 
         <p>Citizenship</p>
-        <input type="text" name="username" placeholder="Enter your citizenship">
+        <input type="text" name="birthday" placeholder="Enter your citizenship">
 
         <p>Highschool
-          <input type="text" name="username" placeholder="Enter the highschool where you studied">
+          <input type="text" name="gender" placeholder="Enter the highschool where you studied">
 
         <p>Highschool Graduation</p>
         <input type="text" name="username" placeholder="Enter your highschool graduation date">
@@ -134,8 +153,8 @@
         <p>Expected Graduation</p>
         <input type="text" name="username" placeholder="Enter expected graduation date">
 
-        <input id="mouseDrivenButton2" style="margin-left: 135px; background-color:#ec4646; " type="button" name="submit" value="Go back" onclick="location.href='register2.php';">
-        <input id="mouseDrivenButton" type="button" name="submit" value="Continue" onclick="location.href='register4.php';">
+        <input style="margin-left: 135px; background-color:#ec4646; " type="button" name="submit" value="Go back" onclick="location.href='register2.php';">
+        <input type="submit" name="submit" value="Continue">
 
     </div>
     </form>

@@ -29,6 +29,23 @@
     <?php include 'CSS/register.css';?>
   </style>
 
+
+  <style>
+  /* Chrome, Safari, Edge, Opera arrows in number boxes*/
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  /* Firefox */
+  input[type=number] {
+    -moz-appearance: textfield;
+  }
+  </style>
+
+
+
   <!----- Comienza el LoginBox ----->
   <div>
       <img src="images/Fondo.jpg" class="Fondo"> <!-- Fondo del loginbox -->
@@ -36,14 +53,20 @@
       <!-- Caja de Login -->
 
       <!----- Información del usuario ----->
-      <form>
+      <form action="signcheck.php" method="post">
 
-        <p><b>Step 1 of 7:</b> Enter the Company Code to continue. This code was provided by Diligent Technologies or by Supermercados Buena Vida.</p>
+        <?php if (isset($_GET['error'])) { ?>
+          <br><center><label class="error"><?php echo $_GET['error']; ?></label></center> 
+        <?php } ?>
+
+        <p style="padding-top: 50px;"><b>Step 1 of 7:</b> Enter the Company Code to continue. This code was provided by Diligent Technologies or by Supermercados Buena Vida.</p><br>
+
         <p>Company Code</p>
-        <input type="text" name="username" placeholder="Enter Company Code">
+        <input type="number" name="code" placeholder="Enter Company Code"/>
 
-        <input style="margin-left: 135px; background-color:#ec4646; " type="button" name="submit" value="Go back" onclick="location.href='authenticate.php';">
-          <input type="button" name="submit" value="Continue" onclick="location.href='register2.php';">
+        <input style="margin-left: 135px; background-color:#ec4646; " type="button" name="back" value="Go back" onclick="location.href='authenticate.php';" />
+          <input type="submit" name="submit" value="Continue" />
+
 
 </div>
       </form>
