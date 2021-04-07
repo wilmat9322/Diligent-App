@@ -13,7 +13,7 @@ if (isset($_POST['code'])) {
       header("Location: register.php?error=Company Code is required");
       exit();
     }else {
-  $sql = "SELECT * FROM company_num WHERE comp_code='$code'";
+  $sql = "SELECT * FROM comp_code WHERE comp_code='$code'";
   $result = mysqli_query($conn, $sql);
 
   if (mysqli_num_rows($result) === 1) {

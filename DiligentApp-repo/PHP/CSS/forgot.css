@@ -1,3 +1,16 @@
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
 /***** Propiedades del body *****/
 body {
   margin: 0;
@@ -19,7 +32,7 @@ body {
 /***** Posición y otras propiedades del Login Box *****/
 .login-box {
   width: 740px;
-  height: 380px;
+  height: 520px;
   background: rgba(0, 0, 0, 0.9);
   /* color de fondo del login box */
   color: #fff3e6;
@@ -47,11 +60,10 @@ h1 {
 /***** Propiedades de los nombres de los inputs *****/
 .login-box p {
   margin: 0;
-  padding: 50px 0 0;
   /* Mueve los espacios de <p> del loginbox */
   text-align: left;
   font-size: 24px;
-  margin-top: -20px;
+  margin-top: 10px;
   margin-bottom: 5px;
 
 }
@@ -60,6 +72,13 @@ h1 {
 .login-box input {
   width: 100%;
   margin-bottom: 0;
+}
+
+.error{
+  color:#A94442;
+  border-radius: 5px;
+  font-size: 22px;
+  text-align: center;
 }
 
 .login-box input[type="text"]{
@@ -72,19 +91,46 @@ h1 {
 
 }
 
+.login-box input[type="number"]{
+  /***** Propiedades del input del usuario y de las cajas de input *****/
+  border: none;
+  border-bottom: 1px solid #fff3e6;
+  /* linea blanca debajo del texto */
+  background: rgba(0, 0, 0, 0.5);
+  /* Color de fondo de caja de texto */
+  color: #fff3e6;
+  /* Color del texto de la caja de input */
+  font-size: 20px;
+  outline: none;
+}
+
+.login-box input[type="password"]{
+  /***** Propiedades del input del usuario y de las cajas de input *****/
+  border: none;
+  border-bottom: 1px solid #fff3e6;
+  /* linea blanca debajo del texto */
+  background: rgba(0, 0, 0, 0.5);
+  /* Color de fondo de caja de texto */
+  color: #fff3e6;
+  /* Color del texto de la caja de input */
+  font-size: 20px;
+  outline: none;
+}
+
 
 .login-box input[type="button"] {
   border: none;
   outline: none;
   height: 50px;
-  margin-top: 40px;
-  background: #00917c;
+  margin-top: 25px;
+  background-color:#ec4646;
   color: #fff3e6;
   font-size: 24px;
   border-radius: 0;
   width: 200px;
   margin-left: 10px;
   border-radius: 15px;
+  float: right;
 
 }
 
@@ -94,21 +140,26 @@ h1 {
   opacity: 0.8;
   color: #fff3e6;
 }
-.selectors-p{
-    font-size: 24px;
-    margin-left: 10px;
-}
-.selectors{
-  padding: 7px 10px;
-  position: relative;
-  cursor: pointer;
-  margin-bottom: 10px;
-  width: 300px;
+
+.login-box input[type="submit"] {
+  border: none;
+  outline: none;
+  height: 50px;
+  margin-top: 25px;
+  margin-right: 120px;
+  background: #00917c;
+  color: #fff3e6;
+  font-size: 24px;
+  border-radius: 0;
+  width: 200px;
+  margin-left: 10px;
+  border-radius: 15px;
+  float: right;
 }
 
-.sticky {
-  position: -webkit-sticky;
-  position: sticky;
-  padding: 50px;
-  font-size: 20px;
+/***** hover del botón de Login *****/
+.login-box input[type="submit"]:hover {
+  cursor: pointer;
+  opacity: 0.8;
+  color: #fff3e6;
 }

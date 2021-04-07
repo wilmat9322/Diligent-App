@@ -43,115 +43,152 @@
       <form action="signcheck3.php" method="post">
 
         <?php if (isset($_GET['error'])) { ?>
-          <br><center><label class="error"><?php echo $_GET['error']; ?></label></center>
-        <?php } ?>
+     		<p class="error"><?php echo $_GET['error']; ?></p>
+     	<?php } ?> <br>
 
-        <p><b>Step 3 of 7:</b> Input your personal information to register.</p>
+           <p style = "margin-top: 0;"><b>Step 3 of 4:</b> Input your personal information to register.</p>
 
-        <p>First Name</p>
-        <input type="text" name="name" placeholder="Enter your first name">
+           <label>Company Code</label>
+           <?php if (isset($_GET['code'])) { ?>
+                <input type="text"
+                       name="comp_code"
+                       placeholder="Company Code"
+                       value="<?php echo $_GET['code']; ?>"><br>
+           <?php }else{ ?>
+                <input type="text"
+                       name="code"
+                       placeholder="Company Code"><br>
+           <?php }?>
 
-        <p>Last Name</p>
-        <input type="text" name="lastname" placeholder="Enter your last name">
+           <label>Name</label>
+           <?php if (isset($_GET['name'])) { ?>
+                <input type="text"
+                       name="name"
+                       placeholder="Name"
+                       value="<?php echo $_GET['name']; ?>"><br>
+           <?php }else{ ?>
+                <input type="text"
+                       name="name"
+                       placeholder="Name"><br>
+           <?php }?>
 
-        <p class="selectors-p" type="birthday"> Birthday</p>
-        <select class="selectors">
-          <option value="0">Select Day:</option>
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-          <option value="6">6</option>
-          <option value="7">7</option>
-          <option value="8">8</option>
-          <option value="9">9</option>
-          <option value="10">10</option>
-          <option value="11">11</option>
-          <option value="12">12</option>
-          <option value="13">13</option>
-          <option value="14">14</option>
-          <option value="15">15</option>
-          <option value="16">16</option>
-          <option value="17">17</option>
-          <option value="18">18</option>
-          <option value="19">19</option>
-          <option value="20">20</option>
-          <option value="21">21</option>
-          <option value="22">22</option>
-          <option value="23">23</option>
-          <option value="24">24</option>
-          <option value="25">25</option>
-          <option value="26">26</option>
-          <option value="27">27</option>
-          <option value="28">28</option>
-          <option value="29">29</option>
-          <option value="30">30</option>
-          <option value="31">31</option>
-        </select>
-        <select class="selectors">
-          <option value="0">Select Month:</option>
-          <option value="1">January</option>
-          <option value="2">February</option>
-          <option value="3">March</option>
-          <option value="4">April</option>
-          <option value="5">May</option>
-          <option value="6">June</option>
-          <option value="7">July</option>
-          <option value="8">August</option>
-          <option value="9">September</option>
-          <option value="10">October</option>
-          <option value="11">November</option>
-          <option value="12">December</option>
-        </select>
-        <select class="selectors">
-          <option value="0">Select Year:</option>
-          <option value="1">2010</option>
-          <option value="2">2011</option>
-          <option value="3">2012</option>
-          <option value="4">2013</option>
-          <option value="5">2014</option>
-          <option value="6">2015</option>
-          <option value="7">2016</option>
-          <option value="8">2018</option>
-          <option value="9">2017</option>
-          <option value="10">2018</option>
-          <option value="11">2019</option>
-          <option value="12">2021</option>
-        </select>
+           <label>User Name</label>
+           <?php if (isset($_GET['uname'])) { ?>
+                <input type="text"
+                       name="uname"
+                       placeholder="User Name"
+                       value="<?php echo $_GET['uname']; ?>"><br>
+           <?php }else{ ?>
+                <input type="text"
+                       name="uname"
+                       placeholder="User Name"><br>
+           <?php }?>
 
-        <p class="selectors-p"> Gender</p>
-        <select class="selectors">
-          <option value="0">Select Gender:</option>
-          <option value="1">Male</option>
-          <option value="2">Female</option>
-          <option value="2">Other</option>
-        </select>
+           <label>Gender</label>
+           <?php if (isset($_GET['gender'])) { ?>
+                <input type="text"
+                       name="gender"
+                       placeholder="Gender"
+                       value="<?php echo $_GET['gender']; ?>"><br>
+           <?php }else{ ?>
+                <input type="text"
+                       name="gender"
+                       placeholder="Gender"><br>
+           <?php }?>
 
-        <p>Race</p>
-        <input type="text" name="lastname" placeholder="Enter your race">
+           <label>Birthday</label>
+           <?php if (isset($_GET['bday'])) { ?>
+                <input type="text"
+                       name="bday"
+                       placeholder="Birthday"
+                       value="<?php echo $_GET['bday']; ?>"><br>
+           <?php }else{ ?>
+                <input type="text"
+                       name="bday"
+                       placeholder="Birthday"><br>
+           <?php }?>
 
-        <p>Citizenship</p>
-        <input type="text" name="birthday" placeholder="Enter your citizenship">
+           <label>Race</label>
+           <?php if (isset($_GET['race'])) { ?>
+                <input type="text"
+                       name="race"
+                       placeholder="Race"
+                       value="<?php echo $_GET['race']; ?>"><br>
+           <?php }else{ ?>
+                <input type="text"
+                       name="race"
+                       placeholder="Race"><br>
+           <?php }?>
 
-        <p>Highschool
-          <input type="text" name="gender" placeholder="Enter the highschool where you studied">
+           <label>Citizenship</label>
+           <?php if (isset($_GET['citi_zen'])) { ?>
+                <input type="text"
+                       name="citi_zen"
+                       placeholder="Citizenship"
+                       value="<?php echo $_GET['citi_zen']; ?>"><br>
+           <?php }else{ ?>
+                <input type="text"
+                       name="citi_zen"
+                       placeholder="Citizenship"><br>
+           <?php }?>
 
-        <p>Highschool Graduation</p>
-        <input type="text" name="username" placeholder="Enter your highschool graduation date">
+           <label>Highschool</label>
+           <?php if (isset($_GET['highschool'])) { ?>
+                <input type="text"
+                       name="highschool"
+                       placeholder="Highschool"
+                       value="<?php echo $_GET['highschool']; ?>"><br>
+           <?php }else{ ?>
+                <input type="text"
+                       name="highschool"
+                       placeholder="Highschool"><br>
+           <?php }?>
 
-        <p class="selectors-p"> Are your currently studying?</p>
-        <select class="selectors">
-          <option value="0">Choose:</option>
-          <option value="1">Yes</option>
-          <option value="2">No</option>
-        </select>
+           <label>Graduation</label>
+           <?php if (isset($_GET['graduation'])) { ?>
+                <input type="text"
+                       name="graduation"
+                       placeholder="Graduation"
+                       value="<?php echo $_GET['graduation']; ?>"><br>
+           <?php }else{ ?>
+                <input type="text"
+                       name="graduation"
+                       placeholder="Graduation"><br>
+           <?php }?>
 
-        <p>Enter the degree to obtain</p>
-        <input type="text" name="username" placeholder="Enter your degree to obtain">
+           <label>Degree</label>
+           <?php if (isset($_GET['degree'])) { ?>
+                <input type="text"
+                       name="degree"
+                       placeholder="Degree"
+                       value="<?php echo $_GET['degree']; ?>"><br>
+           <?php }else{ ?>
+                <input type="text"
+                       name="degree"
+                       placeholder="Degree"><br>
+           <?php }?>
 
-        <p>Expected Graduation</p>
-        <input type="text" name="username" placeholder="Enter expected graduation date">
+           <label>Expected Graduation Day</label>
+           <?php if (isset($_GET['expday'])) { ?>
+                <input type="text"
+                       name="expday"
+                       placeholder="Expected Graduation Day"
+                       value="<?php echo $_GET['expday']; ?>"><br>
+           <?php }else{ ?>
+                <input type="text"
+                       name="expday"
+                       placeholder="Expected Graduation Day"><br>
+           <?php }?>
+
+      	<label>Password</label>
+      	<input type="password"
+                  name="password"
+                  placeholder="Password"><br>
+
+           <label>Re Password</label>
+           <input type="password"
+                  name="re_password"
+                  placeholder="Re_Password"><br>
 
         <input style="margin-left: 135px; background-color:#ec4646; " type="button" name="submit" value="Go back" onclick="location.href='register2.php';">
         <input type="submit" name="submit" value="Continue">

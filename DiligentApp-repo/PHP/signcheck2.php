@@ -19,7 +19,7 @@ if (isset($_POST['uname']) && isset($_POST['sec_num'])) {
       exit();
 
     }else {
-  $sql = "SELECT * FROM users_table WHERE user_name='$uname' AND sec_num='$sec_num'";
+  $sql = "SELECT * FROM comp_code WHERE user_name='$uname' AND sec_num='$sec_num'";
   $result = mysqli_query($conn, $sql);
 
   if (mysqli_num_rows($result) === 1) {

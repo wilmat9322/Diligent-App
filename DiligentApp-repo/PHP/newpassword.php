@@ -35,15 +35,20 @@
       <!-- Caja de Login -->
 
       <!----- Información del usuario ----->
-      <form>
-        <p>Enter your employee code and the last four digits of your social security number to continue.</p>
+      <form action="new_check.php" method="post">
+
+        <?php if (isset($_GET['error'])) { ?>
+          <br><center><label class="error"><?php echo $_GET['error']; ?></label></center>
+        <?php } ?>
+
+        <p>Enter your new password to continue</p>
         <p>New Password</p>
-        <input type="text" name="username" placeholder="Enter your new password">
+        <input type="password" name="newpassword" placeholder="Enter your new password">
 
         <p>Repeat New password</p>
-        <input type="text" name="username" placeholder="Enter your new password">
+        <input type="password" name="reppassword" placeholder="Enter your new password">
 
-        <input type="button" name="submit" value="Continue" onclick="location.href='recovery_complete.php';">
+        <input type="submit" name="submit" value="Continue">
         <input type="button" name="submit" value="Go back" onclick="location.href='forgot.php';">
 
       </form>

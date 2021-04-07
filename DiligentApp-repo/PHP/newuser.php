@@ -36,7 +36,10 @@
 
       <!----- Información del usuario ----->
       <form>
-        <p>Your registration has been complete ! Click continue to log in to your new account.</p>
+
+        <?php if (isset($_GET['success'])) { ?>
+             <center><p style = "margin-left: 90px;" class="success"><?php echo $_GET['success']; ?></p></center>
+        <?php } ?>
 
         <input style="margin-left: 15rem;" type="button" name="submit" value="Finish" onclick="location.href='authenticate.php';">
 

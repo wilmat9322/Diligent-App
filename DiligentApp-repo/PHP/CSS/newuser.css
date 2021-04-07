@@ -91,9 +91,15 @@ h1 {
 
 }
 
-
 .login-box input[type="button"]:hover {
   cursor: pointer;
   opacity: 0.8;
   color: #fff3e6;
+}
+
+.success{
+  color: #40754C;
+  border-radius: 5px;
+  font-size: 22px;
+  text-align: center;
 }

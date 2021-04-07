@@ -3,6 +3,13 @@
      Curso: COMP 4400 Desarrollo e Implementación de Sistemas
      Profesor: Ing. Rafael Muñoz ----->
 
+     <?php
+     session_start();
+
+     if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
+
+     ?>
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
@@ -88,7 +95,7 @@
 
       <div class="user_profile">
       <img src="images/profilepic.png" class="profile_img" alt="">
-      <h2 style="font-size: 2rem;" class="admin_name">William S. Matos Díaz</h2>
+      <h2 style="font-size: 2rem;" class="admin_name"><?php echo $_SESSION['name']; ?></h2>
       <button class="edit-btn" type="button"><span><i class="far fa-window-maximize"></i></span> Edit Profile</button>
       </div>
 
@@ -106,11 +113,11 @@
           <table>
           <tbody>
             <tr>
-              <td>Name: William S. Matos Díaz</td>
+              <td>Name: <?php echo $_SESSION['name']; ?> </td>
               <td>Birthday: 12/15/1999</td>
             </tr>
             <tr>
-              <td>Gender: Male</td>
+              <td>Gender: </td>
               <td>Age: 21 years old</td>
             </tr>
             <tr>
@@ -135,7 +142,7 @@
 
               <tr>
                 <td>Highschool: Escuela Superior Luis Muñoz Marín</td>
-                <td>Graduation: May, 2017</Yes</td>
+                <td>Graduation: May, 2017</td>
               </tr>
               <tr>
                 <td>Degree to obtain: B.S. Computer Science</td>
@@ -178,3 +185,9 @@
   </main>
   </body>
   </html>
+  <?php
+  }else{
+    header("Location: authenticate.php");
+    exit();
+  }
+   ?>

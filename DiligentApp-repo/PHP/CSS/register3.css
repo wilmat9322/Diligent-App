@@ -4,6 +4,7 @@ body {
   padding: 0;
   top: 0;
   font-family: Helvetica, "Trebuchet MS", Verdana, sans-serif;
+  zoom: 80%;
 
 }
 /***** Background del Login Box *****/
@@ -36,27 +37,23 @@ body {
 
 /***** Propiedades del h1 *****/
 h1 {
-  margin: 0;
-  padding: 0 0 30px;
   text-align: center;
   font-size: 30px;
   font-weight: bold;
-  padding-top: 20px;
-  margin-bottom: 105px;
+
 }
 
-
-.login-box p {
+.login-box label {
   margin: 0;
   padding: 50px 0 0;
   /* Mueve los espacios de <p> del loginbox */
   text-align: left;
   font-size: 24px;
-  margin-top: -20px;
+  margin-top: 30px;
   margin-bottom: 5px;
+  line-height: 55px;
 
 }
-
 
 .login-box input {
   width: 100%;
@@ -69,9 +66,17 @@ h1 {
   background: rgba(0, 0, 0, 0.5);
   color: #fff3e6;
   font-size: 20px;
-
+  line-height: 30px;
 }
 
+.login-box input[type="password"]{
+  border: none;
+  border-bottom: 1px solid #fff3e6;
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff3e6;
+  font-size: 20px;
+  line-height: 30px;
+}
 
 .login-box input[type="submit"] {
   border: none;
@@ -137,6 +142,13 @@ h1 {
   cursor: pointer;
 }
 
+.error{
+  color:#A94442;
+  border-radius: 5px;
+  font-size: 22px;
+  text-align: center;
+}
+
 /* Media Queries: Tablet Landscape */
 @media screen and (max-width: 1060px) {
     #primary { width:67%; }
@@ -167,4 +179,4 @@ html { font-size:100%; }
 
 @media (min-width: 640px) { body {font-size:1rem;} }
 @media (min-width:960px) { body {font-size:1.2rem;} }
-@media (min-width:1100px) { body {font-size:1.5rem;} } 
+@media (min-width:1100px) { body {font-size:1.5rem;} }

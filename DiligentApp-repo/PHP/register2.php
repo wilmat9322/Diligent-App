@@ -40,7 +40,7 @@
             <br><center><label class="error"><?php echo $_GET['error']; ?></label></center>
           <?php } ?>
 
-          <p style="padding-top: 40px;"><b>Step 2 of 7:</b> Input the following information to proceed.</p><br>
+          <p style="padding-top: 40px;"><b>Step 2 of 4:</b> Input the following information to proceed.</p><br>
 
           <p>Enter your employee code</p>
           <input type="text" name="uname" placeholder="Enter Employe Code" >

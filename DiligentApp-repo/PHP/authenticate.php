@@ -59,7 +59,7 @@
 
         <!----- Lista de nav como Forgot Password y Register Here! ----->
         <nav>
-          <a href="forgot.php">Forgot Passworkd?</a>
+          <a href="forgot.php">Change Password </a>
           <a href="register.php">Register here!</a>
         </nav>
         <!----- Termina el LoginBox ----->

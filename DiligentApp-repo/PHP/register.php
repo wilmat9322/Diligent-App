@@ -16,7 +16,7 @@
   <meta name="keywords" content="DiligentApp, Employee Management, Payroll" />
   <meta name="author" content="Diligent Technologies" />
 
-  <title> Register: Step 1 of 7</title>
+  <title> Register: Step 1 of 4</title>
 
   <link rel="shortcut icon" type="image/png" href="images/favicon">
 
@@ -56,10 +56,10 @@
       <form action="signcheck.php" method="post">
 
         <?php if (isset($_GET['error'])) { ?>
-          <br><center><label class="error"><?php echo $_GET['error']; ?></label></center> 
+          <br><center><label class="error"><?php echo $_GET['error']; ?></label></center>
         <?php } ?>
 
-        <p style="padding-top: 50px;"><b>Step 1 of 7:</b> Enter the Company Code to continue. This code was provided by Diligent Technologies or by Supermercados Buena Vida.</p><br>
+        <p style="padding-top: 50px;"><b>Step 1 of 4:</b> Enter your Company Code to continue. This code was provided by Diligent Technologies or by Supermercados Buena Vida.</p><br>
 
         <p>Company Code</p>
         <input type="number" name="code" placeholder="Enter Company Code"/>

@@ -2,7 +2,12 @@
      Número de estudiante: B00539322
      Curso: COMP 4400 Desarrollo e Implementación de Sistemas
      Profesor: Ing. Rafael Muñoz ----->
+     <?php
+     session_start();
 
+     if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
+
+      ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
@@ -35,15 +40,25 @@
       <!-- Caja de Login -->
 
       <!----- Información del usuario ----->
-      <form>
-        <p>Enter your employee code and the last four digits of your social security number to continue.</p>
-        <p>Employee Code</p>
-        <input type="text" name="username" placeholder="Enter Employee Code">
+      <form action="forgot_check.php" method="post">
 
-        <p>Social Security Number</p>
-        <input type="text" name="username" placeholder="Enter the four last digits of your SSN">
+        <?php if (isset($_GET['error'])) { ?>
+          <br><center><label class="error"><?php echo $_GET['error']; ?></label></center>
+        <?php } ?>
 
-        <input type="button" name="submit" value="Continue" onclick="location.href='newpassword.php';">
+        <p style="padding-top: 40px;">Enter your employee code and the last four digits of your social security number to change your password.</p><br>
+
+        <p style="margin-top: 20px;">Old Password</p>
+        <input type="password" name="oldpassword" placeholder="Enter your old password">
+
+        <p style="margin-top: 20px;">New Password</p>
+        <input type="password" name="newpassword" placeholder="Enter your new password">
+
+        <p style="margin-top: 20px;">Repeat New password</p>
+        <input type="password" name="re_password" placeholder="Enter your new password">
+
+
+        <input type="submit" name="submit" value="Continue">
         <input type="button" name="submit" value="Go back" onclick="location.href='authenticate.php';">
 
       </form>
@@ -52,3 +67,10 @@
 </body>
 
 </html>
+
+<?php
+}else{
+     header("Location: authenticate.php");
+     exit();
+}
+ ?>
