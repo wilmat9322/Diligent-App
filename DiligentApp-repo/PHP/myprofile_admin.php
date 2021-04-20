@@ -5,8 +5,12 @@
 
      <?php
      session_start();
-
+     include_once 'user_db.php';
      if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
+
+      $sql = "SELECT * FROM users_table WHERE id = '".$_SESSION['user_name']."'";
+     	$query = $conn->query($sql);
+     	$user = $query->fetch_assoc();
 
      ?>
 
@@ -83,12 +87,6 @@
   </div>
   <!----- Aquí termina el menú ----->
 
-  <!-- Div para añadir la función de buscador
-    <div>
-      <span class = "ti-search o nombre del simbolo de serach"></span>
-      <input type ="search" placeholder="Seach">
-    </div>
-  -->
   <div class="contenido">
 
     <main>
@@ -98,9 +96,6 @@
       <h2 style="font-size: 2rem;" class="admin_name"><?php echo $_SESSION['name']; ?></h2>
       <button class="edit-btn" type="button"><span><i class="far fa-window-maximize"></i></span> Edit Profile</button>
       </div>
-
-
-
 
       <section class="tablas">
         <div class="tabla-grid">
@@ -112,17 +107,27 @@
 
           <table>
           <tbody>
+            <?php
+              $sql = "SELECT * FROM users_table";
+              $query = $conn->query($sql);
+              $total = $query->num_rows;
+
+              $sql = "SELECT * FROM users_table WHERE user_name = admin";
+              $query = $conn->query($sql);
+
+
+            ?>
             <tr>
               <td>Name: <?php echo $_SESSION['name']; ?> </td>
-              <td>Birthday: 12/15/1999</td>
+              <td>Birthday:  </td>
             </tr>
             <tr>
               <td>Gender: </td>
-              <td>Age: 21 years old</td>
+              <td>Age: </td>
             </tr>
             <tr>
-              <td>Race: Hispanic</td>
-              <td>Citizenship: United States Citizen</td>
+              <td>Race: </td>
+              <td>Citizenship: </td>
             </tr>
             </div>
           </tbody>
@@ -187,7 +192,7 @@
   </html>
   <?php
   }else{
-    header("Location: authenticate.php");
+    header("Location: index.php");
     exit();
   }
    ?>

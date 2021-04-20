@@ -41,13 +41,14 @@
      height: 150px;
      border-radius: 40%;
      position: absolute;
-     margin-top: 48px;
+     margin-top: 68px;
      left: calc(45% - 50px);
    }
 
    /***** Propiedades del h1 *****/
    h1 {
      margin: 10px;
+     margin-top: 30px;
      padding: 0 0 30px;
      text-align: center;
      font-size: 30px;
@@ -109,10 +110,13 @@
 
    /***** Propiedades de los nav (Forgot Password y Register here!) *****/
    .login-box nav a {
-     text-decoration: none;
+
      padding: 17px;
      position: relative;
-     left: 0;
+    text-align: center;
+    float: center;
+    left: calc(45% - 50px);
+
      top: 10px;
      font-size: 20px;
      color: #fff3e6;

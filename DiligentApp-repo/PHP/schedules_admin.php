@@ -3,6 +3,13 @@
      Curso: COMP 4400 Desarrollo e Implementación de Sistemas
      Profesor: Ing. Rafael Muñoz ----->
 
+     <?php
+     session_start();
+
+     if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
+
+     ?>
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
@@ -49,6 +56,8 @@
       <a href="myprofile_admin.php" class="show_profile">My profile</a>
       <img src="images/profilepic.png" class="profile_image" alt"">
       <img src="images/Negocio.png" class="negocio" alt="">
+      <a class="bienvenido"> Hello, <?php echo $_SESSION['name']; ?></a>
+
 
     </div>
   </header>
@@ -452,3 +461,9 @@
   </div>
 </body>
 </html>
+<?php
+}else{
+  header("Location: index.php");
+  exit();
+}
+?>

@@ -145,98 +145,61 @@
 </div>
 
   <!----------------------- Tabla de dashboard empleados -------------------->
-  <section class="List">
-    <div class="empleados-grid">
-      <div class="empleados-card">
+  <?php include "dbs/read.php"; ?>
+  <?php if (isset($_GET['success'])) { ?>
+       <center><p class="success"><?php echo $_GET['success']; ?></p></center>
+    <?php } ?>
+        <section class="List">
+          <div class="empleados-grid">
+            <div class="empleados-card">
 
-      <div>
-      <h3><span><i class="fas fa-users"></i></span>List of Employees</h3>
-      </div>
+            <div>
+            <h3><span><i class="fas fa-users"></i></span>List of Employees</h3>
 
-      <table>
-        <thead>
-          <tr>
-              <th>Name</th>
-              <th>Employee code</th>
-              <th>Position</th>
-              <th>Type</th>
-              <th>Working Since</th>
-              <th>Hours Worked</th>
-              <th>Earning Rate (ph)</th>
-          </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>William S. Matos Díaz</td>
-          <td>008015</td>
-          <td>Manager</td>
-          <td>Admin</td>
-          <td>February 19, 2019</td>
-          <td>40hrs</td>
-          <td>$14.25</td>
-        </tr>
-        <tr>
-          <td>Coral M. Irizarry Cintrón</td>
-          <td>008016</td>
-          <td>Cashier</td>
-          <td>Employee</td>
-          <td>March 8, 2019</td>
-          <td>28hrs</td>
-          <td>$8.75</td>
-        </tr>
-        <tr>
-          <td>Mayra I. Díaz Rodríguez</td>
-          <td>008017</td>
-          <td>Cashier</td>
-          <td>Employee</td>
-          <td>December 13, 2020</td>
-          <td>36hrs</td>
-          <td>$8.75</td>
-        </tr>
-        <tr>
-          <td>William González</td>
-          <td>008019</td>
-          <td>Bagger</td>
-          <td>Employee</td>
-          <td>November 8, 2020</td>
-          <td>12hrs</td>
-          <td>$7.25</td>
-        </tr>
-        <tr>
-          <td>Gerardo Padilla Colón</td>
-          <td>008026</td>
-          <td>Bagger</td>
-          <td>Employee</td>
-          <td>July 5, 2020</td>
-          <td>14hrs</td>
-          <td>$7.25</td>
-        </tr>
-        <tr>
-          <td>Esteban Gonzalez Gonzalez</td>
-          <td>008045</td>
-          <td>Bagger</td>
-          <td>Employee</td>
-          <td>April 5, 2020</td>
-          <td>14hrs</td>
-          <td>$7.25</td>
-        </tr>
-        <tr>
-          <td>Alejandro Del Valle</td>
-          <td>008031</td>
-          <td>Bagger</td>
-          <td>Employee</td>
-          <td>July 5, 2020</td>
-          <td>14hrs</td>
-          <td>$7.25</td>
-        </tr>
-        <tr>
-          <td class="empleados-footer"><a href="manage_admin.php">View all</a></td>
-          <td><td><td><td><td><td class="border">
-        </tr>
+            </div>
+          <?php if (mysqli_num_rows($result)) { ?>
+            <table>
+              <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Name</th>
+                    <th>Employee Code</th>
+                    <th>Position</th>
+                    <th>Type</th>
+                    <th>Working Since</th>
+                    <th>Hours Worked</th>
+                    <th>Earning Rate (ph)</th>
+
+                </tr>
+            </thead>
+            <tbody>
+              <?php
+               $i = 0;
+               while($rows = mysqli_fetch_assoc($result)){
+               $i++;
+             ?>
+            <tr>
+              <th scope="row"><?=$i?></th>
+              <td><?=$rows['name']?></td>
+              <td><?php echo $rows['user_name']; ?></td>
+              <td><?php echo $rows['position']; ?></td>
+              <td><?php echo $rows['type_employee']; ?></td>
+              <td><?php echo $rows['work_time']; ?></td>
+              <td><?php echo $rows['hours_work']; ?>hrs</td>
+              <td>$<?php echo $rows['earn_rate']; ?></td>
+
+              </td>
+            </tr>
+
+            <?php } ?>
+
+            <td><td class="empleados-footer"><a href="manage_admin.php">View all</a></td>
+
+              </div>
+            </tbody>
+          </table>
+          <?php } ?>
         </div>
-      </tbody>
-    </table>
-  </div>
 
   <div class="small-cards">
     <div class="turno-card">
@@ -284,7 +247,7 @@
 </html>
 <?php
 }else{
-  header("Location: authenticate.php");
+  header("Location: index.php");
   exit();
 }
- ?>
+?>

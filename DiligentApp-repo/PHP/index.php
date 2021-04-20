@@ -16,7 +16,7 @@
   <meta name="keywords" content="DiligentApp, Employee Management, Payroll" />
   <meta name="author" content="Diligent Technologies" />
 
-  <title>Password Recovery</title>
+  <title> Login </title>
 
   <link rel="shortcut icon" type="image/png" href="images/favicon">
 
@@ -25,32 +25,38 @@
 <body>
   <!----- Referencia al file del diseño de la página de Login ----->
   <style>
-    <?php include 'CSS/newpassword.css';?>
+    <?php
+    include 'CSS/Login.css';
+    ?>
   </style>
 
   <!----- Comienza el LoginBox ----->
   <div>
+
       <img src="images/Fondo.jpg" class="Fondo"> <!-- Fondo del loginbox -->
+
     <div class="login-box">
+
       <!-- Caja de Login -->
+      <img src="images/Admin.png" class="Logo"> <!-- Logo de DiligentApp -->
+      <h1>Welcome to DiligentApp</h1>
 
       <!----- Información del usuario ----->
-      <form action="new_check.php" method="post">
+      <form action="login.php" method="post" >
 
         <?php if (isset($_GET['error'])) { ?>
-          <br><center><label class="error"><?php echo $_GET['error']; ?></label></center>
+          <p class="error"><?php echo $_GET['error']; ?></p>
         <?php } ?>
 
-        <p>Enter your new password to continue</p>
-        <p>New Password</p>
-        <input type="password" name="newpassword" placeholder="Enter your new password">
+        <label>Company Code</label>
+        <input type="text" name="code" placeholder="Enter Company Code"/>
+        <label>Employee Code</label>
+        <input type="text" name="uname" placeholder="Enter Employee Code"/>
+        <label>Password</label>
+        <input type="password" name="password" placeholder="Enter Password"/>
+        <input type="submit" name="submit" value="Login">
 
-        <p>Repeat New password</p>
-        <input type="password" name="reppassword" placeholder="Enter your new password">
-
-        <input type="submit" name="submit" value="Continue">
-        <input type="button" name="submit" value="Go back" onclick="location.href='forgot.php';">
-
+        <!----- Termina el LoginBox ----->
       </form>
     </div>
   </div>

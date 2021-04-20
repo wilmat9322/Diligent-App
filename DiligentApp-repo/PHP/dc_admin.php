@@ -3,6 +3,12 @@
      Curso: COMP 4400 Desarrollo e Implementación de Sistemas
      Profesor: Ing. Rafael Muñoz ----->
 
+     <?php
+     session_start();
+     if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
+
+     ?>
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
@@ -49,7 +55,8 @@
       <a href="myprofile_admin.php" class="show_profile">My profile</a>
       <img src="images/profilepic.png" class="profile_image" alt"">
       <img src="images/Negocio.png" class="negocio" alt="">
-  
+      <a class="bienvenido"> Hello, <?php echo $_SESSION['name']; ?></a>
+
     </div>
   </header>
   <!----- Aquí termina el header ----->
@@ -164,7 +171,12 @@
 
         <div id="id01" class="modal">
 
-        <form class="modal-content animate" action="/action_page.php" method="post">
+        <form class="modal-content animate" action="upload.php" method="post" enctype="multipart/form-data">
+
+          <?php if (isset($_GET['error'])): ?>
+            <p><?php echo $_GET['error']; ?></p>
+          <?php endif ?>
+
             <div class="txtcontainer">
             <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
             <h3> Complete the following information to add a document. </h3>
@@ -172,19 +184,46 @@
 
         <div class="container">
 
-          <label for="uname"><b>Document Name</br></label>
-          <input type="text" placeholder="Enter Document Name" name="name" required>
+          <label><b>Document Name</label>
+          <?php if (isset($_GET['doc_name'])) { ?>
+               <input type="text"
+                      name="doc_name"
+                      placeholder="Enter Document Name"
+                      value="<?php echo $_GET['doc_name']; ?>">
+          <?php }else{ ?>
+               <input type="text"
+                      name="doc_name"
+                      placeholder="Enter Document Name">
+          <?php }?>
 
           <label for="uname"><b>Add Document</br></label>
-          <input type="file" id="myFile" name="filename">
+          <input type="file" id="my_file" name="my_file">
 
-          <label for="uname"><b>Brief Description of the Document</br></label>
-          <textarea rows="6" cols="63" name="comment" form="usrform"></textarea></br>
+          <label><b>Brief Description of the Document</label>
+          <?php if (isset($_GET['doc_desc'])) { ?>
+               <input type="text"
+                      name="doc_desc"
+                      placeholder="Brief Description"
+                      value="<?php echo $_GET['doc_desc']; ?>">
+          <?php }else{ ?>
+               <input type="text"
+                      name="doc_desc"
+                      placeholder="Brief Description">
+          <?php }?>
 
-          <label for="uname"><b>Date</br></label>
-          <input type="text" placeholder="Enter Date" name="name" required>
+          <label><b>Date</label>
+          <?php if (isset($_GET['doc_date'])) { ?>
+               <input type="text"
+                      name="doc_date"
+                      placeholder="Enter a date"
+                      value="<?php echo $_GET['doc_date']; ?>">
+          <?php }else{ ?>
+               <input type="text"
+                      name="doc_date"
+                      placeholder="Enter a date">
+          <?php }?>
 
-          <button class="add-btn" type="submit">Add</button>
+          <button class="add-btn" name="submit" type="submit">Add</button>
           <button class="cancel-btn" type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
 
         </div>
@@ -340,3 +379,9 @@
 </section>
 </body>
 </html>
+<?php
+}else{
+  header("Location: index.php");
+  exit();
+}
+ ?>
