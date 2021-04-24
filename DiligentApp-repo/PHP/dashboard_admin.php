@@ -17,6 +17,7 @@
 
   <!----- Lista de Metas que considero importantes ----->
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Diligent App es una aplicación de manejo de manejo de empelados y nóminas desarrollada
                                       por Diligent Technologies. Diligent Technologies ha sido una empresa con más de 10 años
                                       de experiencia, encargada de proveer soluciones a grandes negocios a nivel de Puerto Rico.
@@ -56,7 +57,7 @@
       <a href="myprofile_admin.php" class="show_profile">My profile</a>
       <img src="images/profilepic.png" class="profile_image" alt"">
       <img src="images/Negocio.png" class="negocio" alt="">
-      <a class="bienvenido"> Hello, <?php echo $_SESSION['name']; ?></a>
+      <a class="bienvenido"> Welcome, <?php echo $_SESSION['name']; ?></a>
     </div>
   </header>
   <!----- Aquí termina el header ----->
@@ -65,7 +66,7 @@
   <div class="menu-slide">
     <img src="images/Admin.png" class="Logo-DiligentApp" alt="">
 
-    <h4>Administrator</h4>
+    <h4><?php echo $_SESSION['name']; ?></h4>
 
     <!----- Lista de las herramientas con sus símbolos en el menú ----->
     <a href="myprofile_admin.php"><i class="far fa-address-card"></i><span>My profile</span></a>
@@ -74,9 +75,7 @@
     <a href="payrolls_admin.php"><i class="fas fa-file-invoice-dollar"></i><span>Payrolls</span></a>
     <a href="w2_admin.php"><i class="fas fa-landmark"></i><span>W-2 Tax Forms</span></a>
     <a href="schedules_admin.php"><i class="far fa-calendar-alt"></i><span>Schedules</span></a>
-    <a href="messages_admin.php"><i class="fas fa-envelope"></i><span>Messages</span></a>
     <a href="leaves_admin.php"><i class="fas fa-bed"></i><span>Leave</span></a>
-    <a href="attendance_admin.php"><i class="fas fa-user-clock"></i><span>Attendance</span></a>
     <a href="dc_admin.php"><i class="far fa-file-alt"></i><span>Documents and Policies</span></a>
     <footer>
       <h6>Powered by Diligent Technologies</h6>
@@ -87,6 +86,7 @@
   <div class="contenido">
 
     <main>
+
       <h2 class="dash-header">Admin Dashboard</h2>
 
       <div class="dashboard-cards">
@@ -145,10 +145,8 @@
 </div>
 
   <!----------------------- Tabla de dashboard empleados -------------------->
-  <?php include "dbs/read.php"; ?>
-  <?php if (isset($_GET['success'])) { ?>
-       <center><p class="success"><?php echo $_GET['success']; ?></p></center>
-    <?php } ?>
+  <?php include "dbs/dashboard.php"; ?>
+
         <section class="List">
           <div class="empleados-grid">
             <div class="empleados-card">
@@ -193,7 +191,7 @@
 
             <?php } ?>
 
-            <td><td class="empleados-footer"><a href="manage_admin.php">View all</a></td>
+            <td><td><td><td><td><td><td><td class="empleados-footer"><a href="manage_admin.php">View all</a></td>
 
               </div>
             </tbody>
@@ -214,18 +212,7 @@
         </div>
     </div>
   </div>
-  <div class="inbox-card">
-    <div class="inbox-single">
-    <div>
-        <h5 <span><i class="fas fa-envelope"></i></span>Messages</h5>
-        <small>Recieved: 0</small><br>
-        <small>Sent: 0 </small><br>
-        <div class="inbox-footer">
-        <a href="messages_admin.php">View all</a>
-      </div>
-      </div>
-  </div>
-</div>
+
 <div class="leave-card">
   <div class="leave-single">
   <div>

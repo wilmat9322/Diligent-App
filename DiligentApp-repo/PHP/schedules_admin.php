@@ -17,6 +17,7 @@
 
   <!----- Lista de Metas que considero importantes ----->
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Diligent App es una aplicación de manejo de manejo de empelados y nóminas desarrollada
                                       por Diligent Technologies. Diligent Technologies ha sido una empresa con más de 10 años
                                       de experiencia, encargada de proveer soluciones a grandes negocios a nivel de Puerto Rico.
@@ -56,8 +57,7 @@
       <a href="myprofile_admin.php" class="show_profile">My profile</a>
       <img src="images/profilepic.png" class="profile_image" alt"">
       <img src="images/Negocio.png" class="negocio" alt="">
-      <a class="bienvenido"> Hello, <?php echo $_SESSION['name']; ?></a>
-
+      <a class="bienvenido"> Administrator: <?php echo $_SESSION['name']; ?></a>
 
     </div>
   </header>
@@ -67,7 +67,7 @@
   <div class="menu-slide">
     <img src="images/Admin.png" class="Logo-DiligentApp" alt="">
 
-    <h4>Administrator</h4>
+    <h4><?php echo $_SESSION['name']; ?></h4>
 
     <!----- Lista de las herramientas con sus símbolos en el menú ----->
     <a href="myprofile_admin.php"><i class="far fa-address-card"></i><span>My profile</span></a>
@@ -76,9 +76,7 @@
     <a href="payrolls_admin.php"><i class="fas fa-file-invoice-dollar"></i><span>Payrolls</span></a>
     <a href="w2_admin.php"><i class="fas fa-landmark"></i><span>W-2 Tax Forms</span></a>
     <a href="schedules_admin.php"><i class="far fa-calendar-alt"></i></i><span>Schedules</span></a>
-    <a href="messages_admin.php"><i class="fas fa-envelope"></i><span>Messages</span></a>
     <a href="leaves_admin.php"><i class="fas fa-bed"></i><span>Leave</span></a>
-    <a href="attendance_admin.php"><i class="fas fa-user-clock"></i><span>Attendance</span></a>
     <a href="dc_admin.php"><i class="far fa-file-alt"></i><span>Documents and Policies</span></a>
     <footer>
       <h6>Powered by Diligent Technologies</h6>
@@ -88,134 +86,90 @@
 
   <div class="contenido">
     <main>
+      <form action="schedules_admin.php" method="post">
       <div class="top-user">
 
         <h3 style="margin-left:10px;">Schedules</h3>
-        <p class="selectors-p"> Range Schedules Since:</p>
+        <p class="selectors-p"> Search employees by their code:</p>
 
-
-        <select class="selectors">
-          <option value="0">Select Day:</option>
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-          <option value="6">6</option>
-          <option value="7">7</option>
-          <option value="8">8</option>
-          <option value="9">9</option>
-          <option value="10">10</option>
-          <option value="11">11</option>
-          <option value="12">12</option>
-          <option value="13">13</option>
-          <option value="14">14</option>
-          <option value="15">15</option>
-          <option value="16">16</option>
-          <option value="17">17</option>
-          <option value="18">18</option>
-          <option value="19">19</option>
-          <option value="20">20</option>
-          <option value="21">21</option>
-          <option value="22">22</option>
-          <option value="23">23</option>
-          <option value="24">24</option>
-          <option value="25">25</option>
-          <option value="26">26</option>
-          <option value="27">27</option>
-          <option value="28">28</option>
-          <option value="29">29</option>
-          <option value="30">30</option>
-          <option value="31">31</option>
-        </select>
-        <select class="selectors">
-          <option value="0">Select Month:</option>
-          <option value="1">January</option>
-          <option value="2">February</option>
-          <option value="3">March</option>
-          <option value="4">April</option>
-          <option value="5">May</option>
-          <option value="6">June</option>
-          <option value="7">July</option>
-          <option value="8">August</option>
-          <option value="9">September</option>
-          <option value="10">October</option>
-          <option value="11">November</option>
-          <option value="12">December</option>
-        </select>
-        <select class="selectors">
-          <option value="0">Select Year:</option>
-          <option value="1">2010</option>
-          <option value="2">2011</option>
-          <option value="3">2012</option>
-          <option value="4">2013</option>
-          <option value="5">2014</option>
-          <option value="6">2015</option>
-          <option value="7">2016</option>
-          <option value="8">2018</option>
-          <option value="9">2017</option>
-          <option value="10">2018</option>
-          <option value="11">2019</option>
-          <option value="12">2021</option>
-
-        </select>
-
-        <button class="submit-btn" type="button"> Submit</button>
-        <input class="search-container" type"submit" name="search" placeholder="Search Employee">
+        <input class="search-container" type"submit" name="search" placeholder="Search employee">
         <button class="search-btn" type="submit" value="Search"><span><i class="fas fa-search"></i></span></button>
 
-        <button class="payroll-btn" onclick="document.getElementById('id01').style.display='block'" style="width:auto;"><span><i class="far fa-calendar-plus"></i></span> Add Schedule</button>
-        <button class="print-btn" onclick="document.getElementById('id02').style.display='block'" style="width:auto;"><span><i class="far fa-calendar-minus"></i></span> Edit Schedule</button>
-        <button class="save-btn" <span><i class="fas fa-save"></i></span> Save Changes</button>
-        <button class="remove-btn" <span><i class="far fa-calendar-times"></i></span> Remove Schedule</button>
+      </form>
+
+        <label class="payroll-btn" onclick="document.getElementById('id01').style.display='block'" style="width:auto;"><span><i class="far fa-calendar-plus"></i></span>  Add Schedule</label>
+
+        <button class="print-btn" type="button"><span><i class="fas fa-print"></i></span> Print Schedules</button>
+
+        <?php if (isset($_GET['error'])) { ?>
+
+      <center>
+        <p class="error"><?php echo $_GET['error']; ?></p>
+      </center>
+
+      <?php } ?>
 
         <div id="id01" class="modal">
 
-        <form class="modal-content animate" action="" method="post">
             <div class="txtcontainer">
             <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-            <h3> Complete the following information to add an Employee </h3>
-        </div>
-
-        <div class="container">
-
-          <label for="uname"><b>Employee Name</b></label>
-          <input type="text" placeholder="Enter Employee Name" name="name" required>
-
-          <label for="uname"><b>Employee Number</b></label>
-          <input type="text" placeholder="Enter Employee Number" name="name" required>
-
-          <label for="uname"><b>Monday</b></label>
-          <input type="text" placeholder="Enter Shift" name="name" required>
-
-          <label for="uname"><b>Tuesday</b></label>
-          <input type="text" placeholder="Enter Shift" name="name" required>
-
-          <label for="uname"><b>Wednesday</b></label>
-          <input type="text" placeholder="Enter Shift" name="name" required>
-
-          <label for="uname"><b>Thursday</b></label>
-          <input type="text" placeholder="Enter Shift" name="name" required>
-
-          <label for="uname"><b>Friday</b></label>
-          <input type="text" placeholder="Enter Shift" name="name" required>
-
-          <label for="uname"><b>Saturday</b></label>
-          <input type="text" placeholder="Enter Shift" name="name" required>
-
-          <label for="uname"><b>Sunday</b></label>
-          <input type="text" placeholder="Enter Shift" name="name" required>
-
-          <button class="add-btn" type="submit">Add</button>
-          <button class="cancel-btn" type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
 
         </div>
 
         <div class="container">
 
-        </div>
-        </form>
-        </div>
+          <form class="modal-content animate" action="dbs/schedule_create.php" method="post">
+
+            <center><h3 style="font-size: 24px;"> Complete the following information to add a schedule </h3></center>
+
+            <label class="labcol" for="name"><b>Employee Name</b></label>
+                <input type="text" id="name" name="name" value="<?php if(isset($_GET['name']))
+                                           echo($_GET['name']); ?>" placeholder="Enter the name of the employee">
+
+                <label class="labcol" for="user_name"><b>Employee Code</b></label>
+                <input type="text" id="user_name" name="user_name" value="<?php if(isset($_GET['user_name']))
+                                           echo($_GET['user_name']); ?>" placeholder="Enter employee code">
+
+                <label class="labcol" for="monday"><b>Monday</b></label>
+                <input type="text" id="monday" name="monday" value="<?php if(isset($_GET['monday']))
+                           echo($_GET['monday']); ?>" placeholder="Enter schedule for monday">
+
+                <label class="labcol" for="tuesday"><b>Tuesday</b></label>
+                <input type="text" id="tuesday" name="tuesday" value="<?php if(isset($_GET['tuesday']))
+                                                 echo($_GET['tuesday']); ?>" placeholder="Enter schedule for tuesday">
+
+                <label class="labcol" for="wednesday"><b>Wednesday</b></label>
+                <input type="text" id="wednesday" name="wednesday" value="<?php if(isset($_GET['wednesday']))
+                                                       echo($_GET['wednesday']); ?>" placeholder="Enter schedule for wednesday">
+
+                <label class="labcol" for="thursday"><b>Thursday</b></label>
+                <input type="text" id="thursday" name="thursday" value="<?php if(isset($_GET['thursday']))
+                                                             echo($_GET['thursday']); ?>" placeholder="Enter schedule for thursday">
+
+                <label class="labcol" for="friday"><b>Friday</b></label>
+                <input type="text" id="friday" name="friday" value="<?php if(isset($_GET['friday']))
+                                                                   echo($_GET['friday']); ?>" placeholder="Enter schedule for friday">
+
+                <label class="labcol" for="saturday"><b>Saturday</b></label>
+                <input type="text" id="saturday" name="saturday" value="<?php if(isset($_GET['saturday']))
+                                                                  echo($_GET['saturday']); ?>" placeholder="Enter schedule for saturday">
+
+                <label class="labcol" for="sunday"><b>Sunday</b></label>
+                <input type="text" id="sunday" name="sunday" value="<?php if(isset($_GET['sunday']))
+                                                                  echo($_GET['sunday']); ?>" placeholder="Enter schedule for sunday">
+
+                <label class="labcol" for="total_hours"><b>Total Hours</b></label>
+                <input type="text" id="total_hours" name="total_hours" value="<?php if(isset($_GET['total_hours']))
+                                                                  echo($_GET['total_hours']); ?>" placeholder="Enter total of hours">
+
+                <center>
+                <button class="cancel-btn" type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+                <button class="add-btn" type="submit" name="create_schedule">Create</button>
+              </center>
+
+              </form>
+            </div>
+          </div>
 
         <script>
         // Get the modal
@@ -229,236 +183,76 @@
         }
         </script>
 
+        <?php include "dbs/schedule_read.php"; ?>
 
-      <div id="id02" class="modal">
+        <?php if (isset($_GET['success'])) { ?>
+        <center>
+          <p class="success"><?php echo $_GET['success']; ?></p>
+        </center>
+        <?php } ?>
 
-      <form class="modal-content animate" action="" method="post">
-          <div class="txtcontainer">
-          <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
-          <h3> Complete the following information to remove an Employee</h3>
-      </div>
+        <section class="List">
+          <div class="empleados-grid">
+            <div class="empleados-card">
 
-      <div class="container">
+            <div>
+            <h3><span><i class="fas fa-calendar-alt"></i></i></span>Schedules</h3>
+            </div>
+            <?php if (mysqli_num_rows($result)) { ?>
 
-        <label for="uname"><b>Employee Number</b></label>
-        <input type="text" placeholder="Enter Employee Number" name="name" required>
+            <table>
+              <thead>
+                <tr>
+                 <th>Employee Name</th>
+                 <th>Employee Code</th>
+                 <th>Monday</th>
+                 <th>Tuesday</th>
+                 <th>Wednesday</th>
+                 <th>Thursday</th>
+                 <th>Friday</th>
+                 <th>Saturday</th>
+                 <th>Sunday</th>
+                 <th>Total Hours</th>
+                 <th>Manage</th>
+                </tr>
+            </thead>
+            <tbody>
 
-        <label for="uname"><b>Admin Password</b></label>
-        <input type="text" placeholder="Enter Password" name="name" required>
+              <?php
+                       $i = 0;
+                       while($rows = mysqli_fetch_assoc($result)){
+                       $i++;
+                     ?>
 
-        <button class="add-btn" type="submit">Add</button>
-        <button class="cancel-btn" type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
+              <tr>
 
-      </div>
+                <td><?=$rows['name']?></td>
+                <td><?php echo $rows['user_name']; ?></td>
+                <td><?php echo $rows['monday']; ?></td>
+                <td><?php echo $rows['tuesday']; ?></td>
+                <td><?php echo $rows['wednesday']; ?></td>
+                <td><?php echo $rows['thursday']; ?></td>
+                <td><?php echo $rows['friday']; ?></td>
+                <td><?php echo $rows['saturday']; ?></td>
+                <td><?php echo $rows['sunday']; ?></td>
+                <td><?php echo $rows['total_hours']; ?></td>
 
-      <div class="container">
+                <td><a href="schedule_update.php?id=<?=$rows['id']?>" class="up-btn"><span><i class="fas fa-calendar-minus"></i></span><b> Edit</b></a>
 
-      </div>
-      </form>
-      </div>
+                  <a href="dbs/schedule_delete.php?id=<?=$rows['id']?>" class="rm-btn"><span><i class="fas fa-calendar-times"></i></span><b>Delete</b></a>
 
-      <script>
-      // Get the modal
-      var modal = document.getElementById('id02');
 
-      // When the user clicks anywhere outside of the modal, close it
-      window.onclick = function(event) {
-      if (event.target == modal) {
-      modal.style.display = "none";
-        }
-      }
-      </script>
-</div>
-
-      <section class="List">
-        <div class="empleados-grid">
-          <div class="empleados-card">
-
-          <div>
-          <h3><span><i class="far fa-calendar-alt"></i></span>Schedules</h3>
+              </tr>
+              <?php } ?>
+              </div>
+            </tbody>
+          </table>
+          <?php } ?>
           </div>
 
-          <table>
-            <thead>
-              <tr>
-                  <th>Employee Name</th>
-                  <th>Employee Number</th>
-                  <th>Monday</th>
-                  <th>Tuesday</th>
-                  <th>Wednesday</th>
-                  <th>Thursday</th>
-                  <th>Friday</th>
-                  <th>Saturday</th>
-                  <th>Sunday</th>
-                  <th>Total Hours</th>
-              </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-
-            </tr>
-
-          </tbody>
-        </table>
-        </div>
-      </div>
-
   </div>
+</main>
+</section>
 </body>
 </html>
 <?php

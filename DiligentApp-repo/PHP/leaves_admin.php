@@ -3,6 +3,12 @@
      Curso: COMP 4400 Desarrollo e Implementación de Sistemas
      Profesor: Ing. Rafael Muñoz ----->
 
+     <?php
+     session_start();
+     if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
+
+     ?>
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
@@ -10,6 +16,7 @@
 
   <!----- Lista de Metas que considero importantes ----->
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Diligent App es una aplicación de manejo de manejo de empelados y nóminas desarrollada
                                       por Diligent Technologies. Diligent Technologies ha sido una empresa con más de 10 años
                                       de experiencia, encargada de proveer soluciones a grandes negocios a nivel de Puerto Rico.
@@ -49,6 +56,7 @@
       <a href="myprofile_admin.php" class="show_profile">My profile</a>
       <img src="images/profilepic.png" class="profile_image" alt"">
       <img src="images/Negocio.png" class="negocio" alt="">
+      <a class="bienvenido"> Administrator: <?php echo $_SESSION['name']; ?></a>
 
     </div>
   </header>
@@ -58,7 +66,7 @@
   <div class="menu-slide">
     <img src="images/Admin.png" class="Logo-DiligentApp" alt="">
 
-    <h4>Administrator</h4>
+    <h4><?php echo $_SESSION['name']; ?></h4>
 
     <!----- Lista de las herramientas con sus símbolos en el menú ----->
     <a href="myprofile_admin.php"><i class="far fa-address-card"></i><span>My profile</span></a>
@@ -67,9 +75,7 @@
     <a href="payrolls_admin.php"><i class="fas fa-file-invoice-dollar"></i><span>Payrolls</span></a>
     <a href="w2_admin.php"><i class="fas fa-landmark"></i><span>W-2 Tax Forms</span></a>
     <a href="schedules_admin.php"><i class="far fa-calendar-alt"></i><span>Schedules</span></a>
-    <a href="messages_admin.php"><i class="fas fa-envelope"></i><span>Messages</span></a>
     <a href="leaves_admin.php"><i class="fas fa-bed"></i><span>Leave</span></a>
-    <a href="attendance_admin.php"><i class="fas fa-user-clock"></i><span>Attendance</span></a>
     <a href="dc_admin.php"><i class="far fa-file-alt"></i><span>Documents and Policies</span></a>
     <footer>
       <h6>Powered by Diligent Technologies</h6>
@@ -394,3 +400,9 @@
   </div>
   </body>
   </html>
+  <?php
+  }else{
+    header("Location: index.php");
+    exit();
+  }
+   ?>

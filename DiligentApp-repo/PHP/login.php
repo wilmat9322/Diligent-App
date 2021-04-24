@@ -15,15 +15,15 @@ if (isset($_POST['code']) && isset($_POST['uname']) && isset($_POST['password'])
     $pass = validate($_POST['password']);
 
     if(empty($code)) {
-      header("Location: authenticate.php?error=Company Code is required");
+      header("Location: index.php?error=Company Code is required");
       exit();
 
     }else if(empty($uname)) {
-      header("Location: authenticate.php?error=Employee Code is required");
+      header("Location: index.php?error=Employee Code is required");
       exit();
 
     }else if(empty($pass)) {
-      header("Location: authenticate.php?error=Password is required");
+      header("Location: index.php?error=Password is required");
       exit();
     }else{
   $sql = "SELECT * FROM users_table WHERE comp_code='$code' AND user_name='$uname' AND password='$pass'";
@@ -39,15 +39,15 @@ if (isset($_POST['code']) && isset($_POST['uname']) && isset($_POST['password'])
       header("Location: dashboard_admin.php");
       exit();
     }else{
-      header("Location: authenticate.php?error=Incorrect information");
+      header("Location: index.php?error=Incorrect information");
       exit();
     }
   }else{
-    header("Location: authenticate.php?error=Incorrect Code or password");
+    header("Location: index.php?error=Incorrect Code or password");
     exit();
   }
 }
 }else{
-  header("Location: authenticate.php");
+  header("Location: index.php");
   exit();
 }

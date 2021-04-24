@@ -400,10 +400,11 @@
 
 input[type=text], input[type=password], label {
 
-  width: 33rem;
+  width: 30%;
   padding: 5px 10px;
   margin: auto auto;
   display: block;
+  border: 1px solid #ccc;
 
 }
 
@@ -449,12 +450,6 @@ label {
 }
 .container {
   padding: 16px;
-}
-
-}
-
-label b {
-  margin-left: 15px;
 }
 
 .error{

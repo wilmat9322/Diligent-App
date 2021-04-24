@@ -17,11 +17,14 @@ if (isset($_POST['create'])) {
   $work_time = validate($_POST['work_time']);
   $hours_work = validate($_POST['hours_work']);
   $earn_rate = validate($_POST['earn_rate']);
+  $gender = validate($_POST['gender']);
+  $bday = validate($_POST['bday']);
+  $citi = validate($_POST['citi']);
   $pass = validate($_POST['password']);
 	$re_pass = validate($_POST['re_password']);
 
 	$user_data = 'comp_code='.$comp_code. '&name='.$name. '&user_name='.$user_name. '&position='.$position. '&type_employee='.$type_employee. '&work_time='.$work_time.
-              '&hours_work='.$hours_work. '&earn_rate='.$earn_rate. '&password='.$pass. '&re_password='.$re_pass;
+              '&hours_work='.$hours_work. '&earn_rate='.$earn_rate. '&gender='.$gender. '&bday='.$bday. '&citi='.$citi. '&password='.$pass. '&re_password='.$re_pass;
 
 	if (empty($comp_code)) {
 		header("Location: ../manage_admin.php?error=Company Code is required&$user_data");
@@ -39,10 +42,22 @@ if (isset($_POST['create'])) {
     header("Location: ../manage_admin.php?error=Hours worked is required&$user_data");
   }else if (empty($earn_rate)) {
     header("Location: ../manage_admin.php?error=Earning rate is required&$user_data");
+  }else if (empty($gender)) {
+    header("Location: ../manage_admin.php?error=Gender is required&$user_data");
+  }else if (empty($bday)) {
+    header("Location: ../manage_admin.php?error=Birthday is required&$user_data");
+  }else if (empty($citi)) {
+    header("Location: ../manage_admin.php?error=Citizenship is required&$user_data");
+  }else if (empty($pass)) {
+    header("Location: ../manage_admin.php?error=Password is required&$user_data");
+  }else if (empty($re_pass)) {
+    header("Location: ../manage_admin.php?error=Repeated Password is required&$user_data");
   }else if($pass !== $re_pass){
-          header("Location: ../manage_admin.php?error=The Confirmation Password  does not match&$user_data");
+          header("Location: ../manage_admin.php?error=The confirmation password  does not match&$user_data");
         }else if($comp_code !== "1234"){
-                header("Location: ../manage_admin.php?error=The Company Code does not match&$user_data");
+                header("Location: ../manage_admin.php?error=The company code does not match&$user_data");
+              }else if (mysqli_num_rows($result) > 0) {
+                header("Location: ../manage_admin.php?error=The Username is taken try another&$user_data");
 
 
     }else {
@@ -54,13 +69,13 @@ if (isset($_POST['create'])) {
          exit();
    }else {
 
-       $sql2 = "INSERT INTO users_table(comp_code, name, user_name, password, position, type_employee, work_time, hours_work, earn_rate)
-               VALUES('$comp_code','$name', '$user_name', '$pass', '$position', '$type_employee', '$work_time', '$hours_work', '$earn_rate')";
-       $result2 = mysqli_query($conn, $sql2);
-       if ($result2) {
-       	  header("Location: ../manage_admin.php?success=Employee Successfully Added");
+       $sql = "INSERT INTO users_table(comp_code, name, user_name, password, position, type_employee, work_time, hours_work, earn_rate, gender, bday, citi)
+               VALUES('$comp_code','$name', '$user_name', '$pass', '$position', '$type_employee', '$work_time', '$hours_work', '$earn_rate', '$gender', '$bday' , '$citi')";
+       $result = mysqli_query($conn, $sql);
+       if ($result) {
+       	  header("Location: ../manage_admin.php?success=Employee was successfully added");
        }else {
-          header("Location: ../manage_admin.php?error=unknown error occurred&$user_data");
+          header("Location: ../manage_admin.php?error=Unknown error occurred&$user_data");
        }
 	}
 }

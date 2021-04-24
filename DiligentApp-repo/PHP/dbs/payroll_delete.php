@@ -12,15 +12,15 @@ if(isset($_GET['id'])){
 
 	$id = validate($_GET['id']);
 
-	$sql = "DELETE FROM users_table
+	$sql = "DELETE FROM payrolls
 	        WHERE id=$id";
    $result = mysqli_query($conn, $sql);
    if ($result) {
-   	  header("Location: ../manage_admin.php?success=Employee was Successfully Deleted");
+   	  header("Location: ../payrolls_admin.php?success=Payroll was sucessfully deleted");
    }else {
-      header("Location: ../manage_admin.php?error=unknown error occurred&$user_data");
+      header("Location: ../payrolls_admin.php?error=Unknown error occurred&$user_data");
    }
 
 }else {
-	header("Location: ../manage_admin.php");
+	header("Location: ../payrolls_admin .php");
 }

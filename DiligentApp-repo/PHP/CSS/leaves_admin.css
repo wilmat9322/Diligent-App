@@ -79,6 +79,22 @@
       border-radius: 8px;
     }
 
+    .bienvenido {
+      padding: 5px;
+      padding-right: -50px;
+      text-decoration: none;
+      float: right;
+      margin: 30px 0;
+      margin-right: 25px;
+      border-radius: 2px;
+      font-family: Helvetica, "Trebuchet MS", Verdana, sans-serif;
+      font-size: 16px;
+      font-weight: 600;
+      color: #fff;
+      transition: 0.25s;
+      transition-property: background;
+    }
+
     /***** Propiedades del h1 que está en el header *****/
     h1 {
       padding: 10px;
@@ -92,23 +108,22 @@
     /***** Propiedades del h4 llamado Administrator que esta al lado de la foto de Dilligent App en el menu *****/
     h4 {
       color: #fff;
-      margin-top: -50px;
-      margin-left: 100px;
-      margin-bottom: 50px;
+      margin-top: 90px;
+      text-align: center;
+      margin-bottom: 5px;
       font-family: Helvetica, "Trebuchet MS", Verdana, sans-serif;
     }
 
     /***** Propiedades del footer que está en el menú *****/
     h6 {
       color: #fff;
-      padding-left: 40px;
+      text-align: center;
       font-family: Helvetica, "Trebuchet MS", Verdana, sans-serif;
     }
 
     /***** Propiedades del menú *****/
     .menu-slide {
       background: #222831;
-      z-index: 1;
       margin-top: 145px;
       padding-top: 30px;
       position: fixed;
@@ -117,14 +132,18 @@
       height: 100%;
       transition: 0.25s;
       transition-property: left;
+      overflow: auto;
     }
 
     /***** Propiedades de la foto del menú *****/
     .menu-slide .Logo-DiligentApp {
-      width: 80px;
-      height: 80px;
+      width: 100px;
+      height: 100px;
+      position: absolute;
+      transform: translate(70%, -10%);
+      box-sizing: border-box;
       border-radius: 100px;
-      margin-left: 10px;
+      margin-left: 20px;
       margin-top: -10px;
       margin-bottom: 0;
     }
@@ -134,7 +153,7 @@
       color: #f8f7de;
       display: block;
       width: 100%;
-      line-height: 60px;
+      line-height: 55px;
       text-decoration: none;
       padding-left: 20px;
       box-sizing: border-box;
@@ -155,7 +174,7 @@
     /***** Tipo id para que el btn de menu no se altere por otro bloque de codigo  *****/
     /***** Propiedades del btn de menu *****/
     label #menu_btn {
-      z-index: 1;
+      z-index: 0;
       color: #f8f7de;
       position: fixed;
       cursor: pointer;
@@ -172,9 +191,10 @@
       color: #f05454;
     }
 
+
     /***** Si el btn se toca, se esconderá *****/
     #check:checked~.menu-slide {
-      left: -220px;
+      left: -235px;
     }
 
     /***** Cuando el btn del menu se toque, se esconderán los elementos del menú menos los simbolos *****/
@@ -185,16 +205,17 @@
     /***** Propiedades de los simbolos cuando el menú está escondido *****/
     #check:checked~.menu-slide a {
       font-size: 20px;
-      margin-left: 210px;
+      margin-left: 220px;
       width: 1px;
     }
 
     /***** Propiedades del contenido que mostraran las herramientas *****/
     .contenido {
       margin-left: 270px;
-      background: #fff;
       background-position: center;
+      background: #fff;
       background-size: cover;
+      height: 100vh;
       transition: 0.25s;
     }
 

@@ -1,4 +1,4 @@
-<?php include 'dbs/update.php'; ?>
+<?php include 'dbs/payrolls_update.php'; ?>
 <!----- Programa hecho por: William S. Matos Díaz
      Número de estudiante: B00539322
      Curso: COMP 4400 Desarrollo e Implementación de Sistemas
@@ -19,7 +19,7 @@
   <meta name="keywords" content="DiligentApp, Employee Management, Payroll" />
   <meta name="author" content="Diligent Technologies" />
 
-  <title>Update Employee Profile</title>
+  <title>Edit Payroll Information</title>
 
   <!----- Fonts y Símbolos que utilicé para la aplicación ----->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
@@ -38,11 +38,11 @@
 
   <div class="txtcontainer">
 
-    <h3><b>Complete the following information to update an Employee</b></h3>
+    <h3><b>Complete the following information to edit a Payroll</b></h3>
 
   </div>
 
-    <form action="dbs/update.php" method="post">
+    <form action="dbs/payrolls_update.php" method="post">
 
 
       <?php if (isset($_GET['error'])) { ?>
@@ -54,61 +54,39 @@
       <div class="update">
 
 
-      <label for="comp_code"><b>Company Code</label></center>
-      <input type="text" id="comp_code" name="comp_code" value="<?=$row['comp_code'] ?>">
-
-
-      <label for="name">Employee's Name</label>
+      <label for="name">Employee name<b></label></center>
       <input type="text" id="name" name="name" value="<?=$row['name'] ?>">
 
 
-      <label for="user_name">Username</label>
+      <label for="user_name">Employee Code</label>
       <input type="text" id="user_name" name="user_name" value="<?=$row['user_name'] ?>">
-
-
-      <label for="position">Employee's Position</label>
-      <input type="text" id="position" name="position" value="<?=$row['position'] ?>">
-
-
-      <label for="type_employee">Type of Employee</label>
-      <input type="text" id="type_employee" name="type_employee" value="<?=$row['type_employee'] ?>">
-
-
-      <label for="work_time">Working Since</label>
-      <input type="text" id="work_time" name="work_time" value="<?=$row['work_time'] ?>">
-
-
-      <label for="hours_work">Hours Worked</label>
-      <input type="text" id="hours_work" name="hours_work" value="<?=$row['hours_work'] ?>">
 
 
       <label for="earn_rate">Earn Rate</label>
       <input type="text" id="earn_rate" name="earn_rate" value="<?=$row['earn_rate'] ?>">
 
-      <label for="gender">Gender</label>
-      <input type="text" id="gender" name="gender" value="<?=$row['gender'] ?>">
 
-      <label for="bday">Birthday</label>
-      <input type="text" id="bday" name="bday" value="<?=$row['bday'] ?>">
-
-      <label for="citi">Citizenship</label>
-      <input type="text" id="citi" name="citi" value="<?=$row['citi'] ?>">
+      <label for="=gross">Gross Earnings</label>
+      <input type="text" id="gross" name="gross" value="<?=$row['gross'] ?>">
 
 
-      <label for="password">Password</label>
-      <input type="password" id="password" name="password" value="<?=$row['password'] ?>">
+      <label for="dedu">Deductions</label>
+      <input type="text" id="dedu" name="dedu" value="<?=$row['dedu'] ?>">
 
 
-      <label for="re_password">Repeat Password</b></label>
-      <input type="password" id="re_password" name="re_password" value="<?=$row['password'] ?>">
+      <label for="net_pay">Net Pay</label>
+      <input type="text" id="net_pay" name="net_pay" value="<?=$row['net_pay'] ?>">
+
+
+      <label for="date_pay">Date</label>
+      <input type="text" id="date_pay" name="date_pay" value="<?=$row['date_pay'] ?>">
 
     </div>
 
       <input type="text" name="id" value="<?=$row['id']?>" hidden>
 
-
       <center>
-      <a href="manage_admin.php" class="cancel-btn" type="button" class="cancelbtn">Cancel</a>
+      <a href="payrolls_admin.php" class="cancel-btn" type="button" class="cancelbtn">Cancel</a>
       <button class="add-btn" type="submit" name="update">Update</button>
     </center>
 

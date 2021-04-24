@@ -17,6 +17,7 @@
 
   <!----- Lista de Metas que considero importantes ----->
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Diligent App es una aplicación de manejo de manejo de empelados y nóminas desarrollada
                                       por Diligent Technologies. Diligent Technologies ha sido una empresa con más de 10 años
                                       de experiencia, encargada de proveer soluciones a grandes negocios a nivel de Puerto Rico.
@@ -55,7 +56,7 @@
       <a href="myprofile_admin.php" class="show_profile">My profile</a>
       <img src="images/profilepic.png" class="profile_image" alt"">
       <img src="images/Negocio.png" class="negocio" alt="">
-      <a class="bienvenido"> Hello, <?php echo $_SESSION['name']; ?></a>
+      <a class="bienvenido"> Administrator: <?php echo $_SESSION['name']; ?></a>
 
     </div>
   </header>
@@ -65,7 +66,7 @@
   <div class="menu-slide">
     <img src="images/Admin.png" class="Logo-DiligentApp" alt="">
 
-    <h4>Administrator</h4>
+  <h4><?php echo $_SESSION['name']; ?></h4>
 
     <!----- Lista de las herramientas con sus símbolos en el menú ----->
     <a href="myprofile_admin.php"><i class="far fa-address-card"></i><span>My profile</span></a>
@@ -74,9 +75,7 @@
     <a href="payrolls_admin.php"><i class="fas fa-file-invoice-dollar"></i><span>Payrolls</span></a>
     <a href="w2_admin.php"><i class="fas fa-landmark"></i><span>W-2 Tax Forms</span></a>
     <a href="schedules_admin.php"><i class="far fa-calendar-alt"></i><span>Schedules</span></a>
-    <a href="messages_admin.php"><i class="fas fa-envelope"></i><span>Messages</span></a>
     <a href="leaves_admin.php"><i class="fas fa-bed"></i><span>Leave</span></a>
-    <a href="attendance_admin.php"><i class="fas fa-user-clock"></i><span>Attendance</span></a>
     <a href="dc_admin.php"><i class="far fa-file-alt"></i><span>Documents and Policies</span></a>
     <footer>
       <h6>Powered by Diligent Technologies</h6>
@@ -85,134 +84,77 @@
   <!----- Aquí termina el menú ----->
 
   <div class="contenido">
-
     <main>
+      <form action="payrolls_admin.php" method="post">
       <div class="top-user">
 
         <h3 style="margin-left:10px;">Payrolls</h3>
-        <p class="selectors-p"> Range Payrolls Since:</p>
-        <select class="selectors">
-          <option value="0">Select Day:</option>
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-          <option value="6">6</option>
-          <option value="7">7</option>
-          <option value="8">8</option>
-          <option value="9">9</option>
-          <option value="10">10</option>
-          <option value="11">11</option>
-          <option value="12">12</option>
-          <option value="13">13</option>
-          <option value="14">14</option>
-          <option value="15">15</option>
-          <option value="16">16</option>
-          <option value="17">17</option>
-          <option value="18">18</option>
-          <option value="19">19</option>
-          <option value="20">20</option>
-          <option value="21">21</option>
-          <option value="22">22</option>
-          <option value="23">23</option>
-          <option value="24">24</option>
-          <option value="25">25</option>
-          <option value="26">26</option>
-          <option value="27">27</option>
-          <option value="28">28</option>
-          <option value="29">29</option>
-          <option value="30">30</option>
-          <option value="31">31</option>
-        </select>
+        <p class="selectors-p"> Search Payrolls by their Code:</p>
 
-        <select class="selectors">
-          <option value="0">Select Month:</option>
-          <option value="1">January</option>
-          <option value="2">February</option>
-          <option value="3">March</option>
-          <option value="4">April</option>
-          <option value="5">May</option>
-          <option value="6">June</option>
-          <option value="7">July</option>
-          <option value="8">August</option>
-          <option value="9">September</option>
-          <option value="10">October</option>
-          <option value="11">November</option>
-          <option value="12">December</option>
-        </select>
-        <select class="selectors">
-          <option value="0">Select Year:</option>
-          <option value="1">2010</option>
-          <option value="2">2011</option>
-          <option value="3">2012</option>
-          <option value="4">2013</option>
-          <option value="5">2014</option>
-          <option value="6">2015</option>
-          <option value="7">2016</option>
-          <option value="8">2018</option>
-          <option value="9">2017</option>
-          <option value="10">2018</option>
-          <option value="11">2019</option>
-          <option value="12">2021</option>
-
-        </select>
-
-        <button class="submit-btn" type="button"> Submit</button>
         <input class="search-container" type"submit" name="search" placeholder="Search Payroll">
         <button class="search-btn" type="submit" value="Search"><span><i class="fas fa-search"></i></span></button>
+      </form>
 
-        <button class="print-btn" type="button"><span><i class="fas fa-print"></i></span> Print Payroll</button>
+      <label class="payroll-btn" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">+ <span><i class="fas fa-file-invoice-dollar"></i></span> Add Payroll</label>
 
-        <button class="payroll-btn" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">+ <span><i class="fas fa-file-invoice-dollar"></i></span> Add Payroll</button>
-        <button class="delete-btn" onclick="document.getElementById('id02').style.display='block'" style="width:auto;">- <span><i class="fas fa-file-invoice-dollar"></i></span> Remove Payroll</button>
-        <button class="save-btn" <span><i class="fas fa-save"></i></span> Save Changes</button>
+      <button class="print-btn" type="button"><span><i class="fas fa-print"></i></span> Print Payroll</button>
 
+      <?php if (isset($_GET['error'])) { ?>
+
+      <center>
+        <p class="error"><?php echo $_GET['error']; ?></p>
+      </center>
+
+      <?php } ?>
 
         <div id="id01" class="modal">
 
-        <form class="modal-content animate" action="/action_page.php" method="post">
             <div class="txtcontainer">
             <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-            <h3> Complete the following information to add a payroll </h3>
+            </div>
+
+            <div class="container">
+
+              <form class="modal-content animate" action="dbs/payroll_create.php" method="post">
+
+            <center><h3 style="font-size: 24px;"> Complete the following information to add a payroll </h3></center>
+
+            <label class="labcol" for="name"><b>Employee Name</b></label>
+            <input type="text" id="name" name="name" value="<?php if(isset($_GET['name']))
+                                       echo($_GET['name']); ?>" placeholder="Enter the name of the employee">
+
+            <label class="labcol" for="user_name"><b>Employee Code</b></label>
+            <input type="text" id="user_name" name="user_name" value="<?php if(isset($_GET['user_name']))
+                                       echo($_GET['user_name']); ?>" placeholder="Enter a username for the employee">
+
+            <label class="labcol" for="earn_rate"><b>Earn Rate</b></label>
+            <input type="text" id="earn_rate" name="earn_rate" value="<?php if(isset($_GET['earn_rate']))
+                       echo($_GET['earn_rate']); ?>" placeholder="Enter the earn rate of the employee">
+
+            <label class="labcol" for="gross"><b>Gross Earnings</b></label>
+            <input type="text" id="gross" name="gross" value="<?php if(isset($_GET['gross']))
+                                             echo($_GET['gross']); ?>" placeholder="Enter employee gross earnings">
+
+            <label class="labcol" for="dedu"><b>Deductions</b></label>
+            <input type="text" id="dedu" name="dedu" value="<?php if(isset($_GET['dedu']))
+                                                   echo($_GET['dedu']); ?>" placeholder="Enter employee deductions">
+
+            <label class="labcol" for="net_pay"><b>Net Pay</b></label>
+            <input type="text" id="net_pay" name="net_pay" value="<?php if(isset($_GET['net_pay']))
+                                                         echo($_GET['net_pay']); ?>" placeholder="Enter employee net pay">
+
+            <label class="labcol" for="date_pay"><b>Date</b></label>
+            <input type="text" id="date_pay" name="date_pay" value="<?php if(isset($_GET['date_pay']))
+                                                               echo($_GET['date_pay']); ?>" placeholder="Enter date of payroll">
+
+            <center>
+            <button class="cancel-btn" type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+            <button class="add-btn" type="submit" name="create">Create</button>
+          </center>
+
+          </form>
         </div>
-
-        <div class="container">
-
-          <label for="uname"><b>Add Payroll</br></label>
-          <input type="file" id="myFile" name="filename">
-
-          <label for="uname"><b>Employee Name</br></label>
-          <input type="text" placeholder="Enter Employee Name" name="name" required>
-
-          <label for="uname"><b>Employee Code</br></label>
-          <input type="text" placeholder="Enter Employee Code" name="name" required>
-
-          <label for="uname"><b>Pay Rate</br></label>
-          <input type="text" placeholder="Enter Employee Pay Rate" name="name" required>
-
-          <label for="uname"><b>Gross Earnings</br></label>
-          <input type="text" placeholder="Enter Gross Earnings" name="name" required>
-
-          <label for="uname"><b>Deductions</br></label>
-          <input type="text" placeholder="Enter Deductions" name="name" required>
-
-          <label for="uname"><b>Net Pay</br></label>
-          <input type="text" placeholder="Enter Net Pay" name="name" required>
-
-          <label for="uname"><b>Date</br></label>
-          <input type="text" placeholder="Enter Date" name="name" required>
-
-          <button class="add-btn" type="submit">Add</button>
-          <button class="cancel-btn" type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-
-        </div>
-
-        <div class="container">
-
-        </div>
-        </form>
-        </div>
+      </div>
 
         <script>
         // Get the modal
@@ -226,46 +168,13 @@
         }
         </script>
 
-        <div id="id02" class="modal">
+        <?php include "dbs/payrolls_read.php"; ?>
 
-        <form class="modal-content animate" action="/action_page.php" method="post">
-            <div class="txtcontainer">
-            <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
-            <h3> To remove a Payroll, please enter a valid password. </h3>
-        </div>
-
-        <div class="container">
-
-          <label for="uname"><br>Payroll Number</br></label>
-          <input type="text" placeholder="Enter Payroll Name" name="name" required>
-
-          <label for="uname"><br>Password</br></label>
-          <input type="password" placeholder="Enter Password" name="name" required>
-
-          <button class="confirm-btn" type="submit">Confirm</button>
-          <button class="cancel-btn" type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
-
-        </div>
-
-        <div class="container">
-
-        </div>
-        </form>
-        </div>
-
-        <script>
-        // Get the modal
-        var modal = document.getElementById('id02');
-
-        // When the user clicks anywhere outside of the modal, close it
-        window.onclick = function(event) {
-        if (event.target == modal) {
-        modal.style.display = "none";
-          }
-        }
-        </script>
-
-      </div>
+        <?php if (isset($_GET['success'])) { ?>
+        <center>
+          <p class="success"><?php echo $_GET['success']; ?></p>
+        </center>
+        <?php } ?>
 
       <section class="List">
         <div class="empleados-grid">
@@ -274,6 +183,8 @@
           <div>
           <h3><span><i class="fas fa-file-invoice-dollar"></i></span>List of Employee Payrolls</h3>
           </div>
+
+          <?php if (mysqli_num_rows($result)) { ?>
 
           <table>
             <thead>
@@ -286,132 +197,39 @@
                   <th>Deductions</th>
                   <th>Net Pay</th>
                   <th>Date</th>
+                  <th>Manage</th>
               </tr>
           </thead>
           <tbody>
+
+            <?php
+                     $i = 0;
+                     while($rows = mysqli_fetch_assoc($result)){
+                     $i++;
+                   ?>
+
             <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
+
+              <th scope="row"><?=$i?></th>
+              <td><?=$rows['name']?></td>
+              <td><?php echo $rows['user_name']; ?></td>
+              <td><?php echo $rows['earn_rate']; ?></td>
+              <td><?php echo $rows['gross']; ?></td>
+              <td><?php echo $rows['dedu']; ?></td>
+              <td><?php echo $rows['net_pay']; ?></td>
+              <td><?php echo $rows['date_pay']; ?></td>
+
+              <td><a href="update_payrolls.php?id=<?=$rows['id']?>" class="up-btn"><span><i class="fas fa-file-invoice-dollar"></i></span><b> Edit</b></a>
+
+                <a href="dbs/payroll_delete.php?id=<?=$rows['id']?>" class="rm-btn"><span><i class="fas fa-file-invoice-dollar"></i></span></span><b>Delete</b></a>
+
+
             </tr>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
+            <?php } ?>
             </div>
           </tbody>
         </table>
+        <?php } ?>
       </div>
 
   </div>

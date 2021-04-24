@@ -4,15 +4,11 @@
      Profesor: Ing. Rafael Muñoz ----->
 
      <?php
-     session_start();
-     include_once 'user_db.php';
-     if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
+          session_start();
 
-      $sql = "SELECT * FROM users_table WHERE id = '".$_SESSION['user_name']."'";
-     	$query = $conn->query($sql);
-     	$user = $query->fetch_assoc();
+          if (isset($_SESSION['id']) && isset($_SESSION['user_name'])  && isset($_SESSION['name'])) {
 
-     ?>
+          ?>
 
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -21,6 +17,7 @@
 
   <!----- Lista de Metas que considero importantes ----->
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Diligent App es una aplicación de manejo de manejo de empelados y nóminas desarrollada
                                       por Diligent Technologies. Diligent Technologies ha sido una empresa con más de 10 años
                                       de experiencia, encargada de proveer soluciones a grandes negocios a nivel de Puerto Rico.
@@ -60,15 +57,16 @@
       <a href="myprofile_admin.php" class="show_profile">My profile</a>
       <img src="images/profilepic.png" class="profile_image" alt"">
       <img src="images/Negocio.png" class="negocio" alt="">
+      <a class="bienvenido"> Administrator: <?php echo $_SESSION['name']; ?></a>
     </div>
   </header>
   <!----- Aquí termina el header ----->
 
   <!----- Aquí empieza el menu ----->
   <div class="menu-slide">
-    <img src="images/Admin.png" class="Logo-DiligentApp" alt="">
+    <img src="images/Admin.png" class="Logo-DiligentApp" alt="DiligentApp-Logo">
+    <h4><?php echo $_SESSION['name']; ?></h4>
 
-    <h4>Administrator</h4>
 
     <!----- Lista de las herramientas con sus símbolos en el menú ----->
     <a href="myprofile_admin.php"><i class="far fa-address-card"></i><span>My profile</span></a>
@@ -77,9 +75,7 @@
     <a href="payrolls_admin.php"><i class="fas fa-file-invoice-dollar"></i><span>Payrolls</span></a>
     <a href="w2_admin.php"><i class="fas fa-landmark"></i><span>W-2 Tax Forms</span></a>
     <a href="schedules_admin.php"><i class="far fa-calendar-alt"></i><span>Schedules</span></a>
-    <a href="messages_admin.php"><i class="fas fa-envelope"></i><span>Messages</span></a>
     <a href="leaves_admin.php"><i class="fas fa-bed"></i><span>Leave</span></a>
-    <a href="attendance_admin.php"><i class="fas fa-user-clock"></i><span>Attendance</span></a>
     <a href="dc_admin.php"><i class="far fa-file-alt"></i><span>Documents and Policies</span></a>
     <footer>
       <h6>Powered by Diligent Technologies</h6>
@@ -94,9 +90,10 @@
       <div class="user_profile">
       <img src="images/profilepic.png" class="profile_img" alt="">
       <h2 style="font-size: 2rem;" class="admin_name"><?php echo $_SESSION['name']; ?></h2>
-      <button class="edit-btn" type="button"><span><i class="far fa-window-maximize"></i></span> Edit Profile</button>
       </div>
 
+      <?php
+      include "dbs/profile.php"; ?>
       <section class="tablas">
         <div class="tabla-grid">
           <div class="contenido-card">
@@ -104,61 +101,31 @@
           <div>
           <h3><span><i class="far fa-address-card"></i></span>Personal Information</h3>
           </div>
+          <?php if (mysqli_num_rows($result)) { ?>
 
           <table>
           <tbody>
-            <?php
-              $sql = "SELECT * FROM users_table";
-              $query = $conn->query($sql);
-              $total = $query->num_rows;
-
-              $sql = "SELECT * FROM users_table WHERE user_name = admin";
-              $query = $conn->query($sql);
 
 
-            ?>
+                  <?php
+                     if($rows = mysqli_fetch_assoc($result)){
+                   ?>
+
             <tr>
-              <td>Name: <?php echo $_SESSION['name']; ?> </td>
-              <td>Birthday:  </td>
+              <td><b>Name: <?=$_SESSION['name']?></td>
+              <td><b>Gender: <?php echo $rows['gender']; ?></td>
             </tr>
             <tr>
-              <td>Gender: </td>
-              <td>Age: </td>
+              <td><b>Birthday: <?php echo $rows['bday']; ?></td>
+              <td><b>Citizenship: <?php echo $rows['citi']; ?></td>
             </tr>
-            <tr>
-              <td>Race: </td>
-              <td>Citizenship: </td>
-            </tr>
+              <?php } ?>
             </div>
           </tbody>
         </table>
+          <?php } ?>
       </div>
       </section>
-
-      <section class="tablas">
-        <div class="tabla-grid">
-          <div class="contenido-card">
-            <div>
-            <h3><span><i class="fas fa-graduation-cap"></i></span>Education</h3>
-            </div>
-
-            <table>
-            <tbody>
-
-              <tr>
-                <td>Highschool: Escuela Superior Luis Muñoz Marín</td>
-                <td>Graduation: May, 2017</td>
-              </tr>
-              <tr>
-                <td>Degree to obtain: B.S. Computer Science</td>
-                <td>Expected Graduation Day: December, 2021
-              </tr>
-
-              </div>
-            </tbody>
-          </table>
-        </div>
-        </section>
 
         <section class="tablas">
           <div class="tabla-grid">
@@ -170,16 +137,17 @@
               <table>
               <tbody>
                 <tr>
-                  <td>Employee Code: 008015</td>
-                  <td>Position: Manager</td>
+                  <td><b>Employee Code: <?php echo $_SESSION['user_name']; ?></td>
+                  <td><b>Position: <?php echo $rows['position']; ?></td>
                 </tr>
                 <tr>
-                  <td>Type: Admin</td>
-                  <td>Earning Rate: $14.25 per hour</td>
+                  <td><b>Type: <?php echo $rows['type_employee']; ?></td>
+                  <td><b>Earning Rate: $<?php echo $rows['earn_rate']; ?></td>
                 </tr>
               <tr>
-                <td>Status: Active</td>
-                <td>Working Since: February, 19 2019</td>
+
+                <td><b>Working Since: <?php echo $rows['work_time']; ?></td>
+                <td><b>Status: <?php echo $rows['earn_rate']; ?></td>
 
                 </div>
               </tbody>
@@ -191,8 +159,8 @@
   </body>
   </html>
   <?php
-  }else{
-    header("Location: index.php");
-    exit();
-  }
-   ?>
+      }else{
+        header("Location: index.php");
+        exit();
+      }
+      ?>
