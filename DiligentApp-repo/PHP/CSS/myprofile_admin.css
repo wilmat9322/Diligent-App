@@ -108,7 +108,7 @@ h1 {
 /***** Propiedades del h4 llamado Administrator que esta al lado de la foto de Dilligent App en el menu *****/
 h4 {
   color: #fff;
-  margin-top: 90px;
+  margin-top: 100px;
   text-align: center;
   margin-bottom: 5px;
   font-family: Helvetica, "Trebuchet MS", Verdana, sans-serif;
@@ -270,8 +270,10 @@ main {
   background: #4CAF50;
 }
 .tablas {
+margin: auto auto;
 margin-top: 2rem;
 margin-bottom: 3rem;
+width: 80%;
 }
 .tabla-grid {
 display: grid;

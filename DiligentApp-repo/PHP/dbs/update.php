@@ -76,9 +76,8 @@ if (isset($_GET['id'])) {
           header("Location: ../manage_admin.php?error=The confirmation password  does not match&$user_data");
         }else if($comp_code !== "1234"){
                 header("Location: ../manage_admin.php?error=The company code does not match&$user_data");
-              }else if (mysqli_num_rows($result) > 0) {
-                header("Location: ../manage_admin.php?error=The username is taken try another&$user_data");
-  }else {
+
+             }else {
 
        $sql = "UPDATE users_table
                SET comp_code='$comp_code', name='$name', user_name='$user_name', position='$position', type_employee='$type_employee', work_time='$work_time', hours_work='$hours_work', earn_rate='$earn_rate', password='$pass', gender='$gender', bday='$bday', citi='$citi'
@@ -87,7 +86,7 @@ if (isset($_GET['id'])) {
        if ($result) {
        	  header("Location: ../manage_admin.php?success=Employee was successfully updated");
        }else {
-          header("Location: ../manage_admin.php?id=$id&error=unknown error occurred&$user_data");
+          header("Location: ../manage_admin.php?id=$id&error=Unknown error occurred&$user_data");
        }
 	}
 

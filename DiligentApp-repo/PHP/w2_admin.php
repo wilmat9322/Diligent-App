@@ -3,7 +3,7 @@
      Curso: COMP 4400 Desarrollo e Implementación de Sistemas
      Profesor: Ing. Rafael Muñoz ----->
 
-     <?php
+<?php
      session_start();
 
      if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
@@ -76,7 +76,6 @@
     <a href="payrolls_admin.php"><i class="fas fa-file-invoice-dollar"></i><span>Payrolls</span></a>
     <a href="w2_admin.php"><i class="fas fa-landmark"></i><span>W-2 Tax Forms</span></a>
     <a href="schedules_admin.php"><i class="far fa-calendar-alt"></i><span>Schedules</span></a>
-    <a href="leaves_admin.php"><i class="fas fa-bed"></i><span>Leave</span></a>
     <a href="dc_admin.php"><i class="far fa-file-alt"></i><span>Documents and Policies</span></a>
     <footer>
       <h6>Powered by Diligent Technologies</h6>
@@ -86,210 +85,143 @@
 
   <div class="contenido">
     <main>
+      <form action="w2_admin.php" method="post">
       <div class="top-user">
 
         <h3 style="margin-left:10px;">W-2 Tax Forms</h3>
-        <p class="selectors-p"> Select Year:</p>
+        <p class="selectors-p"> Search Tax Form by Name:</p>
 
-        <select class="selectors">
-          <option value="0">Select Year:</option>
-          <option value="1">2010</option>
-          <option value="2">2011</option>
-          <option value="3">2012</option>
-          <option value="4">2013</option>
-          <option value="5">2014</option>
-          <option value="6">2015</option>
-          <option value="7">2016</option>
-          <option value="8">2018</option>
-          <option value="9">2017</option>
-          <option value="10">2018</option>
-          <option value="11">2019</option>
-          <option value="12">2021</option>
+        <input class="search-container" type"text" name="search" placeholder="Search Tax Form"></input>
+        <button class="search-btn" type="submit" name="submit" value="Search"><span><i class="fas fa-search"></i></span></button>
+        </form>
 
-        </select>
-
-        <button class="submit-btn" type="button"> Submit</button>
-        <input class="search-container" type"submit" name="search" placeholder="Search Tax Form">
-        <button class="search-btn" type="submit" value="Search"><span><i class="fas fa-search"></i></span></button>
-
+        <label class="payroll-btn" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">+ <span><i class="fas fa-file-invoice-dollar"></i></span> Add Form</label>
         <button class="print-btn" <span><i class="fas fa-print"></i></span> Print Tax Form</button>
-        <button class="payroll-btn" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">+ <span><i class="fas fa-file-invoice-dollar"></i></span> Add Form</button>
-        <button class="delete-btn" onclick="document.getElementById('id02').style.display='block'" style="width:auto;">- <span><i class="fas fa-file-invoice-dollar"></i></span> Remove Form</button>
-        <button class="save-btn" <span><i class="fas fa-save"></i></span> Save Changes</button>
+
+        <?php if (isset($_GET['error'])) { ?>
+
+        <center>
+          <p class="error"><?php echo $_GET['error']; ?></p>
+        </center>
+
+        <?php } ?>
 
         <div id="id01" class="modal">
 
-        <form class="modal-content animate" action="" method="post">
-            <div class="txtcontainer">
+          <div class="txtcontainer">
             <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-            <h3> Complete the following information to add a Tax Form</h3>
-        </div>
+          </div>
 
-        <div class="container">
+          <div class="container">
 
-          <label for="uname"><b>Add Tax Form</br></label>
-          <input type="file" id="myFile" name="filename">
+            <form class="modal-content animate" action="dbs/w2_create.php" method="post">
 
-          <label for="uname"><b>Employee Name</br></label>
-          <input type="text" placeholder="Enter Employee Name" name="name" required>
+              <center>
+                <h3 style="margin-left: 30px; font-size: 24px;">Complete the following information to add a Tax Form</h3>
+              </center><br>
 
-          <label for="uname"><b>Employee Code</br></label>
-          <input type="text" placeholder="Enter Employee Code" name="name" required>
+              <label class="labcol" for="name"><b>Employee Name</b></label>
+              <input type="text" id="name" name="name" value="<?php if(isset($_GET['name']))
+                  echo($_GET['name']); ?>" placeholder="Enter employee name">
 
-          <label for="uname"><b>Date</br></label>
-          <input type="text" placeholder="Enter Date" name="name" required>
+              <label class="labcol" for="user_name"><b>Employee Code</b></label>
+              <input type="text" id="user_name" name="user_name" value="<?php if(isset($_GET['user_name']))
+                  echo($_GET['user_name']); ?>" placeholder="Enter employee code">
 
-          <button class="add-btn" type="submit">Add</button>
-          <button class="cancel-btn" type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+              <label class="labcol" for="add_tax"><b>Add Tax Form</b></label>
+              <input type="text" id="add_tax" name="add_tax" value="<?php if(isset($_GET['add_tax']))
+                    echo($_GET['add_tax']); ?>" placeholder="Enter tax form">
 
-        </div>
+              <label class="labcol" for="date_tax"><b>Date</b></label>
+              <input type="text" id="date_tax" name="date_tax" value="<?php if(isset($_GET['date_tax']))
+                     echo($_GET['date_tax']); ?>" placeholder="Enter date">
 
-        <div class="container">
+              <center>
+                <button class="cancel-btn" type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
 
-        </div>
-        </form>
-        </div>
+                <button class="add-btn" type="submit" name="create">Create</button>
+              </center>
 
-        <script>
-        // Get the modal
-        var modal = document.getElementById('id01');
-
-        // When the user clicks anywhere outside of the modal, close it
-        window.onclick = function(event) {
-        if (event.target == modal) {
-        modal.style.display = "none";
-          }
-        }
-        </script>
-
-        <div id="id02" class="modal">
-
-        <form class="modal-content animate" action="/action_page.php" method="post">
-            <div class="txtcontainer">
-            <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
-            <h3> To remove a Tax Form, please enter a valid password. </h3>
-        </div>
-
-        <div class="container">
-
-          <label for="uname"><br>Tax Form Code</br></label>
-          <input type="text" placeholder="Enter Tax Form Code" name="name" required>
-
-          <label for="uname"><br>Password</br></label>
-          <input type="password" placeholder="Enter Password" name="name" required>
-
-          <button class="confirm-btn" type="submit">Confirm</button>
-          <button class="cancel-btn" type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
-
-        </div>
-
-        <div class="container">
-
-        </div>
-        </form>
+            </form>
+          </div>
         </div>
 
         <script>
-        // Get the modal
-        var modal = document.getElementById('id02');
+          // Get the modal
+          var modal = document.getElementById('id01');
 
-        // When the user clicks anywhere outside of the modal, close it
-        window.onclick = function(event) {
-        if (event.target == modal) {
-        modal.style.display = "none";
+          // When the user clicks anywhere outside of the modal, close it
+          window.onclick = function(event) {
+            if (event.target == modal) {
+              modal.style.display = "none";
+            }
           }
-        }
         </script>
 
-  </div>
+        <?php include "dbs/w2_read.php"; ?>
+
+        <?php if (isset($_GET['success'])) { ?>
+        <center>
+          <p class="success"><?php echo $_GET['success']; ?></p>
+        </center>
+        <?php } ?>
+
         <section class="List">
-          <div class="empleados-grid">
-            <div class="empleados-card">
+        <div class="empleados-grid">
+          <div class="empleados-card">
 
-            <div>
-            <h3><span><i class="fas fa-landmark"></i></span>List of Tax Forms</h3>
+          <div>
+          <h3><span><i class="fas fa-landmark"></i></span>List of Tax Forms</h3>
+          </div>
+
+          <?php if (mysqli_num_rows($result)) { ?>
+
+          <table>
+            <thead>
+              <tr>
+                <th>Tax Form Code</th>
+                  <th>Employee Name</th>
+                  <th>Employee Code</th>
+                  <th>Tax Form</th>
+                  <th>Date</th>
+                  <th>Manage</th>
+              </tr>
+          </thead>
+          <tbody>
+
+            <?php
+                     $i = 0;
+                     while($rows = mysqli_fetch_assoc($result)){
+                     $i++;
+                   ?>
+
+            <tr>
+
+              <th scope="row"><?=$i?></th>
+              <td><?=$rows['name']?></td>
+              <td><?php echo $rows['user_name']; ?></td>
+              <td><?php echo $rows['add_tax']; ?></td>
+              <td><?php echo $rows['date_tax']; ?></td>
+
+              <td style="width: 10%;"><a href="w2_update.php?id=<?=$rows['id']?>" class="up-btn"><span><i class="fas fa-file-invoice-dollar"></i></span><b> Edit</b></a>
+
+                <a href="dbs/w2_delete.php?id=<?=$rows['id']?>" class="rm-btn"><span><i class="fas fa-file-invoice-dollar"></i></span></span><b>Delete</b></a>
+
+
+            </tr>
+            <?php } ?>
             </div>
+          </tbody>
+        </table>
+        <?php } ?>
+      </div>
 
-            <table>
-              <thead>
-                <tr>
-                    <th>Tax Form Code</th>
-                    <th>Employee Name</th>
-                    <th>Employee Code</th>
-                    <th>Date</th>
-                </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr><tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr><tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr><tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr><tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr><tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr><tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr><tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr><tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr><tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr><tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              </div>
-            </tbody>
-          </table>
-        </div>
   </div>
-  </body>
-  </html>
-  <?php
+</main>
+</section>
+</body>
+</html>
+<?php
   }else{
     header("Location: index.php");
     exit();

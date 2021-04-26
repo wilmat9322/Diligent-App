@@ -126,7 +126,7 @@
     /***** Propiedades del h4 llamado Administrator que esta al lado de la foto de Dilligent App en el menu *****/
     h4 {
       color: #fff;
-      margin-top: 90px;
+      margin-top: 100px;
       text-align: center;
       margin-bottom: 5px;
       font-family: Helvetica, "Trebuchet MS", Verdana, sans-serif;
@@ -251,53 +251,53 @@
       padding: 1rem 4rem;
       padding-right: 70px;
     }
-    .List {
-      margin-top: 2rem;
-      margin-bottom: 3rem;
-    }
-    .empleados-grid {
-      display: grid;
-      grid-column-gap: 1.5rem;
-    }
-    .empleados-card{
-      background: #fff;
-    }
-    .empleados-card h3 {
-      color: #777;
-      margin-top: 0;
-      font-size: 1.4rem;
-      padding-left: 0;
-    }
-    .empleados-card table{
-      width: 100%;
-      height: 100px;
-      border-collapse: collapse;
-    }
-    .empleados-card thead{
-      background: #efefef;
-      text-align: center;
-    }
-    .empleados-card i{
-      font-size: 2rem;
-      color: #f05454;
-      margin-top: 20px;
-      margin-right: 20px;
-      padding-left: 0.8rem;
-    }
-    th, td {
-      font-size: 0.9rem;
-      padding: 1rem 1rem;
-      text-align: left;
-      border: 1px solid #dddddd;
-      color: black;
-      text-align: center;
-    }
-    td {
-      font-size: 1rem;
-    }
-    tbody tr:nth-child(even) {
-      background: #f9fafc;
-    }
+  .List {
+    margin-top: 1rem;
+    margin-bottom: 3rem;
+  }
+  .empleados-grid {
+    display: grid;
+    grid-column-gap: 1.5rem;
+  }
+  .empleados-card{
+    background: #fff;
+}
+  .empleados-card h3 {
+    color: #777;
+    margin-top: 0;
+    font-size: 1.4rem;
+    padding-left: 0;
+  }
+  .empleados-card table{
+    width: 100%;
+    height: 100px;
+    border-collapse: collapse;
+}
+  .empleados-card thead{
+    background: #efefef;
+    text-align: left;
+  }
+  .empleados-card i{
+    font-size: 2rem;
+    color: #f05454;
+    margin-top: 20px;
+    margin-right: 20px;
+    padding-left: 0.8rem;
+  }
+  th, td {
+    font-size: 0.9rem;
+    padding: 1rem 1rem;
+    text-align: left;
+    border: 1px solid #dddddd;
+    color: black;
+    text-align: center;
+  }
+  td {
+    font-size: 1rem;
+  }
+  tbody tr:nth-child(even) {
+    background: #f9fafc;
+  }
 .top-user{
   float: none;
   display: block;
@@ -599,6 +599,12 @@ background: #F2DEDE;
   -webkit-animation: animatezoom 0.6s;
   animation: animatezoom 0.6s
 }
+
+@media screen and (max-width: 600px) {
+  img, button, a{
+    width:100%;
+  }
+
 @-webkit-keyframes animatezoom {
   from {-webkit-transform: scale(0)}
   to {-webkit-transform: scale(1)}
@@ -608,6 +614,8 @@ background: #F2DEDE;
   from {transform: scale(0)}
   to {transform: scale(1)}
 }
+
+
 @media screen and (max-width: 300px) {
   span.psw {
      display: block;

@@ -99,7 +99,6 @@
 .show_profile:hover {
   background: #f05454;
 }
-}
 
     /***** Propiedades del h1 que está en el header *****/
     h1 {
@@ -114,7 +113,7 @@
     /***** Propiedades del h4 llamado Administrator que esta al lado de la foto de Dilligent App en el menu *****/
     h4 {
       color: #fff;
-      margin-top: 90px;
+      margin-top: 100px;
       text-align: center;
       margin-bottom: 5px;
       font-family: Helvetica, "Trebuchet MS", Verdana, sans-serif;
@@ -199,7 +198,7 @@
 
     /***** Si el btn se toca, se esconderá *****/
     #check:checked~.menu-slide {
-      left: -220px;
+      left: -235px;
     }
 
     /***** Cuando el btn del menu se toque, se esconderán los elementos del menú menos los simbolos *****/
@@ -210,8 +209,8 @@
     /***** Propiedades de los simbolos cuando el menú está escondido *****/
     #check:checked~.menu-slide a {
       font-size: 20px;
-      margin-left: 210px;
-      width: 1px;
+      margin-left: 220px;
+      width: 10px;
     }
 
     /***** Propiedades del contenido que mostraran las herramientas *****/
@@ -237,7 +236,7 @@
       min-height: 90vh;
       background: #f1f5f9;
       padding: 1rem 3rem;
-      padding-right: 250px;
+      padding-right: 320px;
     }
     .dash-header {
       color: #000000;

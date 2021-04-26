@@ -76,7 +76,6 @@
     <a href="payrolls_admin.php"><i class="fas fa-file-invoice-dollar"></i><span>Payrolls</span></a>
     <a href="w2_admin.php"><i class="fas fa-landmark"></i><span>W-2 Tax Forms</span></a>
     <a href="schedules_admin.php"><i class="far fa-calendar-alt"></i></i><span>Schedules</span></a>
-    <a href="leaves_admin.php"><i class="fas fa-bed"></i><span>Leave</span></a>
     <a href="dc_admin.php"><i class="far fa-file-alt"></i><span>Documents and Policies</span></a>
     <footer>
       <h6>Powered by Diligent Technologies</h6>
@@ -90,9 +89,9 @@
       <div class="top-user">
 
         <h3 style="margin-left:10px;">Schedules</h3>
-        <p class="selectors-p"> Search employees by their code:</p>
+        <p class="selectors-p"> Search Employees by their Code:</p>
 
-        <input class="search-container" type"submit" name="search" placeholder="Search employee">
+        <input class="search-container" type"submit" name="search" placeholder="Search Employee by Code">
         <button class="search-btn" type="submit" value="Search"><span><i class="fas fa-search"></i></span></button>
 
       </form>
@@ -204,7 +203,6 @@
               <thead>
                 <tr>
                  <th>Employee Name</th>
-                 <th>Employee Code</th>
                  <th>Monday</th>
                  <th>Tuesday</th>
                  <th>Wednesday</th>
@@ -227,7 +225,6 @@
               <tr>
 
                 <td><?=$rows['name']?></td>
-                <td><?php echo $rows['user_name']; ?></td>
                 <td><?php echo $rows['monday']; ?></td>
                 <td><?php echo $rows['tuesday']; ?></td>
                 <td><?php echo $rows['wednesday']; ?></td>
@@ -235,9 +232,9 @@
                 <td><?php echo $rows['friday']; ?></td>
                 <td><?php echo $rows['saturday']; ?></td>
                 <td><?php echo $rows['sunday']; ?></td>
-                <td><?php echo $rows['total_hours']; ?></td>
+                <td><?php echo $rows['total_hours']; ?>hrs</td>
 
-                <td><a href="schedule_update.php?id=<?=$rows['id']?>" class="up-btn"><span><i class="fas fa-calendar-minus"></i></span><b> Edit</b></a>
+                <td style="width: 10%;"><a href="schedule_update.php?id=<?=$rows['id']?>" class="up-btn"><span><i class="fas fa-calendar-minus"></i></span><b> Edit</b></a>
 
                   <a href="dbs/schedule_delete.php?id=<?=$rows['id']?>" class="rm-btn"><span><i class="fas fa-calendar-times"></i></span><b>Delete</b></a>
 

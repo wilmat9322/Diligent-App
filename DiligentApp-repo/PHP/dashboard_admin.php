@@ -75,7 +75,6 @@
     <a href="payrolls_admin.php"><i class="fas fa-file-invoice-dollar"></i><span>Payrolls</span></a>
     <a href="w2_admin.php"><i class="fas fa-landmark"></i><span>W-2 Tax Forms</span></a>
     <a href="schedules_admin.php"><i class="far fa-calendar-alt"></i><span>Schedules</span></a>
-    <a href="leaves_admin.php"><i class="fas fa-bed"></i><span>Leave</span></a>
     <a href="dc_admin.php"><i class="far fa-file-alt"></i><span>Documents and Policies</span></a>
     <footer>
       <h6>Powered by Diligent Technologies</h6>
@@ -132,7 +131,7 @@
         <div class="ponches-body">
         <span><i class="fas fa-business-time" style="margin-bottom: 50px;"></i></span>
         <div>
-          <h3>Hours Worked for this payroll</h3>
+          <h3>Hours worked for this payroll</h3>
           <h2 style="padding-top: 40px;">You have worked <span class="gray">35</span> hours for this payroll.</h2>
         </div>
       </div>
@@ -213,7 +212,7 @@
     </div>
   </div>
 
-<div class="leave-card">
+  <div class="leave-card">
   <div class="leave-single">
   <div>
       <h5 <span><i class="fas fa-bed"></i></span>Leaves</h5>
@@ -224,8 +223,7 @@
       <a href="leaves_admin.php">View all</a>
     </div>
     </div>
-</div>
-</div>
+
 </div>
 </div>
   </section>

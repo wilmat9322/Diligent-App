@@ -75,7 +75,6 @@
     <a href="payrolls_admin.php"><i class="fas fa-file-invoice-dollar"></i><span>Payrolls</span></a>
     <a href="w2_admin.php"><i class="fas fa-landmark"></i><span>W-2 Tax Forms</span></a>
     <a href="schedules_admin.php"><i class="far fa-calendar-alt"></i><span>Schedules</span></a>
-    <a href="leaves_admin.php"><i class="fas fa-bed"></i><span>Leave</span></a>
     <a href="dc_admin.php"><i class="far fa-file-alt"></i><span>Documents and Policies</span></a>
     <footer>
       <h6>Powered by Diligent Technologies</h6>
@@ -192,7 +191,7 @@
                 <th>Payroll Number</th>
                   <th>Employee Name</th>
                   <th>Employee Code</th>
-                  <th>Pay Rate</th>
+                  <th>Earning Rate (ph)</th>
                   <th>Gross Earnings</th>
                   <th>Deductions</th>
                   <th>Net Pay</th>
@@ -213,10 +212,10 @@
               <th scope="row"><?=$i?></th>
               <td><?=$rows['name']?></td>
               <td><?php echo $rows['user_name']; ?></td>
-              <td><?php echo $rows['earn_rate']; ?></td>
-              <td><?php echo $rows['gross']; ?></td>
-              <td><?php echo $rows['dedu']; ?></td>
-              <td><?php echo $rows['net_pay']; ?></td>
+              <td>$<?php echo $rows['earn_rate']; ?></td>
+              <td>$<?php echo $rows['gross']; ?></td>
+              <td>-$<?php echo $rows['dedu']; ?></td>
+              <td>$<?php echo $rows['net_pay']; ?></td>
               <td><?php echo $rows['date_pay']; ?></td>
 
               <td><a href="update_payrolls.php?id=<?=$rows['id']?>" class="up-btn"><span><i class="fas fa-file-invoice-dollar"></i></span><b> Edit</b></a>

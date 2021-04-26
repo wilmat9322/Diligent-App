@@ -75,7 +75,6 @@
     <a href="payrolls_admin.php"><i class="fas fa-file-invoice-dollar"></i><span>Payrolls</span></a>
     <a href="w2_admin.php"><i class="fas fa-landmark"></i><span>W-2 Tax Forms</span></a>
     <a href="schedules_admin.php"><i class="far fa-calendar-alt"></i><span>Schedules</span></a>
-    <a href="leaves_admin.php"><i class="fas fa-bed"></i><span>Leave</span></a>
     <a href="dc_admin.php"><i class="far fa-file-alt"></i><span>Documents and Policies</span></a>
     <footer>
       <h6>Powered by Diligent Technologies</h6>
@@ -147,7 +146,7 @@
               <tr>
 
                 <td><b>Working Since: <?php echo $rows['work_time']; ?></td>
-                <td><b>Status: <?php echo $rows['earn_rate']; ?></td>
+                <td><b>Status: Active</td>
 
                 </div>
               </tbody>

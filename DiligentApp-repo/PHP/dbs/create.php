@@ -59,7 +59,6 @@ if (isset($_POST['create'])) {
               }else if (mysqli_num_rows($result) > 0) {
                 header("Location: ../manage_admin.php?error=The Username is taken try another&$user_data");
 
-
     }else {
       $sql = "SELECT * FROM users_table WHERE comp_code='$comp_code' AND user_name='$user_name' ";
    $result = mysqli_query($conn, $sql);

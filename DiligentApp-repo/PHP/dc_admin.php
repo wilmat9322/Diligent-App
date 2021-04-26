@@ -75,7 +75,6 @@
     <a href="payrolls_admin.php"><i class="fas fa-file-invoice-dollar"></i><span>Payrolls</span></a>
     <a href="w2_admin.php"><i class="fas fa-landmark"></i><span>W-2 Tax Forms</span></a>
     <a href="schedules_admin.php"><i class="far fa-calendar-alt"></i><span>Schedules</span></a>
-    <a href="leaves_admin.php"><i class="fas fa-bed"></i><span>Leave</span></a>
     <a href="dc_admin.php"><i class="far fa-file-alt"></i><span>Documents and Policies</span></a>
     <footer>
       <h6>Powered by Diligent Technologies</h6>
@@ -86,152 +85,71 @@
   <div class="contenido">
 
     <main>
-      <div class="top-user">
 
-        <h3 style="margin-left:10px;">Documents and Policies</h3>
-        <p class="selectors-p"> Range Documents Since:</p>
+<form action="dc_admin.php" method="post">
+  <div class="top-user">
 
-        <select class="selectors">
-          <option value="0">Select Day:</option>
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-          <option value="6">6</option>
-          <option value="7">7</option>
-          <option value="8">8</option>
-          <option value="9">9</option>
-          <option value="10">10</option>
-          <option value="11">11</option>
-          <option value="12">12</option>
-          <option value="13">13</option>
-          <option value="14">14</option>
-          <option value="15">15</option>
-          <option value="16">16</option>
-          <option value="17">17</option>
-          <option value="18">18</option>
-          <option value="19">19</option>
-          <option value="20">20</option>
-          <option value="21">21</option>
-          <option value="22">22</option>
-          <option value="23">23</option>
-          <option value="24">24</option>
-          <option value="25">25</option>
-          <option value="26">26</option>
-          <option value="27">27</option>
-          <option value="28">28</option>
-          <option value="29">29</option>
-          <option value="30">30</option>
-          <option value="31">31</option>
-        </select>
-        <select class="selectors">
-          <option value="0">Select Month:</option>
-          <option value="1">January</option>
-          <option value="2">February</option>
-          <option value="3">March</option>
-          <option value="4">April</option>
-          <option value="5">May</option>
-          <option value="6">June</option>
-          <option value="7">July</option>
-          <option value="8">August</option>
-          <option value="9">September</option>
-          <option value="10">October</option>
-          <option value="11">November</option>
-          <option value="12">December</option>
-        </select>
-        <select class="selectors">
-          <option value="0">Select Year:</option>
-          <option value="1">2010</option>
-          <option value="2">2011</option>
-          <option value="3">2012</option>
-          <option value="4">2013</option>
-          <option value="5">2014</option>
-          <option value="6">2015</option>
-          <option value="7">2016</option>
-          <option value="8">2018</option>
-          <option value="9">2017</option>
-          <option value="10">2018</option>
-          <option value="11">2019</option>
-          <option value="12">2021</option>
+  <h3 style="margin-left:10px;">Documents and Policies</h3>
+  <p class="selectors-p"> Search documents by their Name:</p>
 
-        </select>
+  <input class="search-container" type"submit" name="search" placeholder="Search Document">
+  <button class="search-btn" type="submit" value="Search"><span><i class="fas fa-search"></i></span></button>
+  </form>
 
-        <button class="submit-btn" type="button"> Submit</button>
-        <input class="search-container" type"submit" name="search" placeholder="Search Document">
-        <button class="search-btn" type="submit" value="Search"><span><i class="fas fa-search"></i></span></button>
+        <label class="payroll-btn" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">+ <span><i class="far fa-file-alt"></i></span> Add Document</label>
 
         <button class="print-btn" type="button"><span><i class="fas fa-print"></i></span> Print Document</button>
 
-        <button class="payroll-btn" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">+ <span><i class="far fa-file-alt"></i></span> Add Document</button>
-        <button class="delete-btn" onclick="document.getElementById('id02').style.display='block'" style="width:auto;">- <span><i class="far fa-file-alt"></i></span> Remove Document</button>
-        <button class="save-btn" <span><i class="fas fa-save"></i></span> Save Changes</button>
+        <?php if (isset($_GET['error'])) { ?>
 
+        <center>
+        <p class="error"><?php echo $_GET['error']; ?></p>
+        </center>
+
+        <?php } ?>
 
         <div id="id01" class="modal">
 
-        <form class="modal-content animate" action="upload.php" method="post" enctype="multipart/form-data">
+        <form class="modal-content animate" action="dbs/dc_create.php" method="post" enctype="multipart/form-data">
 
           <?php if (isset($_GET['error'])): ?>
             <p><?php echo $_GET['error']; ?></p>
           <?php endif ?>
 
-            <div class="txtcontainer">
-            <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-            <h3> Complete the following information to add a document. </h3>
+          <div class="txtcontainer">
+          <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+          </div>
+
+          <div class="container">
+
+            <form class="modal-content animate" action="dbs/dc_create.php" method="post">
+
+          <center><h3 style="font-size: 24px; margin-top: 0;"> Complete the following information to add a document </h3></center>
+
+          <label class="labcol" for="dc_name"><b>Document Name</b></label>
+            <input type="text" id="dc_name" name="dc_name" value="<?php if(isset($_GET['dc_name']))
+                                             echo($_GET['dc_name']); ?>" placeholder="Enter the name of the document">
+
+            <label class="labcol" for="dc_add"><b>Add Document</b></label>
+            <input type="text" id="dc_add" name="dc_add" value="<?php if(isset($_GET['dc_add']))
+                                                   echo($_GET['dc_add']); ?>" placeholder="Select a document">
+
+            <label class="labcol" for="dc_desc"><b>Brief Description of the Document</b></label>
+            <input type="text" id="dc_desc" name="dc_desc" value="<?php if(isset($_GET['dc_desc']))
+                                                         echo($_GET['dc_desc']); ?>" placeholder="Enter a brief description for the document">
+
+            <label class="labcol" for="dc_date"><b>Date</b></label>
+            <input type="text" id="dc_date" name="dc_date" value="<?php if(isset($_GET['dc_date']))
+                                                               echo($_GET['dc_date']); ?>" placeholder="Enter a date for the document">
+
+            <center>
+            <button class="cancel-btn" type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+            <button class="add-btn" type="submit" name="create">Create</button>
+          </center>
+
+          </form>
         </div>
-
-        <div class="container">
-
-          <label><b>Document Name</label>
-          <?php if (isset($_GET['doc_name'])) { ?>
-               <input type="text"
-                      name="doc_name"
-                      placeholder="Enter Document Name"
-                      value="<?php echo $_GET['doc_name']; ?>">
-          <?php }else{ ?>
-               <input type="text"
-                      name="doc_name"
-                      placeholder="Enter Document Name">
-          <?php }?>
-
-          <label for="uname"><b>Add Document</br></label>
-          <input type="file" id="my_file" name="my_file">
-
-          <label><b>Brief Description of the Document</label>
-          <?php if (isset($_GET['doc_desc'])) { ?>
-               <input type="text"
-                      name="doc_desc"
-                      placeholder="Brief Description"
-                      value="<?php echo $_GET['doc_desc']; ?>">
-          <?php }else{ ?>
-               <input type="text"
-                      name="doc_desc"
-                      placeholder="Brief Description">
-          <?php }?>
-
-          <label><b>Date</label>
-          <?php if (isset($_GET['doc_date'])) { ?>
-               <input type="text"
-                      name="doc_date"
-                      placeholder="Enter a date"
-                      value="<?php echo $_GET['doc_date']; ?>">
-          <?php }else{ ?>
-               <input type="text"
-                      name="doc_date"
-                      placeholder="Enter a date">
-          <?php }?>
-
-          <button class="add-btn" name="submit" type="submit">Add</button>
-          <button class="cancel-btn" type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-
-        </div>
-
-        <div class="container">
-
-        </div>
-        </form>
-        </div>
+      </div>
 
         <script>
         // Get the modal
@@ -245,139 +163,76 @@
         }
         </script>
 
-        <div id="id02" class="modal">
+        <?php include "dbs/dc_read.php"; ?>
 
-        <form class="modal-content animate" action="/action_page.php" method="post">
-            <div class="txtcontainer">
-            <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
-            <h3> To remove a Payroll, please enter a valid password. </h3>
-        </div>
+        <?php if (isset($_GET['success'])) { ?>
+        <center>
+          <p class="success"><?php echo $_GET['success']; ?></p>
+        </center>
+        <?php } ?>
 
-        <div class="container">
+        <section class="List">
+          <div class="empleados-grid">
+            <div class="empleados-card">
 
-          <label for="uname"><br>Remove Document</br></label>
-          <input type="text" placeholder="Enter Document Name" name="name" required>
+              <div>
 
-          <label for="uname"><br>Password</br></label>
-          <input type="password" placeholder="Enter Password" name="name" required>
+                <h3><span><i class="far fa-file-alt"></i></span>Documents and Policies</h3>
 
-          <button class="confirm-btn" type="submit">Confirm</button>
-          <button class="cancel-btn" type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
+              </div>
+              <?php if (mysqli_num_rows($result)) { ?>
 
-        </div>
+              <table>
+                <thead>
+                  <tr>
 
-        <div class="container">
+                    <th>Name</th>
+                    <th>Document</th>
+                    <th>Description</th>
+                    <th>Date</th>
+                    <th>Manage</th>
 
-        </div>
-        </form>
-        </div>
+                  </tr>
+                </thead>
+                <tbody>
 
-        <script>
-        // Get the modal
-        var modal = document.getElementById('id02');
+                  <?php
+              			  	   $i = 0;
+              			  	   while($rows = mysqli_fetch_assoc($result)){
+              			  	   $i++;
+              			  	 ?>
 
-        // When the user clicks anywhere outside of the modal, close it
-        window.onclick = function(event) {
-        if (event.target == modal) {
-        modal.style.display = "none";
-          }
-        }
-        </script>
+                  <tr>
 
-      </div>
+                    <td><?=$rows['dc_name']?></td>
+                    <td><?php echo $rows['dc_add']; ?></td>
+                    <td><?php echo $rows['dc_desc']; ?></td>
+                    <td><?php echo $rows['dc_date']; ?></td>
 
-      <section class="List">
-        <div class="empleados-grid">
-          <div class="empleados-card">
+                    <td style="width: 10%;"><a href="dc_update.php?id=<?=$rows['id']?>" class="up-btn"><span><i class="far fa-file-alt"></i></span><b>Update</b></a>
 
-          <div>
-          <h3><span><i class="far fa-file-alt"></i></span>Documents and Policies</h3>
+                      <a href="dbs/dc_delete.php?id=<?=$rows['id']?>" class="rm-btn"><span><i class="far fa-file-alt"></i></span><b>Delete</b></a>
+
+                    </td>
+
+                  </tr>
+                  <?php } ?>
+            </div>
+
+            </tbody>
+            </table>
+            <?php } ?>
           </div>
 
-          <table>
-            <thead>
-              <tr>
-                <th>Document Name</th>
-                <th>Description</th>
-                <th>Date</th>
-              </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            </div>
-          </tbody>
-        </table>
-      </div>
 
-  </div>
-</main>
-</section>
-</body>
-</html>
+          </div>
+          </main>
+        </section>
+
+        </div>
+    </body>
+
+    </html>
 <?php
 }else{
   header("Location: index.php");

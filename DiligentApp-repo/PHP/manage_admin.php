@@ -78,7 +78,6 @@
     <a href="payrolls_admin.php"><i class="fas fa-file-invoice-dollar"></i><span>Payrolls</span></a>
     <a href="w2_admin.php"><i class="fas fa-landmark"></i><span>W-2 Tax Forms</span></a>
     <a href="schedules_admin.php"><i class="far fa-calendar-alt"></i><span>Schedules</span></a>
-    <a href="leaves_admin.php"><i class="fas fa-bed"></i><span>Leave</span></a>
     <a href="dc_admin.php"><i class="far fa-file-alt"></i><span>Documents and Policies</span></a>
     <footer>
       <h6>Powered by Diligent Technologies</h6>
@@ -93,7 +92,6 @@
 
           <h3 style="margin-left:10px;">Manage Employees</h3>
           <p class="selectors-p"> Search Employees by their Code:</p>
-
 
           <input class="search-container" type"text" name="search" placeholder="Search Employee by Code"></input>
           <button class="search-btn" type="submit" name="submit" value="Search"><span><i class="fas fa-search"></i></span></button>
@@ -123,13 +121,13 @@
 
         <label class="labcol" for="comp_code"><b>Company code</b></label>
         <input type="text" id="comp_code" name="comp_code" value="<?php if(isset($_GET['comp_code']))
-                        echo($_GET['comp_code']); ?>" placeholder="Enter the company code">
+                        echo($_GET['comp_code']); ?>" placeholder="Escribe 1234 en este campo">
 
-        <label class="labcol" for="name"><b>Employee Name</b></label>
+        <label class="labcol" for="name"><b>Employee name</b></label>
         <input type="text" id="name" name="name" value="<?php if(isset($_GET['name']))
     		                           echo($_GET['name']); ?>" placeholder="Enter the name of the employee">
 
-        <label class="labcol" for="user_name"><b>Employee Code</b></label>
+        <label class="labcol" for="user_name"><b>Employee code</b></label>
         <input type="text" id="user_name" name="user_name" value="<?php if(isset($_GET['user_name']))
     		                           echo($_GET['user_name']); ?>" placeholder="Enter a username for the employee">
 
@@ -167,11 +165,11 @@
 
         <label class="labcol" for="password"><b>Password</b></label>
         <input type="password" id="password" name="password" value="<?php if(isset($_GET['password']))
-                                                            echo($_GET['password']); ?>" placeholder="Password">
+                                                            echo($_GET['password']); ?>" placeholder="Enter a password">
 
-        <label class="labcol"><b>Re Password</b></label>
+        <label class="labcol"><b>Repeat password</b></label>
         <input type="password" id="re_password" name="re_password" value="<?php if(isset($_GET['re_password']))
-                                                                echo($_GET['re_password']); ?>" placeholder="Re_Password">
+                                                                echo($_GET['re_password']); ?>" placeholder="Repeat the password">
 
         <center>
         <button class="cancel-btn" type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>

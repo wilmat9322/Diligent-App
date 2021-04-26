@@ -1,4 +1,4 @@
-<?php include 'dbs/schedule_update.php'; ?>
+<?php include 'dbs/w2_update.php'; ?>
 <!----- Programa hecho por: William S. Matos Díaz
      Número de estudiante: B00539322
      Curso: COMP 4400 Desarrollo e Implementación de Sistemas
@@ -19,7 +19,7 @@
   <meta name="keywords" content="DiligentApp, Employee Management, Payroll" />
   <meta name="author" content="Diligent Technologies" />
 
-  <title>Edit Schedule</title>
+  <title>Edit Tax Form</title>
 
   <!----- Fonts y Símbolos que utilicé para la aplicación ----->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
@@ -38,11 +38,11 @@
 
   <div class="txtcontainer">
 
-    <h3><b>Complete the following information to edit a Payroll</b></h3>
+    <h3><b>Complete the following information to update an Employee</b></h3>
 
   </div>
 
-    <form action="dbs/schedule_update.php" method="post">
+    <form action="dbs/w2_update.php" method="post">
 
 
       <?php if (isset($_GET['error'])) { ?>
@@ -54,43 +54,28 @@
       <div class="update">
 
 
-      <label for="name">Employee name<b></label></center>
+      <label for="name"><b>Employee Name</label></center>
       <input type="text" id="name" name="name" value="<?=$row['name'] ?>">
 
 
       <label for="user_name">Employee Code</label>
       <input type="text" id="user_name" name="user_name" value="<?=$row['user_name'] ?>">
 
-      <label for="monday">Monday</label>
-      <input type="text" id="monday" name="monday" value="<?=$row['monday'] ?>">
 
-      <label for="tuesday">Tuesday</label>
-      <input type="text" id="tuesday" name="tuesday" value="<?=$row['tuesday'] ?>">
+      <label for="add_tax">Add Tax Form</label>
+      <input type="text" id="add_tax" name="add_tax" value="<?=$row['add_tax'] ?>">
 
-      <label for="wednesday">Wednesday</label>
-      <input type="text" id="wednesday" name="wednesday" value="<?=$row['wednesday'] ?>">
 
-      <label for="thursday">Thursday</label>
-      <input type="text" id="thursday" name="thursday" value="<?=$row['thursday'] ?>">
-
-      <label for="friday">Friday</label>
-      <input type="text" id="friday" name="friday" value="<?=$row['friday'] ?>">
-
-      <label for="saturday">Saturday</label>
-      <input type="text" id="saturday" name="saturday" value="<?=$row['saturday'] ?>">
-
-      <label for="sunday">Sunday</label>
-      <input type="text" id="sunday" name="sunday" value="<?=$row['sunday'] ?>">
-
-      <label for="total_hours">Total Hours</label>
-      <input type="text" id="total_hours" name="total_hours" value="<?=$row['total_hours'] ?>">
+      <label for="date_tax">Date</label>
+      <input type="text" id="date_tax" name="date_tax" value="<?=$row['date_tax'] ?>">
 
     </div>
 
       <input type="text" name="id" value="<?=$row['id']?>" hidden>
 
+
       <center>
-      <a href="schedules_admin.php" class="cancel-btn" type="button" class="cancelbtn">Cancel</a>
+      <a href="w2_admin.php" class="cancel-btn" type="button" class="cancelbtn">Cancel</a>
       <button class="add-btn" type="submit" name="update">Update</button>
     </center>
 

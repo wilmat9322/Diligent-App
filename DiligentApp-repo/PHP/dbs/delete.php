@@ -1,4 +1,3 @@
-
 <?php
 
 if(isset($_GET['id'])){
@@ -13,14 +12,17 @@ if(isset($_GET['id'])){
 	$id = validate($_GET['id']);
 
 	$sql = "DELETE FROM users_table
-	        WHERE id=$id";
+	        WHERE id=$id AND id <> '1'";
    $result = mysqli_query($conn, $sql);
-   if ($result) {
-   	  header("Location: ../manage_admin.php?success=Employee was Successfully Deleted");
-   }else {
-      header("Location: ../manage_admin.php?error=unknown error occurred&$user_data");
-   }
+   if ($id <> '1') {
+   	  header("Location: ../manage_admin.php?success=Employee was successfully deleted");
 
+   }else if ($result == '1'){
+      header("Location: ../manage_admin.php?error=You cannot delete this account&$user_data");
+   }else{
+       header("Location: ../manage_admin.php?error=Unknown error occurred&$user_data");
+
+}
 }else {
 	header("Location: ../manage_admin.php");
 }
