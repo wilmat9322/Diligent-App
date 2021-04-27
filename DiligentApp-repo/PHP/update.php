@@ -53,47 +53,72 @@
 
       <div class="update">
 
-
       <label for="comp_code"><b>Company Code</label></center>
       <input type="text" id="comp_code" name="comp_code" value="<?=$row['comp_code'] ?>">
 
-
-      <label for="name">Employee's Name</label>
+      <label for="name">Employee Name</label>
       <input type="text" id="name" name="name" value="<?=$row['name'] ?>">
 
-
-      <label for="user_name">Username</label>
+      <label for="user_name">Employee Code</label>
       <input type="text" id="user_name" name="user_name" value="<?=$row['user_name'] ?>">
 
+      <label for="position">Select a Position for this employee</label>
+      <select id="position" name="position">
 
-      <label for="position">Employee's Position</label>
-      <input type="text" id="position" name="position" value="<?=$row['position'] ?>">
+        <option><?=$row['position'] ?></option>
+        <option></option>
+        <option> Manager</option>
+        <option> Front End Superviser</option>
+        <option> Cashier</option>
+        <option> Bagger</option>
+        <option> Stocker</option>
+        <option> Butcher</option>
+        <option> Maintenance and Cleaning</option>
 
+        </select>
 
-      <label for="type_employee">Type of Employee</label>
-      <input type="text" id="type_employee" name="type_employee" value="<?=$row['type_employee'] ?>">
+        <label for="type_employee">Select Employee Type</label>
+        <select id="type_employee" name="type_employee">
 
+          <option><?=$row['type_employee'] ?></option>
+          <option></option>
+          <option>Administrator</option>
+          <option>Employee</option>
+
+        </select>
 
       <label for="work_time">Working Since</label>
-      <input type="text" id="work_time" name="work_time" value="<?=$row['work_time'] ?>">
-
+      <input type="date" id="work_time" name="work_time" value="<?=$row['work_time'] ?>">
 
       <label for="hours_work">Hours Worked</label>
       <input type="text" id="hours_work" name="hours_work" value="<?=$row['hours_work'] ?>">
 
+      <label for="earn_rate">Select the Earning Rate for this Employee</label>
+      <select id="earn_rate" name="earn_rate">
 
-      <label for="earn_rate">Earn Rate</label>
-      <input type="text" id="earn_rate" name="earn_rate" value="<?=$row['earn_rate'] ?>">
+        <option><?=$row['earn_rate'] ?></option>
+        <option></option></option>
+        <option> $8.75</option>
+        <option> $18.75</option>
 
-      <label for="gender">Gender</label>
-      <input type="text" id="gender" name="gender" value="<?=$row['gender'] ?>">
+        </select>
+
+        <label for="earn_rate">Select a Gender</label>
+        <select class="options" id="gender" name="gender">
+
+          <option><?=$row['gender'] ?></option>
+          <option></option>
+          <option>Male</option>
+          <option>Female</option>
+          <option>Other</option>
+
+        </select>
 
       <label for="bday">Birthday</label>
-      <input type="text" id="bday" name="bday" value="<?=$row['bday'] ?>">
+      <input type="date" id="bday" name="bday" value="<?=$row['bday'] ?>">
 
       <label for="citi">Citizenship</label>
       <input type="text" id="citi" name="citi" value="<?=$row['citi'] ?>">
-
 
       <label for="password">Password</label>
       <input type="password" id="password" name="password" value="<?=$row['password'] ?>">

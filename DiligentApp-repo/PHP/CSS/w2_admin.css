@@ -414,12 +414,13 @@
   .print-btn{
     color: white;
     background: green;
-    float: right;
     text-align: center;
     padding: 7.3px 9px;
     text-decoration: none;
-    margin-left: 10px;
-    font-size: 15px;
+    margin-right: 20px;
+    margin-left: 0;
+    float: right;
+    font-size: 16px;
     border-radius: 20px;
     border:none;
     cursor: pointer;
@@ -465,13 +466,14 @@
   }
   .payroll-btn{
     color: white;
-    background: #0e49b5;
+    background: #035aa6;
     text-align: center;
-    float: right;
     padding: 7.3px 9px;
     text-decoration: none;
-    margin-left: 10px;
-    font-size: 15px;
+    margin-right: 20px;
+    margin-left: 0;
+    float: right;
+    font-size: 16px;
     border-radius: 20px;
     border:none;
     cursor: pointer;

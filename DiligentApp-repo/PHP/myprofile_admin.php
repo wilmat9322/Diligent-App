@@ -141,7 +141,7 @@
                 </tr>
                 <tr>
                   <td><b>Type: <?php echo $rows['type_employee']; ?></td>
-                  <td><b>Earning Rate: $<?php echo $rows['earn_rate']; ?></td>
+                  <td><b>Earning Rate: <?php echo $rows['earn_rate']; ?></td>
                 </tr>
               <tr>
 

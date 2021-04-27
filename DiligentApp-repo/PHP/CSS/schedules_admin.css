@@ -397,11 +397,12 @@
   color: white;
   background: green;
   text-align: center;
-  float: right;
   padding: 7.3px 9px;
   text-decoration: none;
-  margin-left: 10px;
-  font-size: 15px;
+  margin-right: 20px;
+  margin-left: 0;
+  float: right;
+  font-size: 16px;
   border-radius: 20px;
   border:none;
   cursor: pointer;
@@ -447,13 +448,14 @@
 }
 .payroll-btn{
   color: white;
-  background: #0e49b5;
+  background: #035aa6;
   text-align: center;
-  float: right;
   padding: 7.3px 9px;
   text-decoration: none;
-  margin-left: 10px;
-  font-size: 15px;
+  margin-right: 20px;
+  margin-left: 0;
+  float: right;
+  font-size: 16px;
   border-radius: 20px;
   border:none;
   cursor: pointer;
@@ -461,7 +463,7 @@
 .payroll-btn:hover {
   background: #23689b;
 }
-input[type=text], input[type=password], input[type=file] {
+input[type=text], input[type=password], input[type=date] {
   width: 50%;
   padding: 14px 2px;
   margin: auto auto;

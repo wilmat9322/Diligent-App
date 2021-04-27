@@ -98,8 +98,6 @@
 
         <label class="payroll-btn" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">+ <span><i class="far fa-file-alt"></i></span> Add Document</label>
 
-        <button class="print-btn" type="button"><span><i class="fas fa-print"></i></span> Print Document</button>
-
         <?php if (isset($_GET['error'])) { ?>
 
         <center>

@@ -46,6 +46,7 @@ if (isset($_GET['id'])) {
 	$re_pass = validate($_POST['re_password']);
 	$id = validate($_POST['id']);
 
+
   if (empty($comp_code)) {
 		header("Location: ../manage_admin.php?error=Company code is required&$user_data");
   }else if (empty($name)) {
@@ -73,23 +74,32 @@ if (isset($_GET['id'])) {
   }else if (empty($re_pass)) {
     header("Location: ../manage_admin.php?error=Repeated password is required&$user_data");
   }else if($pass !== $re_pass){
+       header("Location: ../manage_admin.php?error=The confirmation password  does not match&$user_data");
           header("Location: ../manage_admin.php?error=The confirmation password  does not match&$user_data");
-        }else if($comp_code !== "1234"){
+        }else if($comp_code !== "admin"){
                 header("Location: ../manage_admin.php?error=The company code does not match&$user_data");
-
              }else {
+
+               $sql = "SELECT * FROM users_table WHERE name='$name' AND position='$position'AND type_employee='$type_employee' AND work_time='$work_time' AND hours_work='$hours_work' AND earn_rate='$earn_rate' AND gender='$gender' AND bday='$bday' AND password='$pass' AND citi='$citi'";
+            $result = mysqli_query($conn, $sql);
+
+            if (mysqli_num_rows($result) > 0) {
+              header("Location: ../manage_admin.php?error=No changes were made&$user_data");
+                  exit();
+            }else {
 
        $sql = "UPDATE users_table
                SET comp_code='$comp_code', name='$name', user_name='$user_name', position='$position', type_employee='$type_employee', work_time='$work_time', hours_work='$hours_work', earn_rate='$earn_rate', password='$pass', gender='$gender', bday='$bday', citi='$citi'
-               WHERE id=$id ";
+               WHERE id=$id";
        $result = mysqli_query($conn, $sql);
+
        if ($result) {
        	  header("Location: ../manage_admin.php?success=Employee was successfully updated");
        }else {
           header("Location: ../manage_admin.php?id=$id&error=Unknown error occurred&$user_data");
        }
 	}
-
+}
 }else{
 	header("Location: read.php");
 }

@@ -365,6 +365,24 @@
   margin-right: 5px;
 }
 
+.print-btn{
+  color: white;
+  background: green;
+  text-align: center;
+  padding: 7.3px 9px;
+  text-decoration: none;
+  margin-right: 20px;
+  margin-left: 0;
+  float: right;
+  font-size: 16px;
+  border-radius: 20px;
+  border:none;
+  cursor: pointer;
+}
+.print-btn:hover {
+  background: #4CAF50;
+}
+
 .up-btn{
   text-align: center;
   float: none;
@@ -407,7 +425,6 @@
   margin-left: 0;
   float: right;
   font-size: 16px;
-  font-weight: bold;
   border-radius: 20px;
   border:none;
   cursor: pointer;
@@ -417,7 +434,7 @@
   background: #23689b;
 }
 
-input[type=text], input[type=password] {
+input[type=text], input[type=password], input[type=date], select {
   width: 50%;
   padding: 14px 2px;
   margin: auto auto;
@@ -425,7 +442,9 @@ input[type=text], input[type=password] {
   font-size: 18px;
   border: 1px solid #ccc;
 }
-
+.options{
+  width: 50.5%;
+}
 .labcol{
   background-color: #ccc;
   width: 50%;
@@ -491,7 +510,7 @@ input[type=text], input[type=password] {
 /* Contenido del Modal */
 .modal-content {
   background-color: #fefefe;
-  margin: 2% auto 15% auto;
+  margin: 2.4% auto 15% auto;
   border: 1px solid #888;
   width: 60%;
   line-height: 15px;

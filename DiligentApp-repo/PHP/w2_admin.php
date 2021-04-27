@@ -96,7 +96,7 @@
         </form>
 
         <label class="payroll-btn" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">+ <span><i class="fas fa-file-invoice-dollar"></i></span> Add Form</label>
-        <button class="print-btn" <span><i class="fas fa-print"></i></span> Print Tax Form</button>
+        <label class="print-btn" type="button" onclick="window.print();"><span><i class="fas fa-print"></i></span> Print Form Sheet</label>
 
         <?php if (isset($_GET['error'])) { ?>
 
@@ -166,6 +166,23 @@
         </center>
         <?php } ?>
 
+        <style>
+        @media print {
+          body * {
+            visibility: hidden;
+          }
+          .print-container, .print-container * {
+            visibility: visible;
+          }
+          .print-container {
+            position: absolute;
+            left: 0px;
+            top: 0px;
+          }
+        }
+        </style>
+        <div class = "row print-container">
+
         <section class="List">
         <div class="empleados-grid">
           <div class="empleados-card">
@@ -215,7 +232,7 @@
         </table>
         <?php } ?>
       </div>
-
+</div>
   </div>
 </main>
 </section>

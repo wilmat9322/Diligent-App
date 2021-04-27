@@ -32,6 +32,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link rel="shortcut icon" type="image/png" href="images/favicon">
   <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:ital,wght@1,300&display=swap" rel="stylesheet">
+
 </head>
 
 <body>

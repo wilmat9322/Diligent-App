@@ -21,10 +21,10 @@ if (isset($_POST['create'])) {
   $bday = validate($_POST['bday']);
   $citi = validate($_POST['citi']);
   $pass = validate($_POST['password']);
-	$re_pass = validate($_POST['re_password']);
+  $re_pass = validate($_POST['re_password']);
 
-	$user_data = 'comp_code='.$comp_code. '&name='.$name. '&user_name='.$user_name. '&position='.$position. '&type_employee='.$type_employee. '&work_time='.$work_time.
-              '&hours_work='.$hours_work. '&earn_rate='.$earn_rate. '&gender='.$gender. '&bday='.$bday. '&citi='.$citi. '&password='.$pass. '&re_password='.$re_pass;
+  	$user_data = 'comp_code='.$comp_code. '&name='.$name. '&user_name='.$user_name. '&position='.$position. '&type_employee='.$type_employee. '&work_time='.$work_time.
+                '&hours_work='.$hours_work. '&earn_rate='.$earn_rate. '&gender='.$gender. '&bday='.$bday. '&citi='.$citi. '&password='.$pass. '&re_password='.$re_pass;
 
 	if (empty($comp_code)) {
 		header("Location: ../manage_admin.php?error=Company Code is required&$user_data");
@@ -54,11 +54,9 @@ if (isset($_POST['create'])) {
     header("Location: ../manage_admin.php?error=Repeated Password is required&$user_data");
   }else if($pass !== $re_pass){
           header("Location: ../manage_admin.php?error=The confirmation password  does not match&$user_data");
-        }else if($comp_code !== "1234"){
-                header("Location: ../manage_admin.php?error=The company code does not match&$user_data");
-              }else if (mysqli_num_rows($result) > 0) {
-                header("Location: ../manage_admin.php?error=The Username is taken try another&$user_data");
 
+        }else if($comp_code !== "admin"){
+                header("Location: ../manage_admin.php?error=The company code does not match&$user_data");
     }else {
       $sql = "SELECT * FROM users_table WHERE comp_code='$comp_code' AND user_name='$user_name' ";
    $result = mysqli_query($conn, $sql);

@@ -16,7 +16,7 @@
 <head>
 
   <!----- Lista de Metas que considero importantes ----->
-  <meta charset="utf-8">
+  <meta charset="utf_unicode_ci">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Diligent App es una aplicación de manejo de manejo de empelados y nóminas desarrollada
                                       por Diligent Technologies. Diligent Technologies ha sido una empresa con más de 10 años
@@ -40,6 +40,7 @@
   <!----- Referencia al file del diseño de la app ----->
   <style>
     <?php include 'CSS/manage_admin.css';
+          include 'CSS/print.css';
     ?>
   </style>
 
@@ -99,6 +100,7 @@
 
   <label class="add1-btn" onclick="document.getElementById('id01').style.display='block'" style="width:auto;"><span><i class="fas fa-user-plus"></i></span> Add Employee</label>
 
+  <label class="print-btn" type="button" onclick="window.print();"><span><i class="fas fa-print"></i></span> Print Employee Sheet</label>
   <?php if (isset($_GET['error'])) { ?>
 
   <center>
@@ -121,7 +123,7 @@
 
         <label class="labcol" for="comp_code"><b>Company code</b></label>
         <input type="text" id="comp_code" name="comp_code" value="<?php if(isset($_GET['comp_code']))
-                        echo($_GET['comp_code']); ?>" placeholder="Escribe 1234 en este campo">
+                        echo($_GET['comp_code']); ?>" placeholder="Escribe admin en este campo">
 
         <label class="labcol" for="name"><b>Employee name</b></label>
         <input type="text" id="name" name="name" value="<?php if(isset($_GET['name']))
@@ -131,32 +133,58 @@
         <input type="text" id="user_name" name="user_name" value="<?php if(isset($_GET['user_name']))
     		                           echo($_GET['user_name']); ?>" placeholder="Enter a username for the employee">
 
-        <label class="labcol" for="position"><b>Position</b></label>
-        <input type="text" id="position" name="position" value="<?php if(isset($_GET['position']))
-                   echo($_GET['position']); ?>" placeholder="Enter the position of the employee">
+        <label class="labcol" for="position"><b>Select a Position for this employee</b></label>
+        <select class="options" id="position" name="position">
 
-        <label class="labcol" for="employee type"><b>Employee type</b></label>
-        <input type="text" id="type_employee" name="type_employee" value="<?php if(isset($_GET['type_employee']))
-          		                           echo($_GET['type_employee']); ?>" placeholder="Enter employee type">
+          <option></option>
+          <option> Manager</option>
+          <option> Front End Superviser</option>
+          <option> Cashier</option>
+          <option> Bagger</option>
+          <option> Stocker</option>
+          <option> Butcher</option>
+          <option> Maintenance and Cleaning</option>
+
+          </select>
+
+          <label class="labcol" for="type_employee"><b>Select Employee Type</b></label>
+          <select class="options" id="type_employee" name="type_employee">
+
+            <option></option>
+            <option>Administrator</option>
+            <option>Employee</option>
+
+          </select>
 
         <label class="labcol" for="work_time"><b>Working since</b></label>
-        <input type="text" id="work_time" name="work_time" value="<?php if(isset($_GET['work_time']))
+        <input type="date" id="work_time" name="work_time" value="<?php if(isset($_GET['work_time']))
                 		                           echo($_GET['work_time']); ?>" placeholder="Enter the date the employee started working">
 
         <label class="labcol" for="hours_work"><b>Hours work</b></label>
         <input type="text" id="hours_work" name="hours_work" value="<?php if(isset($_GET['hours_work']))
                       		                           echo($_GET['hours_work']); ?>" placeholder="Enter hours worked">
 
-        <label class="labcol" for="earn_rate"><b>Earning rate</b></label>
-        <input type="text" id="earn_rate" name="earn_rate" value="<?php if(isset($_GET['earn_rate']))
-                            		                           echo($_GET['earn_rate']); ?>" placeholder="Enter earning rate">
+        <label class="labcol" for="earn_rate"><b>Select the Earning Rate for this Employee</b></label>
+        <select class="options" id="earn_rate" name="earn_rate">
 
-       <label class="labcol" for="gender"><b>Gender</b></label>
-       <input type="text" id="gender" name="gender" value="<?php if(isset($_GET['gender']))
-          echo($_GET['gender']); ?>" placeholder="Enter employee gender">
+          <option></option>
+          <option> $8.75</option>
+          <option> $18.75</option>
 
-       <label class="labcol" for="bday"><b>Birthday</b></label>
-       <input type="text" id="bday" name="bday" value="<?php if(isset($_GET['bday']))
+          </select>
+
+  <label class="labcol" for="earn_rate"><b>Select a Gender</b></label>
+  <select class="options" id="gender" name="gender">
+
+    <option></option>
+    <option>Male</option>
+    <option>Female</option>
+    <option>Other</option>
+
+  </select>
+
+       <label class="labcol" for="bday"><b>Enter Employee's Birthday</b></label>
+       <input type="date" id="bday" name="bday" value="<?php if(isset($_GET['bday']))
              echo($_GET['bday']); ?>" placeholder="Enter employee birthday">
 
        <label class="labcol" for="citi"><b>Citizenship</b></label>
@@ -245,7 +273,7 @@
             <td><?php echo $row->type_employee;?></td>
             <td><?php echo $row->work_time;?></td>
             <td><?php echo $row->hours_work;?>hrs</td>
-            <td>$<?php echo $row->earn_rate;?></td>
+            <td><?php echo $row->earn_rate;?></td>
 
                 <center>
           <td><a href="update.php?id=<?=$rows['id']?>" class="up-btn"><span><i class="fas fa-user-edit"></i></span><b>Update</b></a>
@@ -267,7 +295,7 @@
             }
 
           else{
-                echo "Invalid Entry";
+                echo "User not found";
               }
           }
 
@@ -279,12 +307,27 @@
     </center>
     <?php } ?>
 
+<style>
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  .print-container, .print-container * {
+    visibility: visible;
+  }
+  .print-container {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+  }
+}
+</style>
+<div class = "row print-container">
     <section class="List">
       <div class="empleados-grid">
         <div class="empleados-card">
 
           <div>
-
             <h3><span><i class="fas fa-users"></i></span>List of Employees</h3>
 
           </div>
@@ -322,7 +365,7 @@
                 <td><?php echo $rows['type_employee']; ?></td>
                 <td><?php echo $rows['work_time']; ?></td>
                 <td><?php echo $rows['hours_work']; ?>hrs</td>
-                <td>$<?php echo $rows['earn_rate']; ?></td>
+                <td><?php echo $rows['earn_rate']; ?></td>
 
                 <td><a href="update.php?id=<?=$rows['id']?>" class="up-btn"><span><i class="fas fa-user-edit"></i></span><b>Update</b></a>
 
@@ -338,7 +381,7 @@
         </table>
         <?php } ?>
       </div>
-
+</div>
 
       </div>
       </main>
