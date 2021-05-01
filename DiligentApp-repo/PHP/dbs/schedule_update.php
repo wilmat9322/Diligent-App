@@ -32,42 +32,37 @@ if (isset($_GET['id'])) {
 	}
 
   $name = validate($_POST['name']);
-	$user_name = validate($_POST['user_name']);
   $monday = validate($_POST['monday']);
+  $from_monday = validate($_POST['from_monday']);
+  $to_monday = validate($_POST['to_monday']);
   $tuesday = validate($_POST['tuesday']);
+  $from_tuesday = validate($_POST['from_tuesday']);
+  $to_tuesday = validate($_POST['to_tuesday']);
   $wednesday = validate($_POST['wednesday']);
+  $from_wednesday = validate($_POST['from_wednesday']);
+  $to_wednesday = validate($_POST['to_wednesday']);
 	$thursday = validate($_POST['thursday']);
+  $from_thursday = validate($_POST['from_thursday']);
+  $to_thursday = validate($_POST['to_thursday']);
   $friday = validate($_POST['friday']);
+  $from_friday = validate($_POST['from_friday']);
+  $to_friday = validate($_POST['to_friday']);
   $saturday = validate($_POST['saturday']);
+  $from_saturday = validate($_POST['from_saturday']);
+  $to_saturday = validate($_POST['to_saturday']);
   $sunday = validate($_POST['sunday']);
-  $total_hours = validate($_POST['total_hours']);
+  $from_sunday = validate($_POST['from_sunday']);
+  $to_sunday = validate($_POST['to_sunday']);
 	$id = validate($_POST['id']);
 
   if (empty($name)) {
 		header("Location: ../payrolls_admin.php?error=Employee Name is required&$user_data");
-  }else if (empty($user_name)) {
-      header("Location: ../payrolls_admin.php?error=Employee Code is required&$user_data");
-    }else if (empty($monday)) {
-      header("Location: ../schedules_admin.php?error=Schedule for monday is required&$user_data");
-    }else if (empty($tuesday)) {
-      header("Location: ../schedules_admin.php?error=Schedule for tuesday is required&$user_data");
-    }else if (empty($wednesday)) {
-      header("Location: ../schedules_admin.php?error=Schedule for wednesday is required&$user_data");
-    }else if (empty($thursday)) {
-      header("Location: ../schedules_admin.php?error=Schedule for thursday is required&$user_data");
-    }else if (empty($friday)) {
-      header("Location: ../schedules_admin.php?error=Schedule for friday is required&$user_data");
-    }else if (empty($saturday)) {
-      header("Location: ../schedules_admin.php?error=Schedule for saturday is required&$user_data");
-    }else if (empty($sunday)) {
-      header("Location: ../schedules_admin.php?error=Schedule for sunday is required&$user_data");
-    }else if (empty($total_hours)) {
-      header("Location: ../schedules_admin.php?error=Total of hours is required&$user_data");
 
   }else {
 
        $sql = "UPDATE schedules
-               SET name='$name', user_name='$user_name', monday='$monday', tuesday='$tuesday', wednesday='$wednesday', thursday='$thursday', friday='$friday', saturday='$saturday', sunday='$sunday', total_hours='$total_hours'
+               SET name='$name', monday='$monday', from_monday='$from_monday', to_monday='$to_monday', tuesday='$tuesday', from_tuesday='$from_tuesday', to_tuesday='$to_tuesday', wednesday='$wednesday', from_wednesday='$from_wednesday', to_wednesday='$to_wednesday', thursday='$thursday', from_thursday='$from_thursday', to_thursday='$to_thursday',
+                   friday='$friday', from_friday='$from_friday', to_friday='$to_friday', saturday='$saturday', from_saturday='$from_saturday', to_saturday='$to_saturday', sunday='$sunday', from_sunday='$from_sunday', to_sunday='$to_sunday'
                WHERE id=$id ";
 
        $result = mysqli_query($conn, $sql);

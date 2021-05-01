@@ -89,10 +89,11 @@
       <div class="top-user">
 
         <h3 style="margin-left:10px;">Schedules</h3>
-        <p class="selectors-p"> Search Employees by their Code:</p>
+        <p class="selectors-p"> Search Schedule by Employee name:</p>
 
-        <input class="search-container" type"submit" name="search" placeholder="Search Employee by Code">
-        <button class="search-btn" type="submit" value="Search"><span><i class="fas fa-search"></i></span></button>
+        <input class="search-container" type"submit" name="search" placeholder="Search Schedule">
+        <button class="search-btn" type="submit" name="submit" value="Search"><span><i class="fas fa-search"></i></span></button>
+        <button class="search-btn" type="submit" name="cancel" value="Search"><span><i class="fas fa-times-circle"></i></span> Cancel Search</button>
 
       </form>
 
@@ -125,41 +126,61 @@
                 <input type="text" id="name" name="name" value="<?php if(isset($_GET['name']))
                                            echo($_GET['name']); ?>" placeholder="Enter the name of the employee">
 
-                <label class="labcol" for="user_name"><b>Employee Code</b></label>
-                <input type="text" id="user_name" name="user_name" value="<?php if(isset($_GET['user_name']))
-                                           echo($_GET['user_name']); ?>" placeholder="Enter employee code">
-
-                <label class="labcol" for="monday"><b>Monday</b></label>
-                <input type="text" id="monday" name="monday" value="<?php if(isset($_GET['monday']))
+                <label class="labcol" for="monday"><b>Monday</b></label><br>
+                <input style="width: 20.8%; display: inline-block;" type="date" format-value="l, d-M-Y H:i:s T" id="monday" name="monday" value="<?php if(isset($_GET['monday']))
                            echo($_GET['monday']); ?>" placeholder="Enter schedule for monday">
+                <input style="width: 12.8%; display: inline-block; margin-bottom: 15px;" type="time" format-value="l, d-M-Y H:i:s T" id="from_monday" name="from_monday" value="<?php if(isset($_GET['from_monday']))
+                           echo($_GET['from_monday']); ?>" placeholder="Enter schedule for monday"> -
+                <input style="width: 12.8%; display: inline-block; margin-bottom: 15px;" type="time" format-value="l, d-M-Y H:i:s T" id="to_monday" name="to_monday" value="<?php if(isset($_GET['to_monday']))
+                           echo($_GET['to_monday']); ?>" placeholder="Enter schedule for monday">
 
-                <label class="labcol" for="tuesday"><b>Tuesday</b></label>
-                <input type="text" id="tuesday" name="tuesday" value="<?php if(isset($_GET['tuesday']))
+                <br><label class="labcol" for="tuesday"><b>Tuesday</b></label><br>
+                <input style="width: 20.8%; display: inline-block; "type="date" format-value="Y-m-d\TH:i:s.vP" id="tuesday" name="tuesday" value="<?php if(isset($_GET['tuesday']))
                                                  echo($_GET['tuesday']); ?>" placeholder="Enter schedule for tuesday">
+                <input style="width: 12.8%; display: inline-block; margin-bottom: 15px;" type="time" format-value="l, d-M-Y H:i:s T" id="from_tuesday" name="from_tuesday" value="<?php if(isset($_GET['from_tuesday']))
+                                            echo($_GET['from_tuesday']); ?>" placeholder="Enter schedule for tuesday"> -
+                <input style="width: 12.8%; display: inline-block; margin-bottom: 15px;" type="time" format-value="l, d-M-Y H:i:s T" id="to_tuesday" name="to_tuesday" value="<?php if(isset($_GET['to_tuesday']))
+                                   echo($_GET['to_tuesday']); ?>" placeholder="Enter schedule for tuesday">
 
-                <label class="labcol" for="wednesday"><b>Wednesday</b></label>
-                <input type="text" id="wednesday" name="wednesday" value="<?php if(isset($_GET['wednesday']))
+                <label class="labcol" for="wednesday"><b>Wednesday</b></label><br>
+                <input style="width: 20.8%; display: inline-block;" type="date" format-value="yyyy-MM-ddTimeHH:mm" id="wednesday" name="wednesday" value="<?php if(isset($_GET['wednesday']))
                                                        echo($_GET['wednesday']); ?>" placeholder="Enter schedule for wednesday">
+                <input style="width: 12.8%; display: inline-block; margin-bottom: 15px;" type="time" format-value="l, d-M-Y H:i:s T" id="from_wednesday" name="from_wednesday" value="<?php if(isset($_GET['from_wednesday']))
+                                        echo($_GET['from_wednesday']); ?>" placeholder="Enter schedule for wednesday"> -
+                <input style="width: 12.8%; display: inline-block; margin-bottom: 15px;" type="time" format-value="l, d-M-Y H:i:s T" id="to_wednesday" name="to_wednesday" value="<?php if(isset($_GET['to_wednesday']))
+                                                   echo($_GET['to_wednesday']); ?>" placeholder="Enter schedule for wednesday">
 
-                <label class="labcol" for="thursday"><b>Thursday</b></label>
-                <input type="text" id="thursday" name="thursday" value="<?php if(isset($_GET['thursday']))
+                <label class="labcol" for="thursday"><b>Thursday</b></label><br>
+                <input style="width: 20.8%; display: inline-block;" type="date" format-value="yyyy-MM-ddTHH:mm" id="thursday" name="thursday" value="<?php if(isset($_GET['thursday']))
                                                              echo($_GET['thursday']); ?>" placeholder="Enter schedule for thursday">
+                <input  style="width: 12.8%; display: inline-block; margin-bottom: 15px;" type="time" format-value="l, d-M-Y H:i:s T" id="from_thursday" name="from_thursday" value="<?php if(isset($_GET['from_thursday']))
+                                                            echo($_GET['from_thursday']); ?>" placeholder="Enter schedule for thursday"> -
+                <input style="width: 12.8%; display: inline-block; margin-bottom: 15px;" type="time" format-value="l, d-M-Y H:i:s T" id="to_thursday" name="to_thursday" value="<?php if(isset($_GET['to_thursday']))
+                                                                       echo($_GET['to_thursday']); ?>" placeholder="Enter schedule for thursday">
 
-                <label class="labcol" for="friday"><b>Friday</b></label>
-                <input type="text" id="friday" name="friday" value="<?php if(isset($_GET['friday']))
+                <label class="labcol" for="friday"><b>Friday</b></label><br>
+                <input style="width: 20.8%; display: inline-block;" type="date" format-value="yyyy-MM-ddTHH:mm" id="friday" name="friday" value="<?php if(isset($_GET['friday']))
                                                                    echo($_GET['friday']); ?>" placeholder="Enter schedule for friday">
+                <input style="width: 12.8%; display: inline-block; margin-bottom: 15px;" type="time" format-value="l, d-M-Y H:i:s T" id="from_friday" name="from_friday" value="<?php if(isset($_GET['from_friday']))
+                                                        echo($_GET['from_friday']); ?>" placeholder="Enter schedule for friday"> -
+                <input style="width: 12.8%; display: inline-block; margin-bottom: 15px;" type="time" format-value="l, d-M-Y H:i:s T" id="to_friday" name="to_friday" value="<?php if(isset($_GET['to_friday']))
+                                                                   echo($_GET['to_friday']); ?>" placeholder="Enter schedule for friday">
 
-                <label class="labcol" for="saturday"><b>Saturday</b></label>
-                <input type="text" id="saturday" name="saturday" value="<?php if(isset($_GET['saturday']))
+                <label class="labcol" for="saturday"><b>Saturday</b></label><br>
+                <input style="width: 20.8%; display: inline-block;" type="date" format-value="yyyy-MM-ddTHH:mm" id="saturday" name="saturday" value="<?php if(isset($_GET['saturday']))
                                                                   echo($_GET['saturday']); ?>" placeholder="Enter schedule for saturday">
+                <input style="width: 12.8%; display: inline-block; margin-bottom: 15px;" type="time" format-value="l, d-M-Y H:i:s T" id="from_saturday" name="from_saturday" value="<?php if(isset($_GET['from_saturday']))
+                                       echo($_GET['from_saturday']); ?>" placeholder="Enter schedule for saturday"> -
+                <input style="width: 12.8%; display: inline-block; margin-bottom: 15px;" type="time" format-value="l, d-M-Y H:i:s T" id="to_saturday" name="to_saturday" value="<?php if(isset($_GET['to_saturday']))
+                                                  echo($_GET['to_saturday']); ?>" placeholder="Enter schedule for saturday">
 
-                <label class="labcol" for="sunday"><b>Sunday</b></label>
-                <input type="text" id="sunday" name="sunday" value="<?php if(isset($_GET['sunday']))
+                <label class="labcol" for="sunday"><b>Sunday</b></label><br>
+                <input style="width: 20.8%; display: inline-block;" type="date" format-value="yyyy-MM-ddTHH:mm" id="sunday" name="sunday" value="<?php if(isset($_GET['sunday']))
                                                                   echo($_GET['sunday']); ?>" placeholder="Enter schedule for sunday">
-
-                <label class="labcol" for="total_hours"><b>Total Hours</b></label>
-                <input type="text" id="total_hours" name="total_hours" value="<?php if(isset($_GET['total_hours']))
-                                                                  echo($_GET['total_hours']); ?>" placeholder="Enter total of hours">
+                <input style="width: 12.8%; display: inline-block; margin-bottom: 15px;" type="time" format-value="l, d-M-Y H:i:s T" id="from_sunday" name="from_sunday" value="<?php if(isset($_GET['from_sunday']))
+                                                    echo($_GET['from_sunday']); ?>" placeholder="Enter schedule for sunday"> -
+                <input style="width: 12.8%; display: inline-block; margin-bottom: 15px;" type="time" format-value="l, d-M-Y H:i:s T" id="to_sunday" name="to_sunday" value="<?php if(isset($_GET['to_sunday']))
+                                                               echo($_GET['to_sunday']); ?>" placeholder="Enter schedule for sunday">
 
                 <center>
                 <button class="cancel-btn" type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
@@ -183,6 +204,107 @@
         </script>
 
         <?php include "dbs/schedule_read.php"; ?>
+
+        <?php
+                $con = new PDO("mysql:host=localhost;dbname=diligentapp",'root','admin1');
+
+                 if (isset($_POST["submit"])) {
+                  $str = $_POST["search"];
+                  $sth = $con->prepare("SELECT * FROM `schedules` WHERE name = '$str'");
+
+                  $sth->setFetchMode(PDO:: FETCH_OBJ);
+                  $sth -> execute();
+
+                if($row = $sth->fetch())
+                  {
+                    ?>
+        <br>
+        <section class="List">
+          <div class="empleados-grid">
+              <div class="empleados-card">
+
+            <p>
+              <center><b>Results of Schedule Search</b></center>
+            </p>
+            <?php if (mysqli_num_rows($result)) { ?>
+            <table>
+              <thead>
+                <tr>
+                 <th>Employee Name</th>
+                 <th>Monday</th>
+                 <th>Tuesday</th>
+                 <th>Wednesday</th>
+                 <th>Thursday</th>
+                 <th>Friday</th>
+                 <th>Saturday</th>
+                 <th>Sunday</th>
+                 <th>Manage</th>
+                </tr>
+              </thead>
+              <tbody>
+                <?php
+
+                         if($rows = mysqli_fetch_assoc($result)){
+
+                       ?>
+                       <tr>
+
+                  <td style="width: 12%;"><?php echo $row->name;?></td>
+
+                  <td style="width: 12%;">Date:<?php echo $row->monday;?>
+                Clock-in: <?php echo $row->from_monday;?>
+                Clock-in: <?php echo $row->to_monday;?></td>
+
+                  <td style="width: 12%;">Date:<?php echo $row->tuesday;?>
+                Clock-in: <?php echo $row->from_tuesday;?>
+                  Clock-in: <?php echo $row->to_tuesday;?></td>
+
+                  <td style="width: 12%;">Date:<?php echo $row->wednesday;?>
+              Clock-in: <?php echo $row->from_wednesday;?>
+              Clock-in: <?php echo $row->to_wednesday;?></td>
+
+                  <td style="width: 12%;">Date:<?php echo $row->thursday;?>
+              Clock-in: <?php echo $row->from_thursday;?>
+                Clock-in: <?php echo $row->to_thursday;?></td>
+
+                  <td style="width: 12%;">Date:<?php echo $row->friday;?>
+                Clock-in: <?php echo $row->from_friday;?>
+              Clock-in: <?php echo $row->to_friday;?></td>
+
+                  <td style="width: 12%;">Date:<?php echo $row->saturday;?>
+            Clock-in: <?php echo $row->from_saturday;?>
+              Clock-in: <?php echo $row->to_saturday;?></td>
+
+                  <td style="width: 12%;">Date:<?php echo $row->sunday;?>
+              Clock-in: <?php echo $row->from_sunday;?> 
+              Clock-in: <?php echo $row->to_sunday;?></td>
+
+                      <center>
+                        <td style="width: 10%;"><a href="schedule_update.php?id=<?=$rows['id']?>" class="up-btn"><span><i class="fas fa-calendar-minus"></i></span><b> Edit</b></a>
+
+                          <a href="dbs/schedule_delete.php?id=<?=$rows['id']?>" class="rm-btn"><span><i class="fas fa-calendar-times"></i></span><b>Delete</b></a>
+                </center>
+
+                </td>
+                </tr>
+                <?php } ?>
+                </div>
+                </tbody>
+                </table>
+                <?php } ?>
+          </div>
+
+          <br>
+          <?php
+                  }
+
+                else{
+                      echo "Schedule not found";
+                    }
+                }
+
+                ?>
+
 
         <?php if (isset($_GET['success'])) { ?>
         <center>
@@ -227,7 +349,6 @@
                  <th>Friday</th>
                  <th>Saturday</th>
                  <th>Sunday</th>
-                 <th>Total Hours</th>
                  <th>Manage</th>
                 </tr>
             </thead>
@@ -241,20 +362,40 @@
 
               <tr>
 
-                <td><?=$rows['name']?></td>
-                <td><?php echo $rows['monday']; ?></td>
-                <td><?php echo $rows['tuesday']; ?></td>
-                <td><?php echo $rows['wednesday']; ?></td>
-                <td><?php echo $rows['thursday']; ?></td>
-                <td><?php echo $rows['friday']; ?></td>
-                <td><?php echo $rows['saturday']; ?></td>
-                <td><?php echo $rows['sunday']; ?></td>
-                <td><?php echo $rows['total_hours']; ?>hrs</td>
+                <td style="width: 15%;"><?=$rows['name']?></td>
+
+                <td style="width: 12%;">Date: <?php echo $rows['monday']; ?>
+
+                    Clock-in: <?php echo $rows['from_monday']; ?>
+                    Clock-out: <?php echo $rows['to_monday']; ?></td>
+
+                <td style="width: 12%;">Date: <?php echo $rows['tuesday']; ?>
+                    Clock-in: <?php echo $rows['from_tuesday']; ?>
+                    Clock-out: <?php echo $rows['to_tuesday']; ?></td>
+
+                <td style="width: 12%;">Date: <?php echo $rows['wednesday']; ?>
+                    Clock-in: <?php echo $rows['from_wednesday']; ?>
+                    Clock-out: <?php echo $rows['to_wednesday']; ?></td>
+
+                <td style="width: 12%;">Date: <?php echo $rows['thursday']; ?>
+                    Clock-in: <?php echo $rows['from_thursday']; ?>
+                    Clock-out: <?php echo $rows['to_thursday']; ?></td>
+
+                 <td style="width: 12%;">Date: <?php echo $rows['friday']; ?>
+                     Clock-in: <?php echo $rows['from_friday']; ?>
+                     Clock-out: <?php echo $rows['to_friday']; ?></td>
+
+                 <td style="width: 12%;">Date: <?php echo $rows['saturday']; ?>
+                     Clock-in: <?php echo $rows['from_saturday']; ?>
+                     Clock-out: <?php echo $rows['to_saturday']; ?></td>
+
+                  <td style="width: 12%;">Date: <?php echo $rows['sunday']; ?>
+                      Clock-in: <?php echo $rows['from_sunday']; ?>
+                      Clock-out: <?php echo $rows['to_sunday']; ?></td>
 
                 <td style="width: 10%;"><a href="schedule_update.php?id=<?=$rows['id']?>" class="up-btn"><span><i class="fas fa-calendar-minus"></i></span><b> Edit</b></a>
 
                   <a href="dbs/schedule_delete.php?id=<?=$rows['id']?>" class="rm-btn"><span><i class="fas fa-calendar-times"></i></span><b>Delete</b></a>
-
 
               </tr>
               <?php } ?>

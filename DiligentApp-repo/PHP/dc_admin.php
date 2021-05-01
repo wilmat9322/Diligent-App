@@ -90,10 +90,12 @@
   <div class="top-user">
 
   <h3 style="margin-left:10px;">Documents and Policies</h3>
-  <p class="selectors-p"> Search documents by their Name:</p>
+  <p class="selectors-p"> Search Documents by their Name:</p>
 
   <input class="search-container" type"submit" name="search" placeholder="Search Document">
-  <button class="search-btn" type="submit" value="Search"><span><i class="fas fa-search"></i></span></button>
+  <button class="search-btn" type="submit" name="submit" value="Search"><span><i class="fas fa-search"></i></span></button>
+  <button class="search-btn" type="submit" name="cancel" value="Search"><span><i class="fas fa-times-circle"></i></span> Cancel Search</button>
+
   </form>
 
         <label class="payroll-btn" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">+ <span><i class="far fa-file-alt"></i></span> Add Document</label>
@@ -128,24 +130,23 @@
             <input type="text" id="dc_name" name="dc_name" value="<?php if(isset($_GET['dc_name']))
                                              echo($_GET['dc_name']); ?>" placeholder="Enter the name of the document">
 
-            <label class="labcol" for="dc_add"><b>Add Document</b></label>
-            <input type="text" id="dc_add" name="dc_add" value="<?php if(isset($_GET['dc_add']))
-                                                   echo($_GET['dc_add']); ?>" placeholder="Select a document">
 
             <label class="labcol" for="dc_desc"><b>Brief Description of the Document</b></label>
-            <input type="text" id="dc_desc" name="dc_desc" value="<?php if(isset($_GET['dc_desc']))
-                                                         echo($_GET['dc_desc']); ?>" placeholder="Enter a brief description for the document">
+            <textarea rows="2" cols="50" <input type="text" id="dc_desc" name="dc_desc" value="<?php if(isset($_GET['dc_desc']))
+                                                         echo($_GET['dc_desc']); ?>" placeholder="Enter a brief description for the document"> </textarea>
 
             <label class="labcol" for="dc_date"><b>Date</b></label>
-            <input type="text" id="dc_date" name="dc_date" value="<?php if(isset($_GET['dc_date']))
+            <input type="date" id="dc_date" name="dc_date" value="<?php if(isset($_GET['dc_date']))
                                                                echo($_GET['dc_date']); ?>" placeholder="Enter a date for the document">
+
+            <label class="labcol" for="file"><b>Select a File to Upload</b></label>
+            <input type="file" id="file" name="file" />
 
             <center>
             <button class="cancel-btn" type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
             <button class="add-btn" type="submit" name="create">Create</button>
           </center>
-
-          </form>
+        </form>
         </div>
       </div>
 
@@ -162,6 +163,83 @@
         </script>
 
         <?php include "dbs/dc_read.php"; ?>
+
+
+        <?php
+                $con = new PDO("mysql:host=localhost;dbname=diligentapp",'root','admin1');
+
+                 if (isset($_POST["submit"])) {
+                  $str = $_POST["search"];
+                  $sth = $con->prepare("SELECT * FROM `documents` WHERE dc_name = '$str'");
+
+                  $sth->setFetchMode(PDO:: FETCH_OBJ);
+                  $sth -> execute();
+
+                if($row = $sth->fetch())
+                  {
+                    ?>
+        <br>
+        <section class="List">
+          <div class="empleados-grid">
+              <div class="empleados-card">
+
+            <p>
+              <center><b>Results of Document Search</b></center>
+            </p>
+            <?php if (mysqli_num_rows($result)) { ?>
+            <table>
+              <thead>
+                <tr>
+                <th>Name</th>
+                <th>Document</th>
+                <th>Description</th>
+                <th>Date</th>
+                <th>Download</th>
+                <th>Manage</th>
+                <tr>
+              </thead>
+              <tbody>
+                <?php
+
+                  if($rows = mysqli_fetch_assoc($result)){
+
+                       ?>
+                       <tr>
+
+                  <td><?php echo $row->dc_name;?></td>
+                  <td><?php echo $row->file_name;?></td>
+                  <td><?php echo $row->dc_desc;?></td>
+                  <td><?php echo $row->dc_date;?></td>
+
+                      <center>
+
+                        <td><a href="upload/<?php echo $rows['file_name']; ?>" download>Download</td>
+
+                        <td style="width: 10%;"><a href="dc_update.php?id=<?=$rows['id']?>" class="up-btn"><span><i class="far fa-file-alt"></i></span><b>Update</b></a>
+
+                          <a href="dbs/dc_delete.php?id=<?=$rows['id']?>" class="rm-btn"><span><i class="far fa-file-alt"></i></span><b>Delete</b></a>
+                </center>
+
+                </td>
+                </tr>
+                <?php } ?>
+                </div>
+                </tbody>
+                </table>
+                <?php } ?>
+          </div>
+
+          <br>
+          <?php
+                  }
+
+                else{
+                      echo "Document not found";
+                    }
+                }
+
+                ?>
+
 
         <?php if (isset($_GET['success'])) { ?>
         <center>
@@ -188,6 +266,7 @@
                     <th>Document</th>
                     <th>Description</th>
                     <th>Date</th>
+                    <th>Download</th>
                     <th>Manage</th>
 
                   </tr>
@@ -203,9 +282,11 @@
                   <tr>
 
                     <td><?=$rows['dc_name']?></td>
-                    <td><?php echo $rows['dc_add']; ?></td>
-                    <td><?php echo $rows['dc_desc']; ?></td>
+                    <td><?php echo $rows['file_name']; ?></td>
+                    <td style="width: 10%;"><?php echo $rows['dc_desc']; ?></td>
                     <td><?php echo $rows['dc_date']; ?></td>
+
+                    <td><a href="upload/<?php echo $rows['file_name']; ?>" download>Download</td>
 
                     <td style="width: 10%;"><a href="dc_update.php?id=<?=$rows['id']?>" class="up-btn"><span><i class="far fa-file-alt"></i></span><b>Update</b></a>
 

@@ -38,11 +38,11 @@
 
   <div class="txtcontainer">
 
-    <h3><b>Complete the following information to update an Employee</b></h3>
+    <h3><b>Complete the following information to edit a Tax Form</b></h3>
 
   </div>
 
-    <form action="dbs/w2_update.php" method="post">
+    <form action="dbs/w2_update.php" method="post" enctype="multipart/form-data">
 
 
       <?php if (isset($_GET['error'])) { ?>
@@ -62,12 +62,11 @@
       <input type="text" id="user_name" name="user_name" value="<?=$row['user_name'] ?>">
 
 
-      <label for="add_tax">Add Tax Form</label>
-      <input type="text" id="add_tax" name="add_tax" value="<?=$row['add_tax'] ?>">
-
-
       <label for="date_tax">Date</label>
-      <input type="text" id="date_tax" name="date_tax" value="<?=$row['date_tax'] ?>">
+      <input type="date" id="date_tax" name="date_tax" value="<?=$row['date_tax'] ?>">
+
+      <label class="labcol" for="file">Select a Tax Form to Upload</label>
+      <input type="file" id="file" name="file" />
 
     </div>
 

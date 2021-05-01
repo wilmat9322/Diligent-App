@@ -33,7 +33,6 @@ if (isset($_GET['id'])) {
 
   $name = validate($_POST['name']);
 	$user_name = validate($_POST['user_name']);
-  $add_tax = validate($_POST['add_tax']);
 	$date_tax = validate($_POST['date_tax']);
 	$id = validate($_POST['id']);
 
@@ -41,14 +40,32 @@ if (isset($_GET['id'])) {
 		header("Location: ../w2_admin.php?error=Name is required&$user_data");
   }else if (empty($user_name)) {
     header("Location: ../w2_admin.php?error=Employee code is required&$user_data");
-}else if (empty($add_tax)) {
-    header("Location: ../w2_admin.php?error=Tax form is required&$user_data");
 }else if (empty($date_tax)) {
     header("Location: ../w2_admin.php?error=Date is required&$user_data");
+
   }else {
 
+    $file = rand(1000,100000)."-".$_FILES['file']['name'];
+      $file_loc = $_FILES['file']['tmp_name'];
+   $file_size = $_FILES['file']['size'];
+   $file_type = $_FILES['file']['type'];
+   $folder="../upload/";
+
+   /* new file size in KB */
+   $new_size = $file_size/1024;
+   /* new file size in KB */
+
+   /* make file name in lower case */
+   $new_file_name = strtolower($file);
+   /* make file name in lower case */
+
+   $final_file=str_replace(' ','-',$new_file_name);
+
+   if(move_uploaded_file($file_loc,$folder.$final_file))
+   {
+
        $sql = "UPDATE forms
-               SET name='$name', user_name='$user_name', add_tax='$add_tax', date_tax='$date_tax'
+               SET file_name='$final_file', type='$file_type', size='$new_size', name='$name', user_name='$user_name', date_tax='$date_tax'
                WHERE id=$id ";
        $result = mysqli_query($conn, $sql);
        if ($result) {
@@ -57,7 +74,8 @@ if (isset($_GET['id'])) {
           header("Location: ../w2_admin.php?id=$id&error=Unknown error occurred&$user_data");
        }
 	}
-
-}else{
+}
+}
+else{
 	header("Location: w2_read.php");
 }

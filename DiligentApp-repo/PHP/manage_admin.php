@@ -94,8 +94,9 @@
           <h3 style="margin-left:10px;">Manage Employees</h3>
           <p class="selectors-p"> Search Employees by their Code:</p>
 
-          <input class="search-container" type"text" name="search" placeholder="Search Employee by Code"></input>
+          <input class="search-container" type"text" name="search" placeholder="Search Employee"></input>
           <button class="search-btn" type="submit" name="submit" value="Search"><span><i class="fas fa-search"></i></span></button>
+          <button class="search-btn" type="submit" name="cancel" value="Search"><span><i class="fas fa-times-circle"></i></span> Cancel Search</button>
         </form>
 
   <label class="add1-btn" onclick="document.getElementById('id01').style.display='block'" style="width:auto;"><span><i class="fas fa-user-plus"></i></span> Add Employee</label>
@@ -160,7 +161,7 @@
         <input type="date" id="work_time" name="work_time" value="<?php if(isset($_GET['work_time']))
                 		                           echo($_GET['work_time']); ?>" placeholder="Enter the date the employee started working">
 
-        <label class="labcol" for="hours_work"><b>Hours work</b></label>
+        <label class="labcol" for="hours_work"><b>Hours Worked</b></label>
         <input type="text" id="hours_work" name="hours_work" value="<?php if(isset($_GET['hours_work']))
                       		                           echo($_GET['hours_work']); ?>" placeholder="Enter hours worked">
 

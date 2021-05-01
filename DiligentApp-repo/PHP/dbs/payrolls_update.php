@@ -57,6 +57,15 @@ if (isset($_GET['id'])) {
 
   }else {
 
+    $sql = "SELECT * FROM payrolls WHERE name='$name' AND earn_rate='$earn_rate' AND gross='$gross' AND dedu='$dedu' AND net_pay='$net_pay' AND date_pay='$date_pay'" ;
+ $result = mysqli_query($conn, $sql);
+
+ if (mysqli_num_rows($result) > 0) {
+   header("Location: ../payrolls_admin.php?error=No changes were made&$user_data");
+       exit();
+ }else {
+
+
        $sql = "UPDATE payrolls
                SET name='$name', user_name='$user_name', earn_rate='$earn_rate', gross='$gross', dedu='$dedu', net_pay='$net_pay', date_pay='$date_pay'
                WHERE id=$id ";
@@ -68,7 +77,7 @@ if (isset($_GET['id'])) {
           header("Location: ../payrolls_admin.php?id=$id&error=Unknown error occurred&$user_data");
        }
 	}
-
+}
 }else{
 	header("Location: payrolls_read.php");
 }

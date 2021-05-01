@@ -88,10 +88,11 @@
       <div class="top-user">
 
         <h3 style="margin-left:10px;">Payrolls</h3>
-        <p class="selectors-p"> Search Payrolls by their Code:</p>
+        <p class="selectors-p"> Search Payrolls by Employee Code:</p>
 
         <input class="search-container" type"submit" name="search" placeholder="Search Payroll">
-        <button class="search-btn" type="submit" value="Search"><span><i class="fas fa-search"></i></span></button>
+        <button class="search-btn" type="submit" name="submit" value="Search"><span><i class="fas fa-search"></i></span></button>
+        <button class="search-btn" type="submit" name="cancel" value="Search"><span><i class="fas fa-times-circle"></i></span> Cancel Search</button>
       </form>
 
       <label class="payroll-btn" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">+ <span><i class="fas fa-file-invoice-dollar"></i></span> Add Payroll</label>
@@ -126,9 +127,13 @@
             <input type="text" id="user_name" name="user_name" value="<?php if(isset($_GET['user_name']))
                                        echo($_GET['user_name']); ?>" placeholder="Enter a username for the employee">
 
-            <label class="labcol" for="earn_rate"><b>Earn Rate</b></label>
-            <input type="text" id="earn_rate" name="earn_rate" value="<?php if(isset($_GET['earn_rate']))
-                       echo($_GET['earn_rate']); ?>" placeholder="Enter the earn rate of the employee">
+            <label class="labcol" for="earn_rate"><b>Select the Earning Rate for this Employee</b></label>
+            <select class="options" id="earn_rate" name="earn_rate">
+
+                    <option></option>
+                    <option> $8.75</option>
+                    <option> $18.75</option>
+                    </select>
 
             <label class="labcol" for="gross"><b>Gross Earnings</b></label>
             <input type="text" id="gross" name="gross" value="<?php if(isset($_GET['gross']))
@@ -143,7 +148,7 @@
                                                          echo($_GET['net_pay']); ?>" placeholder="Enter employee net pay">
 
             <label class="labcol" for="date_pay"><b>Date</b></label>
-            <input type="text" id="date_pay" name="date_pay" value="<?php if(isset($_GET['date_pay']))
+            <input type="date" id="date_pay" name="date_pay" value="<?php if(isset($_GET['date_pay']))
                                                                echo($_GET['date_pay']); ?>" placeholder="Enter date of payroll">
 
             <center>
@@ -168,6 +173,85 @@
         </script>
 
         <?php include "dbs/payrolls_read.php"; ?>
+
+        <?php
+                $con = new PDO("mysql:host=localhost;dbname=diligentapp",'root','admin1');
+
+                 if (isset($_POST["submit"])) {
+                  $str = $_POST["search"];
+                  $sth = $con->prepare("SELECT * FROM `payrolls` WHERE user_name = '$str'");
+
+                  $sth->setFetchMode(PDO:: FETCH_OBJ);
+                  $sth -> execute();
+
+                if($row = $sth->fetch())
+                  {
+                    ?>
+        <br>
+        <section class="List">
+          <div class="empleados-grid">
+              <div class="empleados-card">
+
+            <p>
+              <center><b>Results of Payroll Search</b></center>
+            </p>
+            <?php if (mysqli_num_rows($result)) { ?>
+            <table>
+              <thead>
+                <tr>
+                    <th>Employee Name</th>
+                    <th>Employee Code</th>
+                    <th>Earning Rate (ph)</th>
+                    <th>Gross Earnings</th>
+                    <th>Deductions</th>
+                    <th>Net Pay</th>
+                    <th>Date</th>
+                    <th>Manage</th>
+
+                </tr>
+              </thead>
+              <tbody>
+                <?php
+
+                         if($rows = mysqli_fetch_assoc($result)){
+
+                       ?>
+                       <tr>
+
+                  <td><?php echo $row->name;?></td>
+                  <td><?php echo $row->user_name;?></td>
+                  <td><?php echo $row->earn_rate;?></td>
+                  <td><?php echo $row->gross;?></td>
+                  <td><?php echo $row->dedu;?></td>
+                  <td><?php echo $row->net_pay;?>hrs</td>
+                  <td><?php echo $row->date_pay;?></td>
+
+                      <center>
+                        <td><a href="update_payrolls.php?id=<?=$rows['id']?>" class="up-btn"><span><i class="fas fa-file-invoice-dollar"></i></span><b> Edit</b></a>
+
+                          <a href="dbs/payroll_delete.php?id=<?=$rows['id']?>" class="rm-btn"><span><i class="fas fa-file-invoice-dollar"></i></span></span><b>Delete</b></a>
+                </center>
+
+                </td>
+                </tr>
+                <?php } ?>
+                </div>
+                </tbody>
+                </table>
+                <?php } ?>
+          </div>
+
+          <br>
+          <?php
+                  }
+
+                else{
+                      echo "Payroll not found";
+                    }
+                }
+
+                ?>
+
 
         <?php if (isset($_GET['success'])) { ?>
         <center>
@@ -229,7 +313,7 @@
               <th scope="row"><?=$i?></th>
               <td><?=$rows['name']?></td>
               <td><?php echo $rows['user_name']; ?></td>
-              <td>$<?php echo $rows['earn_rate']; ?></td>
+              <td><?php echo $rows['earn_rate']; ?></td>
               <td>$<?php echo $rows['gross']; ?></td>
               <td>-$<?php echo $rows['dedu']; ?></td>
               <td>$<?php echo $rows['net_pay']; ?></td>

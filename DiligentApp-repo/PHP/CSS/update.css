@@ -398,7 +398,7 @@
   background: #23689b;
 }
 
-input[type=text], input[type=password], input[type=date], select, label {
+input[type=text], input[type=password], input[type=date], input[type=file], input[type=time], select, label, textarea {
 
   width: 30%;
   padding: 5px 10px;
@@ -449,6 +449,7 @@ label {
   position: relative;
 }
 .container {
+  text-align: center;
   padding: 16px;
 }
 

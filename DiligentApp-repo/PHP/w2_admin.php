@@ -89,10 +89,11 @@
       <div class="top-user">
 
         <h3 style="margin-left:10px;">W-2 Tax Forms</h3>
-        <p class="selectors-p"> Search Tax Form by Name:</p>
+        <p class="selectors-p"> Search Form by Employee Code:</p>
 
         <input class="search-container" type"text" name="search" placeholder="Search Tax Form"></input>
         <button class="search-btn" type="submit" name="submit" value="Search"><span><i class="fas fa-search"></i></span></button>
+        <button class="search-btn" type="submit" name="cancel" value="Search"><span><i class="fas fa-times-circle"></i></span> Cancel Search</button>
         </form>
 
         <label class="payroll-btn" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">+ <span><i class="fas fa-file-invoice-dollar"></i></span> Add Form</label>
@@ -114,7 +115,7 @@
 
           <div class="container">
 
-            <form class="modal-content animate" action="dbs/w2_create.php" method="post">
+            <form class="modal-content animate" action="dbs/w2_create.php" method="post" enctype="multipart/form-data">
 
               <center>
                 <h3 style="margin-left: 30px; font-size: 24px;">Complete the following information to add a Tax Form</h3>
@@ -128,13 +129,12 @@
               <input type="text" id="user_name" name="user_name" value="<?php if(isset($_GET['user_name']))
                   echo($_GET['user_name']); ?>" placeholder="Enter employee code">
 
-              <label class="labcol" for="add_tax"><b>Add Tax Form</b></label>
-              <input type="text" id="add_tax" name="add_tax" value="<?php if(isset($_GET['add_tax']))
-                    echo($_GET['add_tax']); ?>" placeholder="Enter tax form">
-
               <label class="labcol" for="date_tax"><b>Date</b></label>
-              <input type="text" id="date_tax" name="date_tax" value="<?php if(isset($_GET['date_tax']))
+              <input type="date" id="date_tax" name="date_tax" value="<?php if(isset($_GET['date_tax']))
                      echo($_GET['date_tax']); ?>" placeholder="Enter date">
+
+              <label class="labcol" for="file"><b>Select a Tax Form to Upload</b></label>
+              <input type="file" id="file" name="file" />
 
               <center>
                 <button class="cancel-btn" type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
@@ -159,6 +159,80 @@
         </script>
 
         <?php include "dbs/w2_read.php"; ?>
+
+        <?php
+                $con = new PDO("mysql:host=localhost;dbname=diligentapp",'root','admin1');
+
+                 if (isset($_POST["submit"])) {
+                  $str = $_POST["search"];
+                  $sth = $con->prepare("SELECT * FROM `forms` WHERE user_name = '$str'");
+
+                  $sth->setFetchMode(PDO:: FETCH_OBJ);
+                  $sth -> execute();
+
+                if($row = $sth->fetch())
+                  {
+                    ?>
+        <br>
+        <section class="List">
+          <div class="empleados-grid">
+              <div class="empleados-card">
+
+            <p>
+              <center><b>Results of Tax Form Search</b></center>
+            </p>
+            <?php if (mysqli_num_rows($result)) { ?>
+            <table>
+              <thead>
+                <tr>
+                    <th>Employee Name</th>
+                    <th>Employee Code</th>
+                    <th>Tax Form</th>
+                    <th>Date</th>
+                    <th>Download</th>
+                    <th>Manage</th>
+                </tr>
+              </thead>
+              <tbody>
+                <?php
+
+                         if($rows = mysqli_fetch_assoc($result)){
+
+                       ?>
+                       <tr>
+
+                  <td><?php echo $row->name;?></td>
+                  <td><?php echo $row->user_name;?></td>
+                  <td><?php echo $row->file_name;?></td>
+                  <td><?php echo $row->date_tax;?></td>
+
+                      <center>
+                        <td><a href="upload/<?php echo $rows['file_name']; ?>" download>Download</td>
+
+                        <td style="width: 10%;"><a href="w2_update.php?id=<?=$rows['id']?>" class="up-btn"><span><i class="fas fa-file-invoice-dollar"></i></span><b> Edit</b></a>
+
+                          <a href="dbs/w2_delete.php?id=<?=$rows['id']?>" class="rm-btn"><span><i class="fas fa-file-invoice-dollar"></i></span></span><b>Delete</b></a>
+                </center>
+
+                </td>
+                </tr>
+                <?php } ?>
+                </div>
+                </tbody>
+                </table>
+                <?php } ?>
+          </div>
+
+          <br>
+          <?php
+                  }
+
+                else{
+                      echo "Tax Form not found";
+                    }
+                }
+
+                ?>
 
         <?php if (isset($_GET['success'])) { ?>
         <center>
@@ -201,6 +275,7 @@
                   <th>Employee Code</th>
                   <th>Tax Form</th>
                   <th>Date</th>
+                  <th>Download</th>
                   <th>Manage</th>
               </tr>
           </thead>
@@ -217,8 +292,10 @@
               <th scope="row"><?=$i?></th>
               <td><?=$rows['name']?></td>
               <td><?php echo $rows['user_name']; ?></td>
-              <td><?php echo $rows['add_tax']; ?></td>
+              <td><?php echo $rows['file_name']; ?></td>
               <td><?php echo $rows['date_tax']; ?></td>
+
+              <td><a href="upload/<?php echo $rows['file_name']; ?>" download>Download</td>
 
               <td style="width: 10%;"><a href="w2_update.php?id=<?=$rows['id']?>" class="up-btn"><span><i class="fas fa-file-invoice-dollar"></i></span><b> Edit</b></a>
 

@@ -38,11 +38,11 @@
 
   <div class="txtcontainer">
 
-    <h3><b>Complete the following information to update an Employee</b></h3>
+    <h3><b>Complete the following information to update a Document</b></h3>
 
   </div>
 
-    <form action="dbs/dc_update.php" method="post">
+    <form action="dbs/dc_update.php" method="post" enctype="multipart/form-data">
 
 
       <?php if (isset($_GET['error'])) { ?>
@@ -56,16 +56,15 @@
       <label for="dc_name">Document Name</label>
       <input type="text" id="dc_name" name="dc_name" value="<?=$row['dc_name'] ?>">
 
-      <label for="dc_add">Add Document</label>
-      <input type="text" id="dc_add" name="dc_add" value="<?=$row['dc_add'] ?>">
-
-
       <label for="dc_desc">Brief Description of the Document</label>
-      <input type="text" id="dc_desc" name="dc_desc" value="<?=$row['dc_desc'] ?>">
+      <input rows="2" cols="50" type="text" id="dc_desc" name="dc_desc" value="<?=$row['dc_desc'] ?>"/>
 
 
       <label for="dc_date">Date</b></label>
-      <input type="text" id="dc_date" name="dc_date" value="<?=$row['dc_date'] ?>">
+      <input type="date" id="dc_date" name="dc_date" value="<?=$row['dc_date'] ?>">
+
+      <label class="labcol" for="file"><b>Select a File to Upload</b></label>
+      <input type="file" id="file" name="file" />
 
     </div>
 
@@ -78,5 +77,4 @@
 
     </form>
 </body>
-
 </html>

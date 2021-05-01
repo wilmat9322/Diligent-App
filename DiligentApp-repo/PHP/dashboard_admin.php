@@ -28,6 +28,8 @@
   <title>Welcome to DiligentApp!</title>
 
   <!----- Fonts y Símbolos que utilicé para la aplicación ----->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link rel="shortcut icon" type="image/png" href="images/favicon">
@@ -184,7 +186,7 @@
               <td><?php echo $rows['type_employee']; ?></td>
               <td><?php echo $rows['work_time']; ?></td>
               <td><?php echo $rows['hours_work']; ?>hrs</td>
-              <td>$<?php echo $rows['earn_rate']; ?></td>
+              <td><?php echo $rows['earn_rate']; ?></td>
 
               </td>
             </tr>

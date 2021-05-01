@@ -429,7 +429,7 @@
 .payroll-btn:hover {
   background: #23689b;
 }
-input[type=text], input[type=password], input[type=file] {
+input[type=text], input[type=password], input[type=file], input[type=date], textarea {
   width: 70%;
   padding: 14px 2px;
   margin: auto auto;

@@ -61,10 +61,15 @@
       <label for="user_name">Employee Code</label>
       <input type="text" id="user_name" name="user_name" value="<?=$row['user_name'] ?>">
 
+      <label for="earn_rate">Select the Earning Rate for this Employee</label>
+      <select id="earn_rate" name="earn_rate">
 
-      <label for="earn_rate">Earn Rate</label>
-      <input type="text" id="earn_rate" name="earn_rate" value="<?=$row['earn_rate'] ?>">
+        <option><?=$row['earn_rate'] ?></option>
+        <option></option></option>
+        <option> $8.75</option>
+        <option> $18.75</option>
 
+        </select>
 
       <label for="=gross">Gross Earnings</label>
       <input type="text" id="gross" name="gross" value="<?=$row['gross'] ?>">
@@ -79,7 +84,7 @@
 
 
       <label for="date_pay">Date</label>
-      <input type="text" id="date_pay" name="date_pay" value="<?=$row['date_pay'] ?>">
+      <input type="date" id="date_pay" name="date_pay" value="<?=$row['date_pay'] ?>">
 
     </div>
 

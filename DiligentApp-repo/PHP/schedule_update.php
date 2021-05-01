@@ -38,7 +38,7 @@
 
   <div class="txtcontainer">
 
-    <h3><b>Complete the following information to edit a Payroll</b></h3>
+    <h3><b>Complete the following information to edit a Schedule</b></h3>
 
   </div>
 
@@ -53,37 +53,43 @@
 
       <div class="update">
 
-
-      <label for="name">Employee name<b></label></center>
+      <label for="name"><b>Employee name</label></center>
       <input type="text" id="name" name="name" value="<?=$row['name'] ?>">
 
-
-      <label for="user_name">Employee Code</label>
-      <input type="text" id="user_name" name="user_name" value="<?=$row['user_name'] ?>">
-
       <label for="monday">Monday</label>
-      <input type="text" id="monday" name="monday" value="<?=$row['monday'] ?>">
+      <center><input style="width: 10.8%; display: inline-block;" type="date" id="monday" name="monday" value="<?=$row['monday'] ?>">
+      <input style="width: 8.9%; display: inline-block;" type="time" id="from_monday" name="from_monday" value="<?=$row['from_monday'] ?>">
+    - <input style="width: 8.9%; display: inline-block;" type="time" id="to_monday" name="to_monday" value="<?=$row['to_monday'] ?>"></center>
 
       <label for="tuesday">Tuesday</label>
-      <input type="text" id="tuesday" name="tuesday" value="<?=$row['tuesday'] ?>">
+      <center><input style="width: 10.8%; display: inline-block;" type="date" id="tuesday" name="tuesday" value="<?=$row['tuesday'] ?>">
+      <input style="width: 8.9%; display: inline-block;"  type="time" id="from_tuesday" name="from_tuesday" value="<?=$row['from_tuesday'] ?>">
+    - <input style="width: 8.9%; display: inline-block;"  type="time" id="to_tuesday" name="to_tuesday" value="<?=$row['to_tuesday'] ?>"></center>
 
       <label for="wednesday">Wednesday</label>
-      <input type="text" id="wednesday" name="wednesday" value="<?=$row['wednesday'] ?>">
+      <center><input style="width: 10.8%; display: inline-block;" type="date" id="wednesday" name="wednesday" value="<?=$row['wednesday'] ?>">
+      <input style="width: 8.9%; display: inline-block;" type="time" id="from_wednesday" name="from_wednesday" value="<?=$row['from_wednesday'] ?>">
+    - <input style="width: 8.9%; display: inline-block;" type="time" id="to_wednesday" name="to_wednesday" value="<?=$row['to_wednesday'] ?>"></center>
 
       <label for="thursday">Thursday</label>
-      <input type="text" id="thursday" name="thursday" value="<?=$row['thursday'] ?>">
+      <center><input style="width: 10.8%; display: inline-block;" type="date" id="thursday" name="thursday" value="<?=$row['thursday'] ?>">
+      <input style="width: 8.9%; display: inline-block;" type="time" id="from_thursday" name="from_thursday" value="<?=$row['from_thursday'] ?>">
+    - <input style="width: 8.9%; display: inline-block;" type="time" id="to_thursday" name="to_thursday" value="<?=$row['to_thursday'] ?>"></center>
 
       <label for="friday">Friday</label>
-      <input type="text" id="friday" name="friday" value="<?=$row['friday'] ?>">
+      <center><input style="width: 10.8%; display: inline-block;" type="date" id="friday" name="friday" value="<?=$row['friday'] ?>">
+      <input style="width: 8.9%; display: inline-block;" type="time" id="from_friday" name="from_friday" value="<?=$row['from_friday'] ?>">
+    - <input style="width: 8.9%; display: inline-block;" type="time" id="to_friday" name="to_friday" value="<?=$row['to_friday'] ?>"></center>
 
       <label for="saturday">Saturday</label>
-      <input type="text" id="saturday" name="saturday" value="<?=$row['saturday'] ?>">
+      <center><input style="width: 10.8%; display: inline-block;" type="date" id="saturday" name="saturday" value="<?=$row['saturday'] ?>">
+      <input style="width: 8.9%; display: inline-block;" type="time" id="from_saturday" name="from_saturday" value="<?=$row['from_saturday'] ?>">
+    - <input style="width: 8.9%; display: inline-block;" type="time" id="to_saturday" name="to_saturday" value="<?=$row['to_saturday'] ?>"></center>
 
       <label for="sunday">Sunday</label>
-      <input type="text" id="sunday" name="sunday" value="<?=$row['sunday'] ?>">
-
-      <label for="total_hours">Total Hours</label>
-      <input type="text" id="total_hours" name="total_hours" value="<?=$row['total_hours'] ?>">
+      <center><input style="width: 10.8%; display: inline-block;" type="date" id="sunday" name="sunday" value="<?=$row['sunday'] ?>">
+      <input style="width: 8.9%; display: inline-block;" type="time" id="from_sunday" name="from_sunday" value="<?=$row['from_sunday'] ?>">
+    - <input style="width: 8.9%; display: inline-block;" type="time" id="to_sunday" name="to_sunday" value="<?=$row['to_sunday'] ?>"></center>
 
     </div>
 
@@ -91,7 +97,7 @@
 
       <center>
       <a href="schedules_admin.php" class="cancel-btn" type="button" class="cancelbtn">Cancel</a>
-      <button class="add-btn" type="submit" name="update">Update</button>
+      <button class="add-btn" type="submit" name="update"><b>Update</b></button>
     </center>
 
     </form>
