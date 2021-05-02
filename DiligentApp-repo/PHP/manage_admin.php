@@ -225,7 +225,7 @@
   <?php include "dbs/read.php"; ?>
 
   <?php
-          $con = new PDO("mysql:host=localhost;dbname=diligentapp",'root','admin1');
+          $con = new PDO("mysql:host=localhost;dbname=diligentapp",'root','CYBEr152512$');
 
            if (isset($_POST["submit"])) {
             $str = $_POST["search"];

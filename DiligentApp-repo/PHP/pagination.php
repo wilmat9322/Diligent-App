@@ -7,7 +7,7 @@
 <?php
 
     //database connection
-    $conn = mysqli_connect('localhost', 'root', 'admin1');
+    $conn = mysqli_connect('localhost', 'root', 'CYBEr152512$');
     if (! $conn) {
 die("Connection failed" . mysqli_connect_error());
     }

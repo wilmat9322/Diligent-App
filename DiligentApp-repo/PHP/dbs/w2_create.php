@@ -43,8 +43,8 @@ if (isset($_POST['create'])) {
     if(move_uploaded_file($file_loc,$folder.$final_file))
     {
 
-       $sql = "INSERT INTO forms(file_name,type,size,name, user_name, add_tax, date_tax)
-               VALUES('$final_file','$file_type','$new_size','$name', '$user_name', '$add_tax', '$date_tax')";
+       $sql = "INSERT INTO forms(file_name,type,size,name,user_name,date_tax)
+               VALUES('$final_file','$file_type','$new_size', '$name','$user_name','$date_tax')";
        $result = mysqli_query($conn, $sql);
        if ($result) {
        	  header("Location: ../w2_admin.php?success=Tax Form was successfully added");

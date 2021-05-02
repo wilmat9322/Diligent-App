@@ -15,7 +15,7 @@
 <head>
 
   <!----- Lista de Metas que considero importantes ----->
-  <meta charset="utf-8">
+  <meta charset="utf_unicode_ci">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Diligent App es una aplicación de manejo de manejo de empelados y nóminas desarrollada
                                       por Diligent Technologies. Diligent Technologies ha sido una empresa con más de 10 años
@@ -140,7 +140,7 @@
                                                                echo($_GET['dc_date']); ?>" placeholder="Enter a date for the document">
 
             <label class="labcol" for="file"><b>Select a File to Upload</b></label>
-            <input type="file" id="file" name="file" />
+            <input type="file" id="file" name="file" / required>
 
             <center>
             <button class="cancel-btn" type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
@@ -166,7 +166,7 @@
 
 
         <?php
-                $con = new PDO("mysql:host=localhost;dbname=diligentapp",'root','admin1');
+                $con = new PDO("mysql:host=localhost;dbname=diligentapp",'root','CYBEr152512$');
 
                  if (isset($_POST["submit"])) {
                   $str = $_POST["search"];

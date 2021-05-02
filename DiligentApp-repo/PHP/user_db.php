@@ -2,7 +2,7 @@
 
 $sname = "localhost";
 $unme = "root";
-$password = "admin1";
+$password = "CYBEr152512$";
 
 $db_name = "diligentapp";
 

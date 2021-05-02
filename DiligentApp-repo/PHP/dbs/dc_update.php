@@ -42,7 +42,6 @@ if (isset($_GET['id'])) {
     header("Location: ../dc_admin.php?error=Description of document is required&$user_data");
   }else if (empty($dc_date)) {
     header("Location: ../dc_admin.php?error=Date of document is required&$user_data");
-
   }else {
 
     $file = rand(1000,100000)."-".$_FILES['file']['name'];
@@ -76,6 +75,7 @@ if (isset($_GET['id'])) {
        }
 	}
 }
+
 }else{
 	header("Location: dc_read.php");
 }

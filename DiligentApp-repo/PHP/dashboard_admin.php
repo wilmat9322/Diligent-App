@@ -16,7 +16,7 @@
 <head>
 
   <!----- Lista de Metas que considero importantes ----->
-  <meta charset="utf-8">
+  <meta charset="utf_unicode_ci">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Diligent App es una aplicación de manejo de manejo de empelados y nóminas desarrollada
                                       por Diligent Technologies. Diligent Technologies ha sido una empresa con más de 10 años
@@ -60,7 +60,7 @@
       <a href="myprofile_admin.php" class="show_profile">My profile</a>
       <img src="images/profilepic.png" class="profile_image" alt"">
       <img src="images/Negocio.png" class="negocio" alt="">
-      <a class="bienvenido"> Welcome, <?php echo $_SESSION['name']; ?></a>
+      <a class="bienvenido"> Administrator: <?php echo $_SESSION['name']; ?></a>
     </div>
   </header>
   <!----- Aquí termina el header ----->
@@ -97,52 +97,76 @@
         <div class="ponches-card">
           <div class="ponches-single">
           <div class="ponches-body">
-          <span><i class="fas fa-user-clock" style="margin-bottom: 40px;"></i></span>
+          <span><i class="fas fa-user" style="margin-bottom: 40px;"></i></span>
           <div>
-            <h3>Clock in/Out</h3>
+            <h3>Welcome to DiligentApp</h3>
             <div class="green">
-            <h2 style="padding-top: 40px;">Punch Status: <span class="green-status">On-Time</span></div></h2>
+            <h2 style="padding-top: 40px;">Admin: <span><?php echo $_SESSION['name']; ?></span></div></h2>
           </div>
         </div>
         <div class="ponches-footer" style="margin-top: 90px;">
-          <a href="attendance_admin.php">View all</a>
+          <a href="myprofile_admin.php">View all</a>
         </div>
       </div>
     </div>
 
+<?php include "dbs/payrolls_read.php"; ?>
       <div class="ponches-card">
         <div class="ponches-single">
         <div class="ponches-body">
         <span><i class="fas fa-file-invoice-dollar" style="margin-bottom: 70px;"></i></span>
         <div>
+<?php if (mysqli_num_rows($result)) { ?>
           <h3>Last Payroll</h3>
-          <div class="gray-status">
-          <h2>Gross Earnings: <span class="gray">$253.75</h2></span>
-          <h2>Deductions: <span class="gray">$20.03</h2></span>
-          <h2>Net Payment: <span class="gray">$233.45 </h2></span>
+
+          <?php
+           $i = 0;
+           if($rows = mysqli_fetch_assoc($result)){
+           $i++;
+         ?>
+
+         <div>
+
+          <h2>Gross Earnings: <span class="gray">$<?php echo $rows['gross']; ?></span></h2></td>
+          <h2>Deductions: <span class="gray">-$<?php echo $rows['dedu']; ?></span></h2></td>
+          <h2>Net Payment: <span class="gray">$<?php echo $rows['net_pay']; ?></span></h2></td>
+
         </div>
         </div>
       </div>
+      <?php } ?>
       <div class="ponches-footer" style="margin-top: 60px;">
         <a href="payrolls_admin.php">View all</a>
       </div>
       </div>
     </div>
+    <?php } ?>
 
+<?php include "dbs/read.php"; ?>
       <div class="ponches-card">
         <div class="ponches-single">
         <div class="ponches-body">
         <span><i class="fas fa-business-time" style="margin-bottom: 50px;"></i></span>
         <div>
+          <?php if (mysqli_num_rows($result)) { ?>
           <h3>Hours worked for this payroll</h3>
-          <h2 style="padding-top: 40px;">You have worked <span class="gray">35</span> hours for this payroll.</h2>
+
+          <?php
+           $i = 0;
+           if($rows = mysqli_fetch_assoc($result)){
+           $i++;
+         ?>
+
+          <h2 style="padding-top: 40px;">You have worked <span class="gray"><td><?php echo $rows['hours_work']; ?></span> hours for this payroll.</h2>
         </div>
       </div>
+      <?php } ?>
       <div class="ponches-footer" style="margin-top: 76px;">
-        <a href="payrolls_admin.php">View all</a>
+        <a href="manage_admin.php">View all</a>
       </div>
       </div>
       </div>
+    <?php } ?>
 
 </div>
 
@@ -200,32 +224,53 @@
           </table>
           <?php } ?>
         </div>
-
+<?php include "dbs/dc_read.php"; ?>
   <div class="small-cards">
     <div class="turno-card">
       <div class="turno-single">
       <div>
-          <h5 <span><i class="far fa-calendar-plus"></i></span>Next Shift</h5>
-          <small>Date: March 15, 2021</small><br>
-          <small>Time: 8:00 a.m.</small><br>
+        <?php if (mysqli_num_rows($result)) { ?>
+          <h5 <span><i class="far fa-file-alt"></i></i></span>Documents and Policies</h5>
+
+          <?php
+           $i = 0;
+           if($rows = mysqli_fetch_assoc($result)){
+           $i++;
+         ?>
+
+          <small>Name: <td><?php echo $rows['dc_name']; ?></td></small><br>
+          <small>Date: <td><?php echo $rows['dc_date']; ?></td></small><br>
+
+          <?php } ?>
           <div class="turno-footer">
-          <a href="schedules_admin.php">View all</a>
+          <a href="dc_admin.php">View all</a>
         </div>
         </div>
     </div>
   </div>
+  <?php } ?>
 
+<?php include "dbs/w2_read.php"; ?>
   <div class="leave-card">
   <div class="leave-single">
   <div>
-      <h5 <span><i class="fas fa-bed"></i></span>Leaves</h5>
-      <small>Number of Leaves: 1</small><br>
-      <small>Latest Leave: Medical Appointment</small><br>
-      <small>Status:<small class="yellow-status"> Pending</small></small><br>
+      <?php if (mysqli_num_rows($result)) { ?>
+      <h5><span><i class="fas fa-landmark"></i></span>Latest W-2 Tax Form</h5>
+      <?php
+       $i = 0;
+       if($rows = mysqli_fetch_assoc($result)){
+       $i++;
+     ?>
+
+      <small>Date: <td><?php echo $rows['date_tax']; ?></td></small><br>
+      <small>Name: <td><?php echo $rows['file_name']; ?></small><br>
+
+        <?php } ?>
       <div class="leave-footer">
-      <a href="leaves_admin.php">View all</a>
+      <a href="w2_admin.php">View all</a>
     </div>
     </div>
+      <?php } ?>
 
 </div>
 </div>

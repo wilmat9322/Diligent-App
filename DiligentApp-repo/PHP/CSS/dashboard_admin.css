@@ -543,7 +543,9 @@ tbody tr:nth-child(even) {
 }
 .gray-status{
   color: #000000;
+  background: #A9A9A9;
 }
+
 .empleados-footer{
   position: relative;
   font-size: 18px;

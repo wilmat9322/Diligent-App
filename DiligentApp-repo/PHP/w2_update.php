@@ -10,7 +10,7 @@
 <head>
 
   <!----- Lista de Metas que considero importantes ----->
-  <meta charset="utf-8">
+  <meta charset="utf_unicode_ci">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Diligent App es una aplicación de manejo de manejo de empelados y nóminas desarrollada
                                       por Diligent Technologies. Diligent Technologies ha sido una empresa con más de 10 años
@@ -66,7 +66,7 @@
       <input type="date" id="date_tax" name="date_tax" value="<?=$row['date_tax'] ?>">
 
       <label class="labcol" for="file">Select a Tax Form to Upload</label>
-      <input type="file" id="file" name="file" />
+      <input type="file" id="file" name="file" /required>
 
     </div>
 
